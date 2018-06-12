@@ -1,0 +1,170 @@
+\documentclass[12pt,a4paper,titlepage]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lipsum}
+\usepackage{cite}
+\usepackage[normalem]{ulem}
+
+\usepackage{amsmath, amssymb, amsfonts, amsthm, fouriernc, mathtools}
+% mathtools for: Aboxed (put box on last equation in align envirenment)
+\usepackage{microtype} %improves the spacing between words and letters
+
+\usepackage{graphicx}
+\graphicspath{ {./pics/} {./eps/}}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\lhead{afranzoni3}
+\rhead{Page \thepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COLOR DEFINITIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[svgnames]{xcolor} % Enabling mixing colors and color's call by 'svgnames'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{MyColor1}{rgb}{0.2,0.4,0.6} %mix personal color
+\newcommand{\textb}{\color{Black} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blue}{\color{MyColor1} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blueb}{\color{MyColor1} \usefont{OT1}{lmss}{b}{n}}
+\newcommand{\red}{\color{LightCoral} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\green}{\color{Turquoise} \usefont{OT1}{lmss}{m}{n}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FONTS AND COLORS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    SECTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec}
+\usepackage{sectsty}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%set section/subsections HEADINGS font and color
+\sectionfont{\color{MyColor1}}  % sets colour of sections
+\subsectionfont{\color{MyColor1}}  % sets colour of sections
+
+%set section enumerator to arabic number (see footnotes markings alternatives)
+\renewcommand\thesection{\arabic{section}.} %define sections numbering
+\renewcommand\thesubsection{\thesection\arabic{subsection}} %subsec.num.
+
+%define new section style
+\newcommand{\mysection}{
+\titleformat{\section} [runin] {\usefont{OT1}{lmss}{b}{n}\color{MyColor1}} 
+{\thesection} {3pt} {} } 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		CAPTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{caption}
+\usepackage{subcaption}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup[figure]{labelfont={color=Turquoise}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		!!!EQUATION (ARRAY) --> USING ALIGN INSTEAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%using amsmath package to redefine eq. numeration (1.1, 1.2, ...) 
+%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\theequation}{\thesection\arabic{equation}}
+
+%set box background to grey in align environment 
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\makeatletter
+\patchcmd{\@Aboxed}{\boxed{#1#2}}{\colorbox{black!15}{$#1#2$}}{}{}%
+\patchcmd{\@boxed}{\boxed{#1#2}}{\colorbox{black!15}{$#1#2$}}{}{}%
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DESIGN CIRCUITS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[siunitx, american, smartlabels, cute inductors, europeanvoltages]{circuitikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\makeatletter
+\let\reftagform@=\tagform@
+\def\tagform@#1{\maketag@@@{(\ignorespaces\textcolor{red}{#1}\unskip\@@italiccorr)}}
+\renewcommand{\eqref}[1]{\textup{\reftagform@{\ref{#1}}}}
+\makeatother
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,citecolor=Black,urlcolor=MyColor1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PREPARE TITLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\blue Educational Technology - Summer 2018 \\
+\blueb Assignment 3}
+\author{Alan Franzoni} 
+
+\date{\today}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+\maketitle
+
+\section* {Great Expectations: unaligned goals in university and industry}
+
+After a (quite) extensive research, I found a number of answered, or at least partially answered, questions, on the so-called academy/industry split. \textbf{My focus is especially on Computer Science and Software Engineering} graduates, degrees, and jobs. There's a quite widespread agreement that most new graduates aren't ready for a job just out of the school \cite{Chakrabarti2018} \cite{Smiley2016} , and some schools even attempted some things in order to make their students better suited for a job \cite{Delgado2017} \cite{Portela2017} \cite{Bastarrica2017} \cite{Dawson2000}  .\newline
+
+What hasn't been cleared out by research, in my opinion, is the \textit{attitude} and the \textit{goals} of university teachers, students, and employers.\newline
+
+ Many employers seem just to \textit{take for granted} that new graduates should be able to take on a job immediately after being hired, and when those can't, they just blame the university for its inadequate training. When hiring, they do evaluate a number of things \cite{Stasio2016} including education, but it doesn't always seem a conscious or rigorous process.\newline
+ 
+ But, \textbf{does the teach-for-a-job purpose apply to university teachers}? Are teachers and/or whoever creates a university curriculum thinking about the industry, or their own purposes (e.g. research)? Or, possibly, are they just going on? Many universities exist since decades or centuries, and maybe they didn't rethink about themselves, so far; they just went on at doing things, maybe updating what they were doing before. Some insights about the topic \cite{Xia2017} exist, but, again, many approaches look like an afterthought rather than a deliberate choice.\newline
+ 
+ What about students? Why do they start studying computer science and/or software engineering? Do they expect to learn things that will be really useful for their future jobs, or do they enroll just because a 4-year degree seems the way to go in their environments, or just because they want to get some signaling for recruiters and employers? Higher education is expensive, especially in the US, and sometimes \cite{SO2018} it doesn't seem worth it, at least from a purely wage-oriented point of view. Not-so-stellar retention rates may be connected \cite{Sithole2017} \cite{Beaubouef2005}. \newline
+
+So, my question is: \textbf{does the perceived skill gap in fresh graduates and/or low retention in CS programs exist because the academy is unable to provide a good education, or just because a) the academy is not even trying to do that kind of job, and b) the industry is taking that kind of job for granted, or c) the students think they should be getting something that the university has no intention to provide them with?}\newline
+
+I suspect that, as it happens in many situations, the main problem is not one of implementation; is not that one side hasn't enough resources or skills to achieve a certain goal, but, rather, that there's a different vision on what should be done, and different and unaligned \textit{rewards} exist for different parties.
+
+
+\section*{Possibile problems and shortcomings}
+\begin{itemize}
+	\item The industry is large and variegated. What could be useful for a large, product-oriented corporation (e.g. Microsoft, Google, Amazon, Apple) could not work for a smaller consultancy firm;
+	\item There're many universities and programs, possibly with different purposes; I'll need to reach out quite a lot of them in order not to get stuck in a biased research;
+	\item One's perception of their own success or failure might be biased, I can't suppose I have the full picture. Also, many a time a company or organization doesn't act as a single, cohesive, goal-oriented entity, but rather like a multi-brain monster where each brain periodically takes control of some part of the body; I shouldn't take coherence for granted.
+\end{itemize}
+
+\section*{How would I like to proceed}
+The topic is quite extensive, and I'd not like to get lost in the details. My research would be done this way (most probably a survey-based qualitative research). Most probably, the output would be something \textbf{descriptive} about the current status of the expectations for students, higher education teachers, professionals, and employees; I hope that this research can highlight some difference in such expectations; this could be the first step in order to provide a fix (if needed) or to just realign some expectations, so that we don't get stuck in a pointless debate.
+
+\begin{itemize}
+\item Ask people around what they think the role of the university currently \textbf{is}. I'd ask that to teachers, deans, students, people working in the industry, with various. Maybe I'll try to provide some minimal guidance to prevent wanderings, but the question should be open. In the question, I'll try to link the person role and experience to its answer.
+\item Then, I'd go on asking to the same public whether the university is doing what they think is right, or it should do something else; if sth else, what, and why.
+\item I would then ask what they think about their own studies (if any) (connection with study level/type) - were they useful for their career, in which way, and after how many years.
+\item Ask whether they would just throw away something that they learned because it was a total waste of time.
+\item Ask whether they had to re-learn something that they had already learned, because too much time passed between the time they took a course and the moment they actually leveraged that specific skill or knowledge.
+\end{itemize}
+
+I would create a website for such research survey, with an explanation of what I would do, and possibly add some search power (e.g. adwords); the backend could just be powered by Google Spreadsheets/Forms. Then I would \sout{spam the website everywhere} use my many contacts in the industry and my few in the university to spread the link worldwide, and I would then analyze the results.
+
+\section*{Questions that could find a (partial) answer through this research}
+\begin{itemize}
+	\item If the industry just wanted better prepared graduates, would it be able to take such role? With the price of current education (that we could estimate in 50/60K USD per year on average) an employer could pay an apprentice for some years to train him. Would that be a better choice?
+	\item Are employers choosing CS/SE graduates because something is better than nothing, and they aren't paying for their education, after all?
+	\item Are students choosing a degree deliberately? Or is theirs just a "do-what-my-parents-did-or-would-have-liked-to-do" attitude, something that could lower motivation and increase student debt?
+\end{itemize}
+
+
+
+\bibliography{../bibliography.bib}{}
+\bibliographystyle{IEEEtran}
+
+
+
+\end{document}
+
