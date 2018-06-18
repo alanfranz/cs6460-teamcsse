@@ -26,6 +26,7 @@
 % (e.g. for preprints).  Consult the conference website for the
 % camera-ready copyright statement.
 
+
 %% HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP --
 %% Please note you need to make sure the copy for your specific
 %% license is used here!
@@ -64,6 +65,7 @@
 % \usepackage[all]{hypcap}    % Fixes bug in hyperref caption linking
 \usepackage{ccicons}          % Cite your images correctly!
 % \usepackage[utf8]{inputenc} % for a UTF8 editor only
+\usepackage{float}
 
 % If you want to use todo notes, marginpars etc. during creation of
 % your draft document, you have to enable the "chi_draft" option for
@@ -132,443 +134,227 @@
 % End of preamble. Here it comes the document.
 \begin{document}
 
-\title{Proposal:\\ Unaligned Expectations in Universities and Industry for New Graduates in Computer Science and Software Engineering}
+\title{Proposal:\\ Discovering Unaligned Expectations in Universities and Industry for New Graduates in Computer Science and Software Engineering}
 
 \numberofauthors{2}
 \author{%
   \alignauthor{Alan Franzoni\\
-    \affaddr{for Submission}\\
-    \affaddr{Rome, Italy}\\
-    \email{afranzoni3@gatech.edu}}\\
+    \affaddr{Georgia Institute of Technology}\\
+    \affaddr{Trieste, Italy}\\
+    \email{alan.franzoni@gatech.edu}}\\
   \alignauthor{Hasti Ghabel\\
-    \affaddr{for Submission}\\
+    \affaddr{Georgia Institute of Technology}\\
     \affaddr{Atlanta, GA}\\
     \email{hghabel1@gatech.edu}}\\
 }
 
 \maketitle
 
-\begin{abstract}
-  \textit{Abstract}-There is a widespread agreement that new graduates from computer science and software engineering does not always possess required skills, abilities or knowledge when joining software industry. The phenomenal question is what are the expectations and motivations for students, teachers in the field of computer science and software engineering? Following that what employers expect from new graduates in this field? Is there any gap between the expectation of these groups? How would be the best practice to limit the possible gap. In this paper and in our project we will discuss about available research articles and analyze the results. We will initially provide survey and sending it to a smaller group in this field such as our classmates. Then, we will provide the official survey and send it to many people outside this classroom, who are active in this field as teacher, student, or employers. We will analyze our results and report it in our paper.
-\end{abstract}
+\section{Introduction}
+There is a widespread agreement that new graduates from computer science and software engineering \textbf{do not always possess required skills, abilities or knowledge when joining the tech industry}: a lot of entry-level jobs actually require three years of experience \cite{Chakrabarti2018}; gaps between Engineering Education, and Practice (what an engineer does in real life) do exist \cite{Sivanesan2017}; the software industry presents dissatisfaction in relation to the level of recently graduated professionals \cite{Portela2017}; there is considerable room for improvement in what is taught to software students [in relation with job relevance] \cite{Lethbridgea}; many employers find that graduates and sandwich students come to them poorly prepared for the every day problems encountered at the workplace \cite{Dawson2000}.
 
-\category{H.5.m.}{Information Interfaces and Presentation
-  (e.g. HCI)}{Miscellaneous} \category{See
-  \url{http://acm.org/about/class/1998/} for the full list of ACM
-  classifiers. This section is required.}{}{}
+Some universities and programs even took steps to try and fix this problem in some specific classes by doing all kind of things: from purposely hindering and disrupting the software development processes \cite{Dawson2000}, to adapting and incorporating industry training strategies into a software engineering course \cite{Portela2017}, to creating and adapting a project-based software engineering course that led the students to face with current, real-world engineering problems \cite{Delgado2017}, and to highlight to students how relevant is having and developing critical soft skills to succeed in projects\cite{Bastarrica2017}.
 
-\keywords{\plainkeywords}
+At first, we thought that different outcomes could come from different programs, so we explored the difference between Computer Science and Software Engineering programs, but those didn't prove really relevant; the official ACM/IEEE curricula for Computer Science \cite{Force2013} and Software Engineering \cite{Ardis2015}, which many universities base their program on, are somewhat overlapping, and some studies trying to highlight differences in outcomes between CS and SE graduates were mostly inconclusive: a lot of core competencies are shared \cite{Meziane2004} \cite{Rasool2014}. And, those recently-updated curricula don't seem to incorporate lessons from the aforementioned efforts.
 
-\section{*** Proposal TODO Items ***} 
+The acknowledgment of this skill gap and the efforts to train new graduates for the industry go back as far as 1992 \cite{Dawson1992}. So, \textbf{if in a quarter of a century little to nothing changed, what is the real matter}?
 
-A feedback:
-What is the underlying educational problem or approach you see as a problem?  What are the main problem(s) with this approach or problem?  How can I fix it?
+\section{The hypothesis}
+So, we started thinking that maybe the problem is not one of implementation; it's not the university is unable to train graduates for the industry. We began thinking that, possibly, there is a \textbf{misalignment in incentives and expectations} for the various stakeholders: industry practitioners, university teachers, and students.
 
-1- What are the research background that shows the motivation and expectations for student/teachers/employers in cs/se program?
+ So, the phenomenal question is: what are the expectations and motivations for students, teachers in the field of computer science and software engineering? Following that, what do employers expect from new graduates in this field? Is there any gap between the expectation of these groups?
+ 
+ We have found some research on the topic: students usually do not have a personal vision for what they hope to do with a Computer Science degree, and there's a mismatch between what they are taught and what they had expected \cite{Hewner2011}; some initial work on understanding what makes a good software engineer was performed \cite{Li2015}, but just on a few small samples from a very specific audience. Some studies exist on employers' hiring behaviour, but their results are far from being exhaustive; some of them even highlight clear differences between different countries \cite{Stasio2016}.
+ 
+ So, we would like to research into \textbf{what the expectations and motivations are} for our groups; we think we'll find a substantial \textbf{unalignment} between different groups' aims, that would justify the root reason for the perceived skill gap. So, we think that, most probably, employers will say they'll expect new graduates to be able to perform most real-world tasks; possibly, some students will say the same; but we suspect that most teachers won't answer this way, and they'll just say that they want their students to learn "computational thinking" or be prepared for doing research.
+ 
+ We think, as well, that employers still find some usefulness in new CS/SE graduates, or they wouldn't hire them, and possibly students would not enter such kind of classes; we may able to infer what's the actual usefulness of somebody's studies when doing their jobs. Would it be a good idea to remove some course which is currently taken in order to improve the immediate perception of readiness for the industry, or would that lead to issues with skills later on?
+ 
+ By the way, we seek mostly a \textbf{descriptive} approach to the problem, so we won't cry if the results don't turn out as we expect; we'll have verified a doubt we had.
+ 
+ \section{What we plan to do}
+ 
+ We plan to \textbf{create a survey} where we ask questions to assess the thoughts of students, university teachers, and industry practitioners about:
+ \begin{itemize}
+ 	\item What should be the expected skills of fresh graduates? (job proficiency, research proficiency, software writing, computational thinking, etc)
+ 	\item What are the actual skills they encounter "in the wild"?
+ 	\item Whether they think gaps exist and should have been filled by somebody else?
 
-2- what are the problems to limit the gap for new graduates in finding a new job after school? Why there is a gap in the new graduate skills and employer expectations?
+ \end{itemize} 
+ 
+ The survey will actually be tweaked depending on the target; some questions will be required for some groups, but not for others. As an example, we may ask teachers whether they're teaching that way because they want to, or if most of what they teach has been chosen by somebody else, and we may ask employers if they got some substantial promise about full work-effectiveness of new graduates.
+ 
+ What we perceive is novel is that \textbf{we target all groups at the same time}, so we can put their answers in perspective, and that we will \textbf{aim for a larger group than previous studies}; we'd really like to reach 300+ answers to our survey.
+ 
+ In order to achieve such target, we'll create a website where we describe what we are doing, and we'll provide links to the survey and an easy way to share the website itself; we hope that a bit of advertising/social media push will help us getting to the numbers we need.
+ 
+ Then, we'll collect the data, graph and analyze it, as well as creating a final presentation to sum up what we'll find.
+ 
+ Our research will be a mix of survey-based and qualitative research. Some questions will be multiple-choice once, but some will be open-answer questions that we'll summarize later on.
+ 
+ The independent variables will be the target groups, the industry types (consulting/SaaS/product based/legacy corporation/...). The dependent variables will be the groups' expectations and motivations.
+ 
+  \section{Limitations}
+ Threats to validity, both internal and external: we hope to get a good sample from around the world, but there's always the risk we incur in some biases - e.g. if some universities or organizations get really involved with the research we may get too many results from those specific institutions. We may also get a skewed number of answers from a specific target group - we'll need to understand what a good proportion is between groups as well, because we doubt the world offers the same amount of professionals, teachers, and students.
+ 
+Additionally, there will be a limitation on finding a large number of participants that meet our group categories. It is more challenging to find a large number of teachers, professors, and also recruiters, since they have a busy schedule or they may not be allowed to participate in certain surveys due to their company policies. 
+  
+ Another thing is time limitation. We only have 4-5 weeks to provide the survey questions, send it to the people (small and large group), validate the questions, and analyze and summerize the results. Sometimes, it takes \textbf{a couple of weeks} for each participant to only complete the survey and collect the results.
+ 
+ Also, we may be getting skewed answers with respect to institutions; for example, we may get a lot of answers from students from a certain university, some teachers from a different one, and then we may get a lot of practitioners that had no contact with such universities, and hence have no such perception; it would be great to match students and teacher from certain institutions, and then let see what employers say about such students; but this would require quite more time and a far more complex setup than what we can afford for this research.
+ 
+  
+ \section{Deliverables}
+ We collect the deliverables and their due dates in the table below.
+ 
+ \begin{table}[H]
+ \centering
+ \begin{tabular}{c r} 					% create two columns
+ \hline\hline						% insert double line
+ Deliverable & Due Dates (year 2018)\\
+ \hline
+ Five weekly status reports & Every week, 06/25 - 07/23\\
+ Intermediate milestone 1 & 07/2\\
+ Intermediate milestone 2 & 07/16\\
+ Final presentation & 07/30\\
+ Final project & 07/30\\
+ \hline
+ \end{tabular}
+ \caption{Schedule of each deliverable} 	% title of the table
+ \end{table}
+	  
+   
+  \section{Tasks}
+  Below, we listed the tasks that needs to be completed for this project. We displayed the number of hours for each task in front of it inside the parenthesis.\newline
 
-3- what are some methodology that can shorten this gap? We can compare ivy league schools and other ones to see the differences and rate of employment after graduation?
+\textbf{Milestone 1}\newline
+\textit{\underline{Task 0}}: Collaborate with teammates and complete the \textbf{project proposal}. (20 h)
 
+\textit{\underline{Task 1}}: Create a \textbf{website} that explains our project objectives to the readers and links to our different surveys. This website is required to enlarge the audience with different  experiences in the field of computer science and software engineering. (15 h)
 
-\section{*** Introduction ***} 
+\textit{\underline{Task 2}}: Plan the \textbf{survey questions} that target different categories including students, teachers and professors, employers, and recruiters.The survey questions are very important to lead the research to its goal. Correspondingly, the given answers from different categories can provide a good and promising results analyses. (20 h)
 
-One of the essential elements of a good software is to have a good software engineer (Paul Luo Li et al., 2015). The question is what makes a great software engineer? (Paul Luo Li et al., 2015) All different groups are looking into this question: employers want to hire a good software engineer, universities want to train a good engineer and new graduates want to become great (Paul Luo Li et al., 2015). Paul Luo Li et al. mention some of the employer’s expectations for hiring software developers (Paul Luo Li et al., 2015). The research indicates that the expert engineers are more productive in terms of producing faster solutions, produce more amount of code in the same amount of time, and write code with much fewer bugs (Paul Luo Li et al., 2015).\\ 
-Hewner and Guzdial investigate a game company on what are the employer expectations from new graduates (Hewner and Guzdial, 2010). They identify two of the essentials skills or expectations are high programming skills as well as people skills such as working in a team and collaborating with other people (Hewner and Guzdial, 2010). McConnell argue that software developers’ personality traits like intellectual honesty, curiosity and being humble about their intelligence are important skills in addition to technical skills (McConnell, 2004). Hewner describes the mismatch between a student’s expectations on skills they hope to learn and what they are taught in an introductory computer science class (Hewner, 2011). He notes that students come to the course with preconception about what they will learn in that computer science course (Hewner, 2011). The educators mention some of the students preconceptions as below (Hewner, 2011):\\
-	- Students expect to learn “advanced features” in application softwares.\\
-	- They expect to do IT work such as assembling computers from parts and configure routers.\\
-	- They expect to learn only about programming and not the architecture and theory.\\
+\textit{\underline{Task 3}}: Using \textbf{proper tools} to provide the survey. Some available tools that we consider are Google Docs, or Monkey surveys. (10 h)
 
-Teaching computer science is different from teaching other subjects (Guzdial, 2014, https://cacm.acm.org/blogs/blog-cacm/174930-what-it-takes-to-be-a-successful-high-school-computer-science-teacher/fulltext ) Good teachers should be able to read the code and help students to write code by hand off from computers (as well as at the computer) (Guzdel, 2014). On the other hand, the less successful teachers focus heavily on assessments and readings (Guzdel, 2014). \\
-The technology and computer science industries are growing so fast (Ayofe and Ajetola, 2009). Therefore, the companies are looking for the graduates, who are able to use the latest technologies. However, the companies criticize the universities curriculum doesn’t meet the practical issues in industry (Ayofe and Ajetola, 2009). 
+\textit{\underline{Task 4}}: Make the \textbf{survey} available to a smaller sample of categories. This gives us the opportunity to better understand what we missed in our survey or what was extra, which does not give us important information. We are planning to share the survey at this level with our classmates at Educational Technology - Summer 2018. We will use Piazza platform to share our survey with this group of people. (15 h)\newline
 
+\textbf{Milestone 2}\newline
+\textit{\underline{Task 5}}: The next step is to \textbf{validate} and \textbf{update} the survey questions based on the result and feedback from small group survey. (20 h)
 
+\textit{\underline{Task 6}}: Create a plan on how to send our results to the people who are interested to know what we find in our research. We can setup a \textbf{mailchimp mailing list}. (15 h)
 
+\textit{\underline{Task 7}}: Share the \textbf{validated survey with a large group of people}. We need to share it on different forums, blogs, linkedIn, facebook, OMSCS slack channel, or maybe targeting employers in some companies. (15 h)
 
+\textit{\underline{Task 8}}: \textbf{Collect the results} from our survey and describe the results. We will do research on available tools that we can analyze our results and display them on a graph to effectively describe our findings. (20 h)\newline
 
-\section{Typeset Text}
-The styles contained in this document have been modified from the
-default styles to reflect ACM formatting conventions. For example,
-content paragraphs like this one are formatted using the Normal style.
+\textbf{Final Steps}\newline
+\textit{\underline{Task 9}}: Put all our findings together and \textbf{prepare the final project paper}. (30 h)\newline
 
-\LaTeX\ sometimes will create overfull lines that extend into columns.
-To attempt to combat this, the \texttt{.cls} file has a command,
-\texttt{{\textbackslash}sloppy}, that essentially asks \LaTeX\ to
-prefer underfull lines with extra whitespace.  For more details on
-this, and info on how to control it more finely, check out
-{\url{http://www.economics.utoronto.ca/osborne/latex/PMAKEUP.HTM}}.
-
-\subsection{Title and Authors}
-
-Your paper's title, authors and affiliations should run across the
-full width of the page in a single column 17.8 cm (7 in.) wide.  The
-title should be in Helvetica or Arial 18-point bold.  Authors' names
-should be in Times New Roman or Times Roman 12-point bold, and
-affiliations in 12-point regular.  
-
-See \texttt{{\textbackslash}author} section of this template for
-instructions on how to format the authors. For more than three
-authors, you may have to place some address information in a footnote,
-or in a named section at the end of your paper. Names may optionally
-be placed in a single centered row instead of at the top of each
-column. Leave one 10-point line of white space below the last line of
-affiliations.
-
-\subsection{Abstract and Keywords}
-
-Every submission should begin with an abstract of about 150 words,
-followed by a set of Author Keywords and ACM Classification
-Keywords. The abstract and keywords should be placed in the left
-column of the first page under the left half of the title. The
-abstract should be a concise statement of the problem, approach, and
-conclusions of the work described. It should clearly state the paper's
-contribution to the field of HCI\@.
-
-\subsection{Normal or Body Text}
-
-Please use a 10-point Times New Roman or Times Roman font or, if this
-is unavailable, another proportional font with serifs, as close as
-possible in appearance to Times Roman 10-point. Other than Helvetica
-or Arial headings, please use sans-serif or non-proportional fonts
-only for special purposes, such as source code text.
-
-\subsection{First Page Copyright Notice}
-This template include a sample ACM copyright notice at the bottom of
-page 1, column 1.  Upon acceptance, you will be provided with the
-appropriate copyright statement and unique DOI string for publication.
-Accepted papers will be distributed in the conference
-publications. They will also be placed in the ACM Digital Library,
-where they will remain accessible to thousands of researchers and
-practitioners worldwide. See
-\url{http://acm.org/publications/policies/copyright_policy} for the
-ACM's copyright and permissions policy.
-
-\subsection{Subsequent Pages}
-
-On pages beyond the first, start at the top of the page and continue
-in double-column format.  The two columns on the last page should be
-of equal length.
-
-\begin{figure}
-\centering
-  \includegraphics[width=0.9\columnwidth]{figures/sigchi-logo}
-  \caption{Insert a caption below each figure. Do not alter the
-    Caption style.  One-line captions should be centered; multi-line
-    should be justified. }~\label{fig:figure1}
-\end{figure}
-
-\subsection{References and Citations}
-
-Use a numbered list of references at the end of the article, ordered
-alphabetically by last name of first author, and referenced by numbers
-in
-brackets~\cite{acm_categories,ethics,Klemmer:2002:WSC:503376.503378}.
-Your references should be published materials accessible to the
-public. Internal technical reports may be cited only if they are
-easily accessible (i.e., you provide the address for obtaining the
-report within your citation) and may be obtained by any reader for a
-nominal fee. Proprietary information may not be cited. Private
-communications should be acknowledged in the main text, not referenced
-(e.g., ``[Borriello, personal communication]'').
-
-References should be in ACM citation format:
-\url{http://acm.org/publications/submissions/latex_style}. This
-includes citations to internet
-resources~\cite{acm_categories,cavender:writing,CHINOSAUR:venue,psy:gangnam}
-according to ACM format, although it is often appropriate to include
-URLs directly in the text, as above.
+\textit{\underline{Task 10}}: Complete the \textbf{final project} and \textbf{final project presentation}.  (20 h)\newline
 
 
-% Use a numbered list of references at the end of the article, ordered
-% alphabetically by first author, and referenced by numbers in
-% brackets~\cite{ethics, Klemmer:2002:WSC:503376.503378,
-%   Mather:2000:MUT, Zellweger:2001:FAO:504216.504224}. For papers from
-% conference proceedings, include the title of the paper and an
-% abbreviated name of the conference (e.g., for Interact 2003
-% proceedings, use \textit{Proc. Interact 2003}). Do not include the
-% location of the conference or the exact date; do include the page
-% numbers if available. See the examples of citations at the end of this
-% document. Within this template file, use the \texttt{References} style
-% for the text of your citation.
+\section{Weekly Milestones}
+Here, we describe the weekly due dates, goals, project-related assignments, and associated tasks due dates.
 
-% Your references should be published materials accessible to the
-% public.  Internal technical reports may be cited only if they are
-% easily accessible (i.e., you provide the address for obtaining the
-% report within your citation) and may be obtained by any reader for a
-% nominal fee.  Proprietary information may not be cited. Private
-% communications should be acknowledged in the main text, not referenced
-% (e.g., ``[Robertson, personal communication]'').
-
-\begin{table}
-  \centering
-  \begin{tabular}{l r r r}
-    % \toprule
-    & & \multicolumn{2}{c}{\small{\textbf{Test Conditions}}} \\
-    \cmidrule(r){3-4}
-    {\small\textit{Name}}
-    & {\small \textit{First}}
-      & {\small \textit{Second}}
-    & {\small \textit{Final}} \\
-    \midrule
-    Marsden & 223.0 & 44 & 432,321 \\
-    Nass & 22.2 & 16 & 234,333 \\
-    Borriello & 22.9 & 11 & 93,123 \\
-    Karat & 34.9 & 2200 & 103,322 \\
-    % \bottomrule
-  \end{tabular}
-  \caption{Table captions should be placed below the table. We
-    recommend table lines be 1 point, 25\% black. Minimize use of
-    table grid lines.}~\label{tab:table1}
-\end{table}
-
-\section{Sections}
-
-The heading of a section should be in Helvetica or Arial 9-point bold,
-all in capitals. Sections should \textit{not} be numbered.
-
-\subsection{Subsections}
-
-Headings of subsections should be in Helvetica or Arial 9-point bold
-with initial letters capitalized.  For sub-sections and
-sub-subsections, a word like \emph{the} or \emph{of} is not
-capitalized unless it is the first word of the heading.
-
-\subsubsection{Sub-subsections}
-
-Headings for sub-subsections should be in Helvetica or Arial 9-point
-italic with initial letters capitalized.  Standard
-\texttt{{\textbackslash}section}, \texttt{{\textbackslash}subsection},
-and \texttt{{\textbackslash}subsubsection} commands will work fine in
-this template.
-
-\section{Figures/Captions}
-
-Place figures and tables at the top or bottom of the appropriate
-column or columns, on the same page as the relevant text (see
-Figure~\ref{fig:figure1}). A figure or table may extend across both
-columns to a maximum width of 17.78 cm (7 in.).
-
-\begin{figure*}
-  \centering
-  \includegraphics[width=1.75\columnwidth]{figures/map}
-  \caption{In this image, the map maximizes use of space. You can make
-    figures as wide as you need, up to a maximum of the full width of
-    both columns. Note that \LaTeX\ tends to render large figures on a
-    dedicated page. Image: \ccbynd~ayman on
-    Flickr.}~\label{fig:figure2}
-\end{figure*}
-
-Captions should be Times New Roman or Times Roman 9-point bold.  They
-should be numbered (e.g., ``Table~\ref{tab:table1}'' or
-``Figure~\ref{fig:figure1}''), centered and placed beneath the figure
-or table.  Please note that the words ``Figure'' and ``Table'' should
-be spelled out (e.g., ``Figure'' rather than ``Fig.'') wherever they
-occur. Figures, like Figure~\ref{fig:figure2}, may span columns and
-all figures should also include alt text for improved accessibility.
-Papers and notes may use color figures, which are included in the page
-limit; the figures must be usable when printed in black-and-white in
-the proceedings.
-
-The paper may be accompanied by a short video figure up to five
-minutes in length. However, the paper should stand on its own without
-the video figure, as the video may not be available to everyone who
-reads the paper.  
-
-\subsection{Inserting Images}
-When possible, include a vector formatted graphic (i.e. PDF or EPS).
-When including bitmaps,  use an image editing tool to resize the image
-at the appropriate printing resolution (usually 300 dpi).
-
-\section{Quotations}
-Quotations may be italicized when \textit{``placed inline''} (Anab,
-23F).
-
-\begin{quote}
-Longer quotes, when placed in their own paragraph, need not be
-italicized or in quotation marks when indented (Ramon, 39M).  
-\end{quote}
-
-\section{Language, Style, and Content}
-
-The written and spoken language of SIGCHI is English. Spelling and
-punctuation may use any dialect of English (e.g., British, Canadian,
-US, etc.) provided this is done consis- tently. Hyphenation is
-optional. To ensure suitability for an international audience, please
-pay attention to the following:
-
+\subsection{Week \#5}
 \begin{itemize}
-\item Write in a straightforward style.
-\item Try to avoid long or complex sentence structures.
-\item Briefly define or explain all technical terms that may be
-  unfamiliar to readers.
-\item Explain all acronyms the first time they are used in your
-  text---e.g., ``Digital Signal Processing (DSP)''.
-\item Explain local references (e.g., not everyone knows all city
-  names in a particular country).
-\item Explain ``insider'' comments. Ensure that your whole audience
-  understands any reference whose meaning you do not describe (e.g.,
-  do not assume that everyone has used a Macintosh or a particular
-  application).
-\item Explain colloquial language and puns. Understanding phrases like
-  ``red herring'' may require a local knowledge of English.  Humor and
-  irony are difficult to translate.
-\item Use unambiguous forms for culturally localized concepts, such as
-  times, dates, currencies, and numbers (e.g., ``1--5--97'' or
-  ``5/1/97'' may mean 5 January or 1 May, and ``seven o'clock'' may
-  mean 7:00 am or 19:00). For currencies, indicate equivalences:
-  ``Participants were paid {\fontfamily{txr}\selectfont \textwon}
-  25,000, or roughly US \$22.''
-\item Be careful with the use of gender-specific pronouns (he, she)
-  and other gendered words (chairman, manpower, man-months). Use
-  inclusive language that is gender-neutral (e.g., she or he, they,
-  s/he, chair, staff, staff-hours, person-years). See the
-  \textit{Guidelines for Bias-Free Writing} for further advice and
-  examples regarding gender and other personal
-  attributes~\cite{Schwartz:1995:GBF}. Be particularly aware of
-  considerations around writing about people with disabilities.
-\item If possible, use the full (extended) alphabetic character set
-  for names of persons, institutions, and places (e.g.,
-  Gr{\o}nb{\ae}k, Lafreni\'ere, S\'anchez, Nguy{\~{\^{e}}}n,
-  Universit{\"a}t, Wei{\ss}enbach, Z{\"u}llighoven, \r{A}rhus, etc.).
-  These characters are already included in most versions and variants
-  of Times, Helvetica, and Arial fonts.
+ 	\item June 11, 2018 - June 18, 2018:
+	\begin{itemize}
+ 		\item \textbf{Goal}: Complete the project proposal.
+ 		\item \textbf{Assignments Due}: Project Proposal
+ 		\item \textbf{Tasks}: Task 0
+ 	\end{itemize} 
+ \end{itemize}
+
+
+\subsection{Week \#6}
+\begin{itemize}
+ 	\item June 18, 2018 - June 25, 2018:
+	\begin{itemize}
+ 		\item \textbf{Goal}: Provide the website to store the surveys, Provide survey questions.
+ 		\item \textbf{Assignments Due}: Weekly Status Check 1
+ 		\item \textbf{Tasks}: Task 1 \& Task 2
+	\end{itemize}
+ \end{itemize} 
+ 
+ \subsection{Week \#7}
+\begin{itemize}
+ 	\item June 25, 2018 - July 2, 2018:
+	\begin{itemize}
+ 		\item \textbf{Goal}: Create the online survey on best possible platform.
+ 		\item \textbf{Assignments Due}: Weekly Status Check 2, Intermediate Milestone 1
+ 		\item \textbf{Tasks}: Task 3 \& Task 4
+ 	\end{itemize} 
 \end{itemize}
+ 
+ \subsection{Week \#8}
+\begin{itemize}
+ 	\item July 2, 2018 - July 9, 2018:
+	\begin{itemize}
+ 		\item \textbf{Goal}: Validate survey and find solutions on automatically share results with people.
+ 		\item \textbf{Assignments Due}: Weekly Status Check 3
+ 		\item \textbf{Tasks}: Task 5 \& Task 6
+	\end{itemize} 
+ \end{itemize} 
+ 
+ \subsection{Week \#9}
+\begin{itemize}
+ 	\item July 9, 2018 - July 16, 2018:
+	\begin{itemize}
+	 	\item \textbf{Goal}: Send the online survey for the larger group of people and Collect data.
+ 		\item \textbf{Assignments Due}: Weekly Status Check 4, Intermediate Milestone 2
+ 		\item \textbf{Tasks}: Task 7 \& Task 8
+	\end{itemize} 
+ \end{itemize} 
+ 
+ \subsection{Week \#10}
+\begin{itemize}
+ 	\item July 16, 2018 - July 23, 2018:
+	\begin{itemize}
+ 		\item \textbf{Goal}: Continue on collecting results, summerize and analyze the collected results to prepare them for the final paper. 
+ 		\item \textbf{Assignments Due}: Weekly Status Check 5
+ 		\item \textbf{Tasks}: Task 8 \& Task 9
+	\end{itemize} 
+ \end{itemize} 
+ 
+ \subsection{Week \#11}
+\begin{itemize}
+ 	\item July 23, 2018 - July 30, 2018:
+	\begin{itemize}
+ 		\item \textbf{Goal}: Complete the Final Project and Final Presentation
+ 		\item \textbf{Assignments Due}: Final Project, Final Paper, Final Presentation
+ 		\item \textbf{Tasks}: Task 9 \& Task 10
+	\end{itemize} 
+ \end{itemize} 
 
-\section{Accessibility}
-The Executive Council of SIGCHI has committed to making SIGCHI
-conferences more inclusive for researchers, practitioners, and
-educators with disabilities. As a part of this goal, the all authors
-are asked to work on improving the accessibility of their
-submissions. Specifically, we encourage authors to carry out the
-following five steps:
+
+\section{Members of The Team}
+The name and GT username of the team members are mentioned below:
+ 
 \begin{enumerate}
-\item Add alternative text to all figures
-\item Mark table headings
-\item Add tags to the PDF
-\item Verify the default language
-\item Set the tab order to ``Use Document Structure''
+	\item Alan Franzoni : \textit{afranzoni3}
+	\item Hasti Ghabel : \textit{hghabelzadeh3}
 \end{enumerate}
-For more information and links to instructions and resources, please
-see: \url{http://chi2016.acm.org/accessibility}.  The
-\texttt{{\textbackslash}hyperref} package allows you to create well tagged PDF files,
-please see the preamble of this template for an example.
 
-\section{Page Numbering, Headers and Footers}
-Your final submission should not contain footer or header information
-at the top or bottom of each page. Specifically, your final submission
-should not include page numbers. Initial submissions may include page
-numbers, but these must be removed for camera-ready. Page numbers will
-be added to the PDF when the proceedings are assembled.
 
-\section{Producing and Testing PDF Files}
+\section{Task division}
+The tasks are divided among the team members. The number of each task is described in front of the name of each team member.
+ 
+\begin{enumerate}
+	\item Alan Franzoni Task \#s: 0, 1, 2, 5, 6, 7, 8, 9, 10
+	\item Hasti Ghabel Task \#s: 0, 2, 3, 4, 5, 7, 8, 9, 10
+\end{enumerate}
 
-We recommend that you produce a PDF version of your submission well
-before the final deadline.  Your PDF file must be ACM DL
-Compliant. The requirements for an ACM Compliant PDF are available at:
-{\url{http://www.sheridanprinting.com/typedept/ACM-distilling-settings.htm}}.
 
-Test your PDF file by viewing or printing it with the same software we
-will use when we receive it, Adobe Acrobat Reader Version 10. This is
-widely available at no cost. Note that most
-reviewers will use a North American/European version of Acrobat
-reader, so please check your PDF accordingly.
 
-When creating your PDF from Word, ensure that you generate a tagged
-PDF from improved accessibility. This can be done by using the Adobe
-PDF add-in, also called PDFMaker. Select Acrobat | Preferences from
-the ribbon and ensure that ``Enable Accessibility and Reflow with
-tagged Adobe PDF'' is selected. You can then generate a tagged PDF by
-selecting ``Create PDF'' from the Acrobat ribbon.
-
-\section{Conclusion}
-
-It is important that you write for the SIGCHI audience. Please read
-previous years' proceedings to understand the writing style and
-conventions that successful authors have used. It is particularly
-important that you state clearly what you have done, not merely what
-you plan to do, and explain how your work is different from previously
-published work, i.e., the unique contribution that your work makes to
-the field. Please consider what the reader will learn from your
-submission, and how they will find your work useful. If you write with
-these questions in mind, your work is more likely to be successful,
-both in being accepted into the conference, and in influencing the
-work of our field.
-
-\section{Acknowledgments}
-
-Sample text: We thank all the volunteers, and all publications support
-and staff, who wrote and provided helpful comments on previous
-versions of this document. Authors 1, 2, and 3 gratefully acknowledge
-the grant from NSF (\#1234--2012--ABC). \textit{This whole paragraph is
-  just an example.}
-
-% Balancing columns in a ref list is a bit of a pain because you
-% either use a hack like flushend or balance, or manually insert
-% a column break.  http://www.tex.ac.uk/cgi-bin/texfaq2html?label=balance
-% multicols doesn't work because we're already in two-column mode,
-% and flushend isn't awesome, so I choose balance.  See this
-% for more info: http://cs.brown.edu/system/software/latex/doc/balance.pdf
-%
-% Note that in a perfect world balance wants to be in the first
-% column of the last page.
-%
-% If balance doesn't work for you, you can remove that and
-% hard-code a column break into the bbl file right before you
-% submit:
-%
-% http://stackoverflow.com/questions/2149854/how-to-manually-equalize-columns-
-% in-an-ieee-paper-if-using-bibtex
-%
-% Or, just remove \balance and give up on balancing the last page.
-%
 \balance{}
 
-\section{References Format}
-Your references should be published materials accessible to the
-public. Internal technical reports may be cited only if they are
-easily accessible and may be obtained by any reader for a nominal
-fee. Proprietary information may not be cited. Private communications
-should be acknowledged in the main text, not referenced (e.g.,
-[Golovchinsky, personal communication]). References must be the same
-font size as other body text. References should be in alphabetical
-order by last name of first author. Use a numbered list of references
-at the end of the article, ordered alphabetically by last name of
-first author, and referenced by numbers in brackets. For papers from
-conference proceedings, include the title of the paper and the name of
-the conference. Do not include the location of the conference or the
-exact date; do include the page numbers if available. 
-
-References should be in ACM citation format:
-\url{http://www.acm.org/publications/submissions/latex_style}.  This
-includes citations to Internet
-resources~\cite{CHINOSAUR:venue,cavender:writing,psy:gangnam}
-according to ACM format, although it is often appropriate to include
-URLs directly in the text, as above. Example reference formatting for
-individual journal articles~\cite{ethics}, articles in conference
-proceedings~\cite{Klemmer:2002:WSC:503376.503378},
-books~\cite{Schwartz:1995:GBF}, theses~\cite{sutherland:sketchpad},
-book chapters~\cite{winner:politics}, an entire journal
-issue~\cite{kaye:puc},
-websites~\cite{acm_categories,cavender:writing},
-tweets~\cite{CHINOSAUR:venue}, patents~\cite{heilig:sensorama}, 
-games~\cite{supermetroid:snes}, and
-online videos~\cite{psy:gangnam} is given here.  See the examples of
-citations at the end of this document and in the accompanying
-\texttt{BibTeX} document. This formatting is a edited version of the
-format automatically generated by the ACM Digital Library
-(\url{http://dl.acm.org}) as ``ACM Ref.'' DOI and/or URL links are
-optional but encouraged as are full first names. Note that the
-Hyperlink style used throughout this document uses blue links;
-however, URLs in the references section may optionally appear in
-black.
-
-% BALANCE COLUMNS
 \balance{}
 
 % REFERENCES FORMAT
 % References must be the same font size as other body text.
 \bibliographystyle{SIGCHI-Reference-Format}
-\bibliography{sample}
+\bibliography{../bibliography.bib}
 
 \end{document}
 
@@ -576,3 +362,4 @@ black.
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
+ 
