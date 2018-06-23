@@ -1,0 +1,407 @@
+\documentclass[12pt,a4paper,titlepage]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lipsum}
+\usepackage{cite}
+\usepackage[normalem]{ulem}
+
+\usepackage{amsmath, amssymb, amsfonts, amsthm, fouriernc, mathtools}
+% mathtools for: Aboxed (put box on last equation in align envirenment)
+\usepackage{microtype} %improves the spacing between words and letters
+
+\usepackage{graphicx}
+\graphicspath{ {./pics/} {./eps/}}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{fancyhdr}
+\usepackage{float}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\lhead{afranzoni3 \& hghabelzadeh3}
+\rhead{Page \thepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COLOR DEFINITIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[svgnames]{xcolor} % Enabling mixing colors and color's call by 'svgnames'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{MyColor1}{rgb}{0.2,0.4,0.6} %mix personal color
+\newcommand{\textb}{\color{Black} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blue}{\color{MyColor1} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blueb}{\color{MyColor1} \usefont{OT1}{lmss}{b}{n}}
+\newcommand{\red}{\color{LightCoral} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\green}{\color{Turquoise} \usefont{OT1}{lmss}{m}{n}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FONTS AND COLORS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    SECTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec}
+\usepackage{sectsty}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%set section/subsections HEADINGS font and color
+\sectionfont{\color{MyColor1}}  % sets colour of sections
+\subsectionfont{\color{MyColor1}}  % sets colour of sections
+
+%set section enumerator to arabic number (see footnotes markings alternatives)
+\renewcommand\thesection{\arabic{section}.} %define sections numbering
+\renewcommand\thesubsection{\thesection\arabic{subsection}} %subsec.num.
+
+%define new section style
+\newcommand{\mysection}{
+\titleformat{\section} [runin] {\usefont{OT1}{lmss}{b}{n}\color{MyColor1}} 
+{\thesection} {3pt} {} } 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		CAPTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{caption}
+\usepackage{subcaption}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup[figure]{labelfont={color=Turquoise}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		!!!EQUATION (ARRAY) --> USING ALIGN INSTEAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%using amsmath package to redefine eq. numeration (1.1, 1.2, ...) 
+%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\theequation}{\thesection\arabic{equation}}
+
+%set box background to grey in align environment 
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\makeatletter
+\patchcmd{\@Aboxed}{\boxed{#1#2}}{\colorbox{black!15}{$#1#2$}}{}{}%
+\patchcmd{\@boxed}{\boxed{#1#2}}{\colorbox{black!15}{$#1#2$}}{}{}%
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DESIGN CIRCUITS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[siunitx, american, smartlabels, cute inductors, europeanvoltages]{circuitikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\makeatletter
+\let\reftagform@=\tagform@
+\def\tagform@#1{\maketag@@@{(\ignorespaces\textcolor{red}{#1}\unskip\@@italiccorr)}}
+\renewcommand{\eqref}[1]{\textup{\reftagform@{\ref{#1}}}}
+\makeatother
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,citecolor=Black,urlcolor=MyColor1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PREPARE TITLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\blue Educational Technology - Summer 2018 \\
+\blueb Survey Questions}
+\author{Alan Franzoni \& Hasti Ghabel} 
+
+\date{\today}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\maketitle
+
+\section {General Questions}
+
+Please  answer below questions?\\
+Age:\\
+Sex:\\
+Which category describes you best in the field of computer science?\\
+-  Student\\
+-  University professor, Staff, or school teacher\\
+-  Employer\\
+
+
+\section {Students}
+\begin{enumerate}
+
+	\item What is your major? Please specify:
+	
+	\item What is your highest degree level?
+	\begin{itemize}
+		\item No degree
+		\item Bachelor's degree
+		\item Post-Bachelors
+		\item Master's degree
+		\item Doctoral
+		\item Professional certificate
+	\end{itemize}
+	
+	\item What year are you in?
+	\begin{itemize}
+		\item Freshman
+		\item Sophomore
+		\item Junior
+		\item Senior
+		\item Other, Please specify:
+	\end{itemize}
+	
+	\item Are you planning to continue your studies at higher level/ graduate levels?
+	\begin{itemize}
+		\item Yes
+		\item No
+		\item N/A
+	\end{itemize}
+	
+	\item If you wanted to start your studies, would you choose another major? If YES, please specify a couple of reasons:
+	
+	\item What is your goal of studying in your major? Please select all that applies.
+	\begin{itemize}
+	\renewcommand{\labelitemi}{\scriptsize$\square$}
+		\item I am very interested.
+		\item Find a good job.
+		\item Receiving high income in future.
+		\item My friends and families encouraged me to study in this field.
+		\item High demand in today's technology to accept computer scientists.
+		\item Other, please specify:
+	\end{itemize}
+	
+	\item What technical skills you expect to learn during your studies? Select all that applies
+	\begin{itemize}
+	\renewcommand{\labelitemi}{\scriptsize$\square$}
+		\item Programming
+		\item Algorithms
+		\item Data structure
+		\item Software architecture
+		\item Artificial Intelligence and Machine Learning
+		\item Other, please specify:
+	\end{itemize}
+	
+	\item Among your above answers, what would you select as the most important skills you would like to learn?
+	\begin{itemize}
+		\item Programming
+		\item Algorithms
+		\item Data structure
+		\item Software architecture
+		\item Artificial Intelligence and Machine Learning
+		\item Other, please specify:
+	\end{itemize}
+	
+	\item What fields you prefer to work? scale from 1 to 7 (1 is the most preference, 7 is the least preference)
+	\begin{table}[H]
+ 		\begin{tabular}{c r r r r r r r} 					% create eight columns
+ 		\hline\hline								% insert double line
+ 		Categories &  1  &  2   &  3  &  4  &  5  &  6  &  7 \\
+	 	\hline
+ 		Science\\
+ 	 	Health\\
+ 		Business\\
+ 		Government\\
+ 		Education\\
+		Law\\
+		Security\\
+ 		\hline
+ 		\end{tabular}
+ 	\end{table}
+
+	\item What do you expect to be your income range right after graduation?
+	\begin{itemize}
+		\item below \$30K
+		\item \$30K - \$40K
+		\item \$40K - \$50K
+		\item \$50K - \$60K
+		\item \$60K - \$70K
+		\item \$70K - \$80K
+		\item \$80K - \$90K
+		\item \$90K - \$100K
+		\item above \&100K
+	\end{itemize}
+	
+	\item What would be the transition time from your graduation and finding a job? Please use 0 if you already have a job.
+	
+	\item How well you like your school?
+	\begin{itemize}
+		\item I am enthusiastic about it
+		\item I like it
+		\item I am more or less neutral about it
+		\item I don't like it
+	\end{itemize}
+	
+	\item Would you please shortly describe a couple of reasons that you like or dislike your school?
+	
+\end{enumerate}
+
+Thank You!
+
+
+\section{Universities/Schools (Professors, Staff, Teachers)}
+\begin{enumerate}
+
+	\item What is your role?
+	\begin{itemize}
+		\item Professor
+		\item Teacher
+		\item School/University Staff
+		\item Other, please specify:
+	\end{itemize}
+	
+	\item In your opinion, what is an important item for the university?
+	\begin{itemize}
+		\item University Ranking
+		\item Number of graduates
+		\item The number of ongoing research
+		\item The amount of receiving the research fundings
+		\item The number of students register in our program
+	\end{itemize}
+	
+	\item What motivates you to continue being in your current role?
+	\begin{itemize}
+		\item Salary
+		\item Research
+		\item Improve technology-industry
+		\item Other, Please specify.
+	\end{itemize}
+	
+	\item why computer science or software engineering is an important major? 
+	\begin{table}[H]
+ 		\begin{tabular}{c r r r r r} 					        % create six columns
+ 		\hline\hline								% insert double line
+ 		Item   &   Not at all  &   Unimportant   &   Neutral  &   Important   &   Very important \\
+	 	\hline
+ 		It is useful\\ in all\\ other fields.\\
+ 	 	It is the most\\ demanding major.\\
+ 		Many students\\ register in this field.\\
+ 		There is a rapid\\ growth in \\technology-based \\jobs in industry.\\
+ 		\hline
+ 		\end{tabular}
+ 	\end{table}
+	
+	\item How students can be prepared to find a decent job after school? Please specify 2-3 items.
+	
+	\item What is the emphasis of your school? 
+	
+	\item In your opinion, what are the important topics for students to learn during their studies? Please rank from 1 to 5 (1 is the highest rank and 5 is the lowest).
+	\begin{table}[H]
+ 		\begin{tabular}{c r r r r r} 					        % create six columns
+ 		\hline\hline								% insert double line
+ 		Item   &  1  &  2  &  3  &  4  &  5\\
+	 	\hline
+ 		Programming:\\
+ 	 	Theories in computer science theories:\\
+ 		Research:\\
+ 		Prepare them for career\\ or job interview:\\
+ 		\hline
+ 		\end{tabular}
+ 	\end{table}
+
+	\item What are the school emphasis? 1 means very strong Emphasis, and 5 means very weak emphasis.
+	\begin{itemize}
+		\item Developing academic, scholars, and intellectual qualities
+		\item Critical, evaluative, and analytical thinking
+		\item Human diversity
+		\item Technical skills (e.g. programming)
+		\item Occupation competences
+		\item Accepting top students only
+		\item Receive higher rankings
+		\item Provide collaborative skills and good relationship with other students
+		\item Career fairs and internships
+	\end{itemize}
+	
+\end{enumerate}
+
+\section{Industry}
+
+\begin{enumerate}
+	
+	\item What is your position level:
+	\begin{itemize}
+		\item Developer
+		\item Management
+		\item Director/VP
+		\item C-level
+		\item Other, Please specify:
+	\end{itemize}
+
+	\item How long you have been in this organization?
+	\begin{itemize}
+		\item less than 1 year
+		\item 1-3 years
+		\item 4-6 years
+		\item 7-9 years
+		\item 10 years or more
+	\end{itemize}
+
+	\item Which category your company goes into:
+	\begin{itemize}
+		\item Banking
+		\item Marketing
+		\item Tele communication
+		\item Law
+		\item Health/Healthcare
+		\item Government
+		\item Security
+		\item Start-ups
+	\end{itemize}
+	
+	\item What the employers expect from fresh graduates? (rank from 1 to 8 question)
+	\begin{itemize}
+		\item Knowledge:
+		\item Technical Skills:
+		\item Attitude:
+		\item Experience/Internships:
+		\item University they graduated:
+		\item grades:
+		\item Curriculum:
+		\item degree level:
+	\end{itemize}
+
+	\item Please rank your expectation from your employees's \textbf{knowledge} ? (rank from 1 to 8 question)
+	\begin{itemize}
+		\item Data structure:
+		\item Algorithms:
+		\item Database:
+		\item Operating System
+		\item Machine Learning and AI:
+	\end{itemize}
+	
+	\item Please rank your expectation from your employees's \textbf{Skills} ? (rank from 1 to 8 question)
+	\begin{itemize}
+		\item Multiple Programming languages:
+		\item Object-oriente design:
+		\item Coding:
+		\item Fast-learning
+		\item Analytical thinking
+		\item Presentation skills:
+		\item Collaboration and team-work
+		\item Communication
+	\end{itemize}
+	
+	\item Please rank your expectation from your employees's \textbf{Attitude} ? (rank from 1 to 8 question)
+	\begin{itemize}
+		\item Self-motivated
+		\item Self-Discipline
+		\item Commitment
+	\end{itemize}
+	
+	\item What are the benefits to hire a new graduate? Please specify 2-3 reasons.
+	
+	\item What are the disadvantages, if any, to hire a new graduate? Please specify 2-3 reasons.
+	
+	\item what is the average years of experience for hiring employees?
+	
+
+
+\end{enumerate}
+
+
+\bibliography{bibliography.bib}{}
+\bibliographystyle{IEEEtran}
+
+
+
+\end{document}
+
