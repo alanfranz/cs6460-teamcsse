@@ -1,0 +1,368 @@
+\documentclass[12pt,a4paper,titlepage]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lipsum}
+\usepackage{cite}
+\usepackage[normalem]{ulem}
+
+\usepackage{amsmath, amssymb, amsfonts, amsthm, fouriernc, mathtools}
+% mathtools for: Aboxed (put box on last equation in align envirenment)
+\usepackage{microtype} %improves the spacing between words and letters
+
+\usepackage{graphicx}
+\graphicspath{ {./pics/} {./eps/}}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{fancyhdr}
+\usepackage{float}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\lhead{afranzoni3 \& hghabelzadeh3}
+\rhead{Page \thepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COLOR DEFINITIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[svgnames]{xcolor} % Enabling mixing colors and color's call by 'svgnames'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{MyColor1}{rgb}{0.2,0.4,0.6} %mix personal color
+\newcommand{\textb}{\color{Black} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blue}{\color{MyColor1} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blueb}{\color{MyColor1} \usefont{OT1}{lmss}{b}{n}}
+\newcommand{\red}{\color{LightCoral} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\green}{\color{Turquoise} \usefont{OT1}{lmss}{m}{n}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FONTS AND COLORS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    SECTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec}
+\usepackage{sectsty}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%set section/subsections HEADINGS font and color
+\sectionfont{\color{MyColor1}}  % sets colour of sections
+\subsectionfont{\color{MyColor1}}  % sets colour of sections
+
+%set section enumerator to arabic number (see footnotes markings alternatives)
+\renewcommand\thesection{\arabic{section}.} %define sections numbering
+\renewcommand\thesubsection{\thesection\arabic{subsection}} %subsec.num.
+
+%define new section style
+\newcommand{\mysection}{
+\titleformat{\section} [runin] {\usefont{OT1}{lmss}{b}{n}\color{MyColor1}} 
+{\thesection} {3pt} {} } 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		CAPTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{caption}
+\usepackage{subcaption}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup[figure]{labelfont={color=Turquoise}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		!!!EQUATION (ARRAY) --> USING ALIGN INSTEAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%using amsmath package to redefine eq. numeration (1.1, 1.2, ...) 
+%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\theequation}{\thesection\arabic{equation}}
+
+%set box background to grey in align environment 
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\makeatletter
+\patchcmd{\@Aboxed}{\boxed{#1#2}}{\colorbox{black!15}{$#1#2$}}{}{}%
+\patchcmd{\@boxed}{\boxed{#1#2}}{\colorbox{black!15}{$#1#2$}}{}{}%
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DESIGN CIRCUITS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[siunitx, american, smartlabels, cute inductors, europeanvoltages]{circuitikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\makeatletter
+\let\reftagform@=\tagform@
+\def\tagform@#1{\maketag@@@{(\ignorespaces\textcolor{red}{#1}\unskip\@@italiccorr)}}
+\renewcommand{\eqref}[1]{\textup{\reftagform@{\ref{#1}}}}
+\makeatother
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,citecolor=Black,urlcolor=MyColor1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PREPARE TITLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\blue Educational Technology - Summer 2018 \\
+\blueb Survey Questions}
+\author{Alan Franzoni \& Hasti Ghabel} 
+
+\date{\today}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\maketitle
+
+\section {General Questions}
+
+Please  answer below questions?\\
+Age:\\
+Sex:\\
+Country you live:\\
+Your major:\\
+Degree Level:\\
+Country you received your degree:\\
+The category:\\
+	-  Student\\
+	-  Professor/Teachers/University Staff\\
+	-  Employer\\
+
+
+\section {STUDENTS}
+\begin{enumerate}
+
+	\item What are the current goals of studying computer science in undergraduate level? (Multi-select) 
+	\begin{itemize}
+		\item Interested in this field.
+		\item I used to do sort of programming since I was a child.
+		\item Find a decent job.
+		\item Make a lot of money. 
+		\item My friends and families encouraged me to study in this field.
+		\item Todays technology and world is accepting/in the need of many software engineers
+		\item Other, please specify: ..........
+	\end{itemize}
+
+	\item In your opinion, what would be the ideal goal of studying computer science in undergraduate level?
+	\begin{itemize}
+		\item work on research projects
+		\item get into industry very quickly
+		\item receive a high income job
+		\item learn about computer and its structure
+		\item improve the current technology in fields like health or education
+		\item Other, please specify: ..........
+	\end{itemize}
+
+	\item In your opinion, how important it is to have a high GPA to find a professional job?
+	\begin{itemize}
+		\item very important
+		\item important
+		\item neither important nor unimportant
+		\item not important
+		\item not important at all
+	\end{itemize}
+
+	\item How important it is that the student is graduated from which university? (e.g. ivy-league universities or any other universities)
+	\begin{itemize}
+		\item very important
+		\item important
+		\item neither important nor unimportant
+		\item not important
+		\item not important at all
+	\end{itemize}
+	
+	\item What would be your expected time transition from graduation and landing in your first job?
+	\begin{itemize}
+		\item already have a job in computer science field
+		\item 1-3 months
+		\item 3-6 months
+		\item more than 6 months
+		\item N/A
+	\end{itemize}
+
+	\item What would be the required time for you as a new graduate to become proficient in your current/future job?
+	\begin{itemize}
+		\item 1-3 months
+		\item 3-6 months
+		\item more than 6 months
+		\item Other, please specify: ..........
+	\end{itemize}
+
+
+	\item What are a couple of reasons that you choose the required time in previous questions?
+
+	\item What are the top skills that is useful and important for a job that cannot be taught in schools or universities, if any? Please specify 2-3 items.
+
+	\item How important it is to receive a degree in computer science in an academic process from a university or just gaining the skills from other resources such as online courses, or certificates, self-learning programming skills and etc to land on a professional job?
+	\begin{itemize}
+		\item very important
+		\item important
+		\item neither important nor unimportant
+		\item not important
+		\item not important at all
+	\end{itemize}
+
+	\item Please describe 2-3 reasons  you choose the answer to the previous question?
+
+\end{enumerate}
+
+\section{PROFESSORS}
+
+\begin{enumerate}
+	
+	\item What best describes your current goal in terms of being a member of university or school system and interacting with undergraduate students?
+	\begin{itemize}
+		\item to train students in research field
+		\item to prepare students to find a job after graduation
+		\item to teach the theoretical topics
+		\item to improve their skills
+		\item to teach them analytical thinking
+		\item Other, please specify: ..........
+	\end{itemize}
+
+	\item In your opinion, what would be the ideal goal of teaching computer science to undergraduate-level students?
+	\begin{itemize}
+		\item work on research projects
+		\item get into industry very quickly
+		\item receive a high income job
+		\item learn about computer and its structure
+		\item improve the current technology in fields like health or education
+		\item Other, please specify: ..........
+	\end{itemize}
+
+	\item In your opinion, how important is the role of student’s GPA in order to be successful in their future proficiency?
+	\begin{itemize}
+		\item very important
+		\item important
+		\item neither important nor unimportant
+		\item not important
+		\item not important at all
+	\end{itemize}
+
+	\item Is it important that the student is studied computer science in which university? (e.g. ivy-league universities or any other type of universities)
+	\begin{itemize}
+		\item very important
+		\item important
+		\item neither important nor unimportant
+		\item not important
+		\item not important at all
+	\end{itemize} 
+
+	\item What would you expect to be the time transition from students’ graduation and landing in their first job?
+	\begin{itemize}
+		\item They find a job in computer science field during studying
+		\item 1-3 months
+		\item 3-6 months
+		\item more than 6 months
+	\end{itemize}
+
+	\item What would be the required time for a new graduate to become proficient in their current/future job?
+	\begin{itemize}
+		\item 1-3 months
+		\item 3-6 months
+		\item more than 6 months
+		\item Other, please specify: ..........
+	\end{itemize}
+
+
+	\item What are a couple of reasons that you choose the required time in previous questions?
+
+	\item What are the top skills that is useful and important for a job that might not be taught in schools or universities, if any? Please specify 2-3 items.
+
+	\item How important it is to receive a degree in computer science in an academic process from a university or just gaining the skills from other resources such as online courses, or certificates, self-learning programming skills and etc to land on a professional job?
+	\begin{itemize}
+		\item very important
+		\item important
+		\item neither important nor unimportant
+		\item not important
+		\item not important at all
+	\end{itemize} 
+
+	\item Please describe 2-3 reasons  you choose the answer to the previous question?
+
+\end{enumerate}
+
+
+\section{INDUSTRY}
+
+\begin{enumerate}
+
+	\item What are the current goals of universities to teach computer science/software engineering to undergraduate-level students?
+	\begin{itemize}
+		\item to train students in research field
+		\item to prepare students to find a job after graduation
+		\item to teach the theoretical topics
+		\item to improve their skills
+		\item to teach them analytical thinking
+		\item Other, please specify: ..........
+	\end{itemize}
+
+	\item In your opinion, what would be the ideal goal study for undergraduate-level student in computer science to become successful in industry?
+	\begin{itemize}
+		\item work on research projects
+		\item get into industry very quickly
+		\item receive a high income job
+		\item learn about computer and its structure
+		\item improve the current technology in fields like health or education
+		\item Other, please specify: ..........
+	\end{itemize}
+
+	\item In your opinion, how important is the role of new graduates’ GPA in order to be considered as the job candidate?
+	\begin{itemize}
+		\item very important
+		\item important
+		\item neither important nor unimportant
+		\item not important
+		\item not important at all
+	\end{itemize} 
+
+	\item In your opinion, how important it is that the student is graduated from which university?
+	\begin{itemize}
+		\item very important
+		\item important
+		\item neither important nor unimportant
+		\item not important
+		\item not important at all
+	\end{itemize} 
+
+	\item What is the expected time transition from student graduation and landing in their first job in the field of computer science/software engineering?
+	\begin{itemize}
+		\item They already have a job in computer science field during studying
+		\item 1-3 months
+		\item 3-6 months
+		\item more than 6 months
+	\end{itemize}
+
+	\item What would be the required time for a new graduate to become proficient in their current/future position/job?
+	\begin{itemize}
+		\item 1-3 months
+		\item 3-6 months
+		\item more than 6 months
+		\item Other, please specify: ..........
+	\end{itemize}
+
+	\item What are a couple of reasons that you choose the required time in previous questions?
+
+	\item What are the top skills that is useful and important for a job that cannot be taught in schools or universities, if any? Please specify 2-3 items.
+
+	\item How important it is to receive a degree in computer science in an academic process from a university or just gaining the skills from other resources such as online courses, or certificates, self-learning programming skills and etc to land on a professional job?
+	\begin{itemize}
+		\item very important
+		\item important
+		\item neither important nor unimportant
+		\item not important
+		\item not important at all
+	\end{itemize} 
+
+	\item Please specify 2-3 reasons you choose the answer to the previous question?
+
+\end{enumerate}
+
+\bibliography{bibliography.bib}{}
+\bibliographystyle{IEEEtran}
+
+
+
+\end{document}
+
