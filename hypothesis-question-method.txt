@@ -1,0 +1,8 @@
+* self-reported current goal for bachelor's degree (what they expect that university does right now)
+* self-reported ideal goal for bachelor's degree (what they wish that university would do, if different from actual)
+* self-reported expected (or actual, for professionals) time to achieve full job proficiency when entering the industry (stop being in a junior role)?
+* self-reported expected time to land the first job?
+* self-reported top skill which is useful at a job that can't be taught at school (if any)
+* self-reported expected proficiency of graduates versus "dropout practictioners" with the same amount of study/work years (immediately vs after N some years)
+
+
