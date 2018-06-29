@@ -3,6 +3,7 @@
 - Country you work in
 - If holding a university degree, country you got it
 - Highest completed education degree (High School/BS/After-BS)
+- If employed: size of the company + size of the company tech department (how many developers/techies)?
 
 -> i think those fields should NOT be mandatory, everybody has the right not to tell us something.
 
@@ -61,8 +62,10 @@ when he graduates? (multiple choices)
 he's learning):
 (open question)
 
+- What are the top 2-3 skills that are not taught at school, but which are essential when working in the industry?
+(open question)
 
-<REPEAT SAME QUESTIONS FOR MASTER'S DEGREES>
+<REPEAT SAME QUESTIONS FOR MASTER'S DEGREES, but suppose that such student hasn't got into industry before getting back to school>
 
 - Consider two candidates for the same job. One holds a 4-year BS degree and no job experience. The other has no degree, but
 has four years job experience in a similar role. What do you think about the candidates' hireability?
@@ -81,6 +84,14 @@ has four years job experience in a similar role. What do you think about the can
 * I think that the BS candidate will perform much better; better quality, and faster work. He'll probably have reached a better position in the company.
 * I think that the experienced candidate will perform much better; better quality, and faster work. He'll probably have reached a better position in the company.
 * They'll perform more or less the same.
+
+<potential ideas>:
+
+- Tell us which of those statements are, in your opinion, true:
+(MCQ)
+* The tech industry is making a lot of money and it's contributing back very little to the education sector
+* The universities should care more about research than practical industry applications
+
 
 
 
