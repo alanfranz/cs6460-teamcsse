@@ -4,11 +4,21 @@ Additional thoughts on project proposal:
 
 2- Are the goals of graduate level students closer to industry expectations?
 
-3- Do the professors train the students in graduate level to be prepared in practical activities instead of research based education?
+3- Do the professors train the students in graduate level to be prepared 
+in practical activities instead of research based education?
 
-4- Does online graduate level education help the student to be prepared for industry more quickly?
+4- Does online graduate level education help the student 
+to be prepared for industry more quickly?
 
-5- Why online high-quality master's program such as OMSCS born? How does it benefit students with fun-time job? How it affects students during their studies to improve the rehired skills in industry?
-Georgia Tech has a page regarding "Why OMSCS? :  "https://www.omscs.gatech.edu/explore-oms-cs"
+5- Why online high-quality master's program such as OMSCS born? 
+How does it benefit students with fun-time job? 
+How it affects students during their studies to improve 
+the rehired skills in industry?
+Georgia Tech has a page regarding "Why OMSCS? :  
+"https://www.omscs.gatech.edu/explore-oms-cs"
 
-6- what are some of the benefits of studying in an online program such as OMSCS and the on-campus program? How one can compare these two with each other? Which one can make the goals of students, professors and industry professionals more close to each other? Why?
+6- what are some of the benefits of studying in an online program 
+such as OMSCS and the on-campus program? 
+How one can compare these two with each other? 
+Which one can make the goals of students, professors and 
+industry professionals more close to each other? Why?
