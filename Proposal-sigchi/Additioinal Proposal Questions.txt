@@ -22,3 +22,16 @@ such as OMSCS and the on-campus program?
 How one can compare these two with each other? 
 Which one can make the goals of students, professors and 
 industry professionals more close to each other? Why?
+
+
+Open questions:
+- if you think that the university and the industry's objectives are quite different, what would you propose to improve the situation?
+
+
+Reproducibility:
+We plan to explain how to get from our survey data to our results
+
+Presentation:
+We plan to put up our research on the website to get 
+
+

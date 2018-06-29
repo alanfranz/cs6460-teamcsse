@@ -1,0 +1,90 @@
+- multiple choice box with: (undergrad student, graduate/phd/after bachelor student, teacher/staff, tech industry professional)
+- Age
+- Country you work in
+- If holding a university degree, country you got it
+- Highest completed education degree (High School/BS/After-BS)
+
+-> i think those fields should NOT be mandatory, everybody has the right not to tell us something.
+
+- currently, what do you think a BACHELOR's student in computer science or software engineering achieves, 
+when he graduates? (multiple choices)
+* he/she learns programming very well
+* he/she learns computational thinking
+* he/she learns project management
+* he/she learns real-world problem solving handling industry-type problems
+* he/she learns how to be a researcher
+* he/she gets very good soft skills (communication, teamwork, etc)
+* he/she gets credentials to get a good job
+* Other - please specify
+
+- Is there any skill, that you think a BACHELOR's student would need to learn at university, and doesn't? (same choices as above)
+
+- Is there any skill, that you think is superfluos for BACHELOR's student to learn at university? (same choices as above)
+
+- How do you think the BS GPA affects a fresh BS graduate's hireability?
+* I think it's not relevant
+* I think that an high GPA is totally essential to getting a great first job
+* I think that a low GPA discourages employers/recruiters, but from a certain threshold onwards employers tend not to care about it
+* The higher the GPA, the easier to get a great first job, the effect is quite linear.
+
+- How do you think the school choice (e.g. Top 10/Ivy League university vs random college) affects a fresh BS graduate's hireability?
+* I think it's not relevant
+* I think that a top-tier school is a key to getting a great first job
+* I think a top-tier school gives a graduate a bit of a boost, but it's not essential
+
+
+- How do you think the BS GPA affects a fresh BS graduate's professional proficiency?
+* I think it's not relevant, BS GPA and first job performance are quite disconnected
+* I think that an high GPA is totally essential to performing fine at a first job
+* I think that low GPA graduates perform badly, but from average to top GPAs you can't see much of a difference
+* The higher the GPA, the better a graduate performs on his job.
+
+- How do you think the school choice (e.g. Top 10/Ivy League university vs random college) affects a fresh BS graduate's professional proficiency?
+* I think it's not relevant
+* I think that a top-tier school makes a graduate fundamentally better at his/her job
+* I think a top-tier school gives a graduate a bit of a boost, but it's not essential
+
+- How long do you think a fresh BS graduate will need in order to land his first job, after graduation?
+* I believe most of them already have an offer before graduation/after interning
+* 1-3 months
+* 3-6 months
+* 6-12 months
+* more than one year
+
+- How long do you think a fresh BS graduate will need in order to become fully proficient at his first job, after being hired?
+* 0-3 months
+* 3-12 months
+* 12-24 months
+* more than two years
+
+- If you choose anything else than '0-3 months', please tell us why do you think a fresh graduate will need that much time (what skills
+he's learning):
+(open question)
+
+
+<REPEAT SAME QUESTIONS FOR MASTER'S DEGREES>
+
+- Consider two candidates for the same job. One holds a 4-year BS degree and no job experience. The other has no degree, but
+has four years job experience in a similar role. What do you think about the candidates' hireability?
+* I think that the BS candidate will stand more chances
+* I think the experienced candidate will stand more chances
+* I think they're more or less equal from an hireability point of view
+
+- Consider two fresh hires for the same position at the same company. One holds a 4-year BS degree and no job experience. The other has no degree, but
+has four years job experience in a similar role. What do you think about the candidates' skills RIGHT AFTER BEING HIRED?
+* I think that the BS candidate will perform much better; better quality, and faster work.
+* I think that the experienced candidate will perform much better; better quality, and faster work.
+* They'll perform more or less the same.
+
+- Consider two fresh hires for the same position at the same company. One holds a 4-year BS degree and no job experience. The other has no degree, but
+has four years job experience in a similar role. What do you think about the candidates' skills right AFTER FOUR YEARS?
+* I think that the BS candidate will perform much better; better quality, and faster work. He'll probably have reached a better position in the company.
+* I think that the experienced candidate will perform much better; better quality, and faster work. He'll probably have reached a better position in the company.
+* They'll perform more or less the same.
+
+
+
+
+
+
+
