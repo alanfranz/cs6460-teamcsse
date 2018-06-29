@@ -1,4 +1,4 @@
-- multiple choice box with: (undergrad student, graduate/phd/after bachelor student, teacher/staff, tech industry professional)
+- checkbox with: (undergrad student, graduate/phd/after bachelor student, teacher/staff, tech industry professional)
 - Age
 - Country you work in
 - If holding a university degree, country you got it
@@ -68,22 +68,44 @@ he's learning):
 <REPEAT SAME QUESTIONS FOR MASTER'S DEGREES, but suppose that such student hasn't got into industry before getting back to school>
 
 - Consider two candidates for the same job. One holds a 4-year BS degree and no job experience. The other has no degree, but
-has four years job experience in a similar role. What do you think about the candidates' hireability?
+has four years job experience in a similar role. What do you think about the candidates' *hireability*?
 * I think that the BS candidate will stand more chances
 * I think the experienced candidate will stand more chances
 * I think they're more or less equal from an hireability point of view
 
 - Consider two fresh hires for the same position at the same company. One holds a 4-year BS degree and no job experience. The other has no degree, but
-has four years job experience in a similar role. What do you think about the candidates' skills RIGHT AFTER BEING HIRED?
+has four years job experience in a similar role. What do you think about the candidates' *skills* RIGHT AFTER BEING HIRED?
 * I think that the BS candidate will perform much better; better quality, and faster work.
 * I think that the experienced candidate will perform much better; better quality, and faster work.
 * They'll perform more or less the same.
 
 - Consider two fresh hires for the same position at the same company. One holds a 4-year BS degree and no job experience. The other has no degree, but
-has four years job experience in a similar role. What do you think about the candidates' skills right AFTER FOUR YEARS?
+has four years job experience in a similar role. They work at the company, in the same role, for one year. What do you think about the candidates' skills and career at that time?
 * I think that the BS candidate will perform much better; better quality, and faster work. He'll probably have reached a better position in the company.
 * I think that the experienced candidate will perform much better; better quality, and faster work. He'll probably have reached a better position in the company.
 * They'll perform more or less the same.
+
+hypothesis: BS+MS no work experience ~ same hireability as a plain BS
+BS+relevant work experience = more hireability than BS+MS without work experience
+
+- Consider two candidates for the same job. One holds a relevant MS degree and no job experience. The other has
+a BS and 2-years of relevant job experience. What do you think about the candidates' *hireability*?
+* I think that the MS candidate will stand more chances
+* I think the BS experienced candidate will stand more chances
+* I think they're more or less equal from an hireability point of view
+
+- Consider two fresh hires for the same position at the same company. One holds a relevant MS degree and no job experience. The other has a BS degree, and a couple of years of experience in a similar role. What do you think about the candidates' *skills* RIGHT AFTER BEING HIRED?
+* I think that the MS candidate will perform much better; better quality, and faster work.
+* I think that the BS experienced candidate will perform much better; better quality, and faster work.
+* They'll perform more or less the same.
+
+- Consider two fresh hires for the same role at the same company. One holds an MS degree and no job experience. The other has a BS degree, and two years job experience in a similar role. They work at the company, in the same role, for one year. What do you think about the candidates' skills and career at that time?
+* I think that the MS candidate will perform much better; better quality, and faster work. He'll probably have reached a better position in the company.
+* I think that the BS experienced candidate will perform much better; better quality, and faster work. He'll probably have reached a better position in the company.
+* They'll perform more or less the same.
+
+
+
 
 <potential ideas>:
 
