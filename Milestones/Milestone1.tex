@@ -1,0 +1,242 @@
+\documentclass{sigchi}
+
+% Use this section to set the ACM copyright statement (e.g. for
+% preprints).  Consult the conference website for the camera-ready
+% copyright statement.
+
+% Copyright
+\CopyrightYear{2016}
+%\setcopyright{acmcopyright}
+\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%\setcopyright{usgov}
+%\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
+% DOI
+\doi{http://dx.doi.org/10.475/123_4}
+% ISBN
+\isbn{123-4567-24-567/08/06}
+%Conference
+\conferenceinfo{CHI'16,}{May 07--12, 2016, San Jose, CA, USA}
+%Price
+\acmPrice{\$15.00}
+
+% Use this command to override the default ACM copyright statement
+% (e.g. for preprints).  Consult the conference website for the
+% camera-ready copyright statement.
+
+
+%% HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP --
+%% Please note you need to make sure the copy for your specific
+%% license is used here!
+% \toappear{
+% Permission to make digital or hard copies of all or part of this work
+% for personal or classroom use is granted without fee provided that
+% copies are not made or distributed for profit or commercial advantage
+% and that copies bear this notice and the full citation on the first
+% page. Copyrights for components of this work owned by others than ACM
+% must be honored. Abstracting with credit is permitted. To copy
+% otherwise, or republish, to post on servers or to redistribute to
+% lists, requires prior specific permission and/or a fee. Request
+% permissions from \href{mailto:Permissions@acm.org}{Permissions@acm.org}. \\
+% \emph{CHI '16},  May 07--12, 2016, San Jose, CA, USA \\
+% ACM xxx-x-xxxx-xxxx-x/xx/xx\ldots \$15.00 \\
+% DOI: \url{http://dx.doi.org/xx.xxxx/xxxxxxx.xxxxxxx}
+% }
+
+% Arabic page numbers for submission.  Remove this line to eliminate
+% page numbers for the camera ready copy
+% \pagenumbering{arabic}
+
+% Load basic packages
+\usepackage{balance}       % to better equalize the last page
+\usepackage{graphics}      % for EPS, load graphicx instead 
+\usepackage[T1]{fontenc}   % for umlauts and other diaeresis
+\usepackage{txfonts}
+\usepackage{mathptmx}
+\usepackage[pdflang={en-US},pdftex]{hyperref}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{textcomp}
+
+% Some optional stuff you might like/need.
+\usepackage{microtype}        % Improved Tracking and Kerning
+% \usepackage[all]{hypcap}    % Fixes bug in hyperref caption linking
+\usepackage{ccicons}          % Cite your images correctly!
+% \usepackage[utf8]{inputenc} % for a UTF8 editor only
+\usepackage{float}
+
+% If you want to use todo notes, marginpars etc. during creation of
+% your draft document, you have to enable the "chi_draft" option for
+% the document class. To do this, change the very first line to:
+% "\documentclass[chi_draft]{sigchi}". You can then place todo notes
+% by using the "\todo{...}"  command. Make sure to disable the draft
+% option again before submitting your final document.
+\usepackage{todonotes}
+
+% Paper metadata (use plain text, for PDF inclusion and later
+% re-using, if desired).  Use \emtpyauthor when submitting for review
+% so you remain anonymous.
+\def\plaintitle{}
+\def\plainauthor{First Author, Second Author, Third Author,
+  Fourth Author, Fifth Author, Sixth Author}
+\def\emptyauthor{}
+\def\plainkeywords{Authors' choice; of terms; separated; by
+  semicolons; include commas, within terms only; required.}
+\def\plaingeneralterms{Documentation, Standardization}
+
+% llt: Define a global style for URLs, rather that the default one
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{
+    \def\UrlFont{\sf}
+  }{
+    \def\UrlFont{\small\bf\ttfamily}
+  }}
+\makeatother
+\urlstyle{leo}
+
+% To make various LaTeX processors do the right thing with page size.
+\def\pprw{8.5in}
+\def\pprh{11in}
+\special{papersize=\pprw,\pprh}
+\setlength{\paperwidth}{\pprw}
+\setlength{\paperheight}{\pprh}
+\setlength{\pdfpagewidth}{\pprw}
+\setlength{\pdfpageheight}{\pprh}
+
+% Make sure hyperref comes last of your loaded packages, to give it a
+% fighting chance of not being over-written, since its job is to
+% redefine many LaTeX commands.
+\definecolor{linkColor}{RGB}{6,125,233}
+\hypersetup{%
+  pdftitle={\plaintitle},
+% Use \plainauthor for final version.
+%  pdfauthor={\plainauthor},
+  pdfauthor={\emptyauthor},
+  pdfkeywords={\plainkeywords},
+  pdfdisplaydoctitle=true, % For Accessibility
+  bookmarksnumbered,
+  pdfstartview={FitH},
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=linkColor,
+  breaklinks=true,
+  hypertexnames=false
+}
+
+% create a shortcut to typeset table headings
+% \newcommand\tabhead[1]{\small\textbf{#1}}
+
+% End of preamble. Here it comes the document.
+\begin{document}
+
+\title{Milestone 1\\ Discovering Unaligned Expectations in Universities and Industry for New Graduates in Computer Science and Software Engineering and Finding Possible Solutions}
+
+\numberofauthors{2}
+\author{%
+  \alignauthor{Alan Franzoni\\
+    \affaddr{Georgia Institute of Technology}\\
+    \affaddr{Trieste, Italy}\\
+    \email{alan.franzoni@gatech.edu}}\\
+  \alignauthor{Hasti Ghabel\\
+    \affaddr{Georgia Institute of Technology}\\
+    \affaddr{Atlanta, GA}\\
+    \email{hghabel1@gatech.edu}}\\
+}
+
+\maketitle
+
+\section{About our research}
+
+We focus on discovering whether there is a misalignment in university and industry expectations for new graduates. We are considering four groups including undergraduate students, post-graduate students, professors and teachers and university staff, and industry professionals. In our final project, we will collect the data on what would be some available solutions to reduce the skill gap, which is caused by expectation gap among these four groups.
+
+\textit{\textbf{Our Research Questions}}\newline
+We will direct two sets of questions in our final project. In the first set, our main question is: \textbf{does the perceived skill gap in fresh graduates exist because the academy is unable to provide a good training, or just because a) the academy is not even trying to do that kind of job, and b) the industry is taking that kind of job for granted, or c) the students think they should be getting something that the university has no intention to provide them with?} Here, we ask what could be the reasons that there exist a gap between students, professors, and industry professionals' expectations. We will look into these questions for both \textbf{undergraduate} and \textbf{post-graduate} level students that are recently graduated from school. We also ask the question that \textbf{how the students' degree can improve the chance of getting hired? Do the graduate-level studies help the students to gain adaptive skills in industry more quickly?}\newline
+In the second set of our questions, we are asking \textbf{what would be the best solutions that bring the university and industry's objectives closer to each other?} 
+
+
+\textit{\textbf{Our Hypothesis}}\newline
+\textit{Hypothesis 1}: One of the reasons for the perceived skill gap is that all those that should - in an employer's view - care for learning some skills to be used at work, don't actually have that aim during their education phase. In other words, the misaligned expectations between industry and university causes the skill gap. Those skills have impact on job proficiency and possibilities to get hired. We think that the expectations among four groups differ. These four groups are composed of \textbf{undergraduate-level students, post-graduate-level students, educators and school staff, and industry professionals}. The main problem is not only that one side hasn’t enough resources or skills to achieve a certain goal, but, rather, that there’s a different vision or gaol on what should be done, and different and unaligned \textit{rewards} exist for different groups.  
+
+\textit{Hypothesis 2}:  We think that the following hypothesis is that the graduate-level studies, on the contrary, can play an important role on reducing the skill gap between industry and university, and therefore, can be considered as one good resolution for that issue. More specifically, we think that \textbf{high-quality online graduate-level programs} such as Georgia Tech OMSCS (Online Master of Science in Computer Science) are quite aligned with industry expectations. These such programs also target many people from all over the world, who can become proficient in their job quickly as well as being active in an academic environment.
+
+\section{Preview research methodologies}
+
+During this milestone, we focused on three of our sample groups: "undergraduate students", "professors, teachers, and university staff", "industry professionals". We provided three sets of surveys; one for each group. The surveys were written in GoogleFoms. You can find the link to the survey for each group below:\\
+
+\textbf{Student (undergraduate level) group}:\\ \textcolor{blue}{https://goo.gl/forms/G4s5dtDZL9chZ1zt1}\\
+
+\textbf{Professors, Teachers, and University Staff group}: \\ \textcolor{blue}{https://goo.gl/forms/jg20dElqkg1oCNiI2}\\
+
+\textbf{Industry Professionals group}:\\  \textcolor{blue}{https://goo.gl/forms/4UCemOlDdaScKz952}\\
+
+We provided the survey links with our classmates on PeerSurvey website (http://peersurvey.cc.gatech.edu/). We used our classmates as our small sample for sharing the survey with them. In order to recruit as many participants from our classmates as possible, we created a thread in Piazza, where we described our research goals and asked our classmates to take our survey if they are interested. We asked them to submit the survey for one group category that matches the best with their current position. 
+
+In our surveys, we provided one last open-ended questions for the participants to give us feedback on their thoughts regarding the quality and quantity of the survey questions; Is there any questions that could be asked that we missed adding it in our survey? Is there any misunderstanding in any of the questions that could be described better for the participants? Here our goal was how we can improve the survey questions before sending it to the other general participants. We will describe the feedback in the later sections in this paper.
+
+In order to send our survey to the general audience, we planned to create a website, where we can describe about our goals and the research. During this milestone, we set-up the website and put the content there. We will also add our finalized survey link there. The results we found will be added in the website for whoever interested to see the results. 
+
+\section{Demo of the Website}
+
+We created a short demo of our website. The demo of our website can be found at:\\
+\textcolor{blue}{***** YOUTUBE OR ANY OTHER LINKE HERE ***}
+
+\section{Data Analysis}
+
+
+\textit{Independent variables}:
+\begin{itemize}
+	\item Category: CS/SE undergraduate student, CS/SE post-graduate students, CS/SE professor/teacher/university staff, industry professional in the tech/software field;
+	\item Age;
+	\item Country of residence;
+	\item Country where somebody got his/her degree (if any);
+	\item Highest completed educational degree;
+	\item Previous programming skills or actual job experience in the tech/software field before starting university;
+	\item If employed, company size and tech department size;
+\end{itemize}
+
+\textit{Dependent variables:}
+
+All the variables are about a CS/SE bachelor's/post-graduate's degree fresh graduates.
+
+\begin{itemize}
+	\item Self-reported current goal for bachelor's/post-graduate's degree: what they think that university aims at, right now;
+	\item Self-reported ideal goal for bachelor's/post-graduate's degree: what they wish that university would do, if different from current;
+	\item Self-reported expected GPA relevance for actual job proficiency;
+	\item Self-reported university ranking relevance - how the ranking of a well-known university can impact the job qualification?
+	\item Self-reported expected (or actual, for professionals) time to achieve full job proficiency when entering the industry?
+	\item Self-reported expected time to land the first job for a current fresh graduate?
+	\item Self-reported chances of getting hired for new graduates with no previous working experience (both post-graduate and undergraduate levels);
+	\item Self-reported top skill which they think useful at a job that can't be taught at school (if any);
+	\item Self-reported expected proficiency of graduates versus practitioners with a relevant work experience in the same ballpark (~4 years) but without a degree, when getting a job;
+	\item Self-reported expected proficiency of graduates versus practitioners with a relevant work experience in the same ballpark (~4 years) but without a degree, after one years of being hired;
+	\item Self-reported possible solutions to reduce the expected skill gap between industry and universities for new graduates; 
+	\item Self-reported role of online high-quality graduate level programs in reducing the skill gap - how programs like Georgia Tech OMSCS (Online Master  of Science in Computer Science) can help to solve this issue?
+\end{itemize}
+ 
+ 
+ \section{Future Steps}
+ 
+  
+
+
+\balance{}
+
+\balance{}
+
+% REFERENCES FORMAT
+% References must be the same font size as other body text.
+\bibliographystyle{SIGCHI-Reference-Format}
+\bibliography{../bibliography.bib}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+ 
