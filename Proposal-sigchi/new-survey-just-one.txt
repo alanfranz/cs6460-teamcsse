@@ -7,8 +7,10 @@
 
 -> i think those fields should NOT be mandatory, everybody has the right not to tell us something.
 
+**** Quantitative survey: Misaligned Expectations Survey ****
+
 - currently, what do you think a BACHELOR's student in computer science or software engineering achieves, 
-when he graduates? (multiple choices)
+when he/she graduates? (multiple choices)
 * he/she learns programming very well
 * he/she learns computational thinking
 * he/she learns project management
@@ -18,7 +20,7 @@ when he graduates? (multiple choices)
 * he/she gets credentials to get a good job
 * Other - please specify
 
-- Is there any skill, that you think a BACHELOR's student would need to learn at university, and doesn't? (same choices as above)
+- Is there any skill, that you think a BACHELOR's student would need to learn at university, and they don't? (same choices as above)
 
 - Is there any skill, that you think is superfluos for BACHELOR's student to learn at university? (same choices as above)
 
@@ -106,6 +108,28 @@ a BS and 2-years of relevant job experience. What do you think about the candida
 
 
 
+**** Qualitative survey: Find the Solution survey *****
+
+- What do you think would be the solutions to reduce the skill gap for new graduates (both BS and post-graduate levels) entering the work force?
+
+- In your opinion, how can students gain similar working experience during their *undergraduate* studies, if any? 
+
+
+- In your opinion, how can students gain similar working experience during their *graduate* studies, if any? 
+
+
+- In your opinion, what would be the benefits of joining a graduate-level *online* program?
+
+
+- In your opinion, how a *graduate-level online* program can reduce the skill gap in industry and university for new graduates?
+
+
+- In general, which statement is, in your opinion, is more accurate (if we assume both below groups have no previous job experience):
+* The undergraduate students are already prepared to join the industry and they do not need a higher post-graduate degree.
+* The post-graduate students are more competitive than undergraduate-level students and they have a higher possibility to be hired in a relevant company.
+
+
+
 
 <potential ideas>:
 
@@ -113,6 +137,7 @@ a BS and 2-years of relevant job experience. What do you think about the candida
 (MCQ)
 * The tech industry is making a lot of money and it's contributing back very little to the education sector
 * The universities should care more about research than practical industry applications
+
 
 
 
