@@ -1,16 +1,34 @@
-1 - checkbox with: (undergrad student, graduate/phd/after bachelor student, teacher/staff, tech industry professional)
-- Age
-- Country you work in
-- If holding a university degree, country you got it
-- Highest completed education degree (High School/BS/After-BS)
-- If employed: size of the company + size of the company tech department (how many developers/techies)?
+Introduction: who should take this survey?
+* CS/SE/other information technology program students at all levels (Bachelor, Master's, PhD)
+* Working professionals in the software/tech sector, including managers, recruiters, etc.
+* Teachers for CS / SE / other information technology programs and classes
 
--> i think those fields should NOT be mandatory, everybody has the right not to tell us something.
+If not in those categories: thanks, but don't take this survey
+
+
+Some terminology:
+dropdown: choose one answer from some possible choices. Most should include a "don't know/prefer not to say" option and an "other" choice with an open field
+checkbox: choose zero or more answers from some possible choices, most should include an "other" choice with open field.
+open: write whatever you like
+autocomplete list: write whatever you like, but with autocompletion
+
+
+1 - checkbox with: (undergrad student, graduate/phd/after bachelor student, teacher/staff, tech industry professional)
+- Age (dropdown with ranges)
+- Country you work in (autocomplete list)
+- If holding a university degree, country you got it (autocomplete list)
+- Highest completed education degree (High School/BS/After-BS) (dropdown)
+- If employed: size of the company + size of the company tech department (how many developers/techies)? dropdown with ranges
+
+
 
 **** Quantitative survey: Misaligned Expectations Survey ****
 
+IF NOT SPECIFIED, questions are DROPDOWN for this section
+
+
 2- currently, what do you think a BACHELOR's student in computer science or software engineering achieves, 
-when he/she graduates? (multiple choices)
+when he/she graduates? (checkbox)
 * he/she learns programming very well
 * he/she learns computational thinking
 * he/she learns project management
@@ -20,9 +38,9 @@ when he/she graduates? (multiple choices)
 * he/she gets credentials to get a good job
 * Other - please specify
 
-3- Is there any skill, that you think a BACHELOR's student would need to learn at university and are essential in working industryt? (same choices as above)
+3- Is there any skill, that you think a BACHELOR's student would need to learn at university and are essential in working industryt? (checkbox)
 
-4- Is there any skill, that you think is superfluous for BACHELOR's student to learn at university? (same choices as above)
+4- Is there any skill, that you think is superfluous for BACHELOR's student to learn at university? (same choices as above) (checkbox)
 
 5- How do you think the BS GPA affects a fresh BS graduate to get hired?
 * I think it's not relevant
@@ -109,7 +127,9 @@ a BS and 2-years of relevant job experience. What do you think about the candida
 
 **** Qualitative survey: Find the Solution survey *****
 
-18- What do you think would be the solutions to reduce the skill gap for new graduates (both BS and post-graduate levels) entering the work force?
+if not specified, those are OPEN questions.
+
+18- If you think any skill gaps exists when a student enters the workforce, what do you think would be the solutions to reduce the skill gap for new graduates (both BS and post-graduate levels) entering the work force?
 
 19- In your opinion, how can students gain similar working experience during their *undergraduate* studies, if any? 
 
@@ -125,8 +145,34 @@ a BS and 2-years of relevant job experience. What do you think about the candida
 
 23- In general, which statement is, in your opinion, is more accurate (if we assume both below groups have no previous job experience):
 * The undergraduate students are already prepared to join the industry and they do not need a higher post-graduate degree.
-* The post-graduate students are more competitive than undergraduate-level students and they have a higher possibility to be hired in a relevant company.
+* The post-graduate students are more prepared than undergraduate-level students
+* Anybody entering the workforce for the first time, regardless of their academic pedigree, will need training and time to get fully proficient.
 
+24- At what point in the life/career of somebody do you think a graduate program (e.g. a Master's degree) can be most effective from professional proficiency point of view?
+* When a student does it straight after getting a Bachelor's
+* When a professional does it after working in the industry for some years
+* When a professional needs retraining (because of outdated skills or change of work field)
+* Not many differences
+
+25- Which flavour of a graduate program (e.g. a Master's degree) do you think would be most effective from professional proficiency point of view?
+* On campus, full time - the grad student does nothing else
+* On campus, part time - the grad student keeps his/her job
+* Online, full time - the grad student does nothing else
+* Online, part time - the grad students keeps his/her job
+
+26- Do you think that there could be valid alternatives to a Master's degree for a professional in need of retraining?
+(checkbox)
+* Retraining on the job - instead of spending money in university, be a kind of "grownup intern" in some company
+* MOOCs
+* In-person classes in non-academic institutions (e.g. Bradfield school of computer science)
+* Other (open field)
+
+27- Which area you deem most critical for a professional when choosing whether to enter a Master's degree?
+* Time. Getting (preferably paid) time off from the employer would matter when entering a program.
+* Money. If the employer pays, it would make it much more probable for a professional to enter a program.
+* Motivation. The topic should be of high interest, not just a dull, imposed training experience.
+* Prestige. Success in the program should be a source of pride.
+* Career advancement. Success in the program should be a guarantee of a better position.
 
 
 
