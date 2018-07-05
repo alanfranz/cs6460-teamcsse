@@ -1,3 +1,4 @@
 .texpadtmp/
 *.bib.bak
 *.bib.sav
+.Rproj.user
