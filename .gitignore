@@ -2,3 +2,5 @@
 *.bib.bak
 *.bib.sav
 .Rproj.user
+data-analysis/.Rhistory
+.httr-oauth
