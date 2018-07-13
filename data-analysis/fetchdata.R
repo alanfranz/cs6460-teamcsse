@@ -12,5 +12,6 @@ df <- gs_read(misaligned_answers_sheet, ws = "Risposte del modulo 1")
 
 
 
+
   
 
