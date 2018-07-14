@@ -40,7 +40,7 @@ when he/she graduates? (checkbox)
 
 3- Is there any skill, that you think a BACHELOR's student would need to learn at university and are essential in working industryt? (checkbox)
 
-4- Is there any skill, that you think is superfluous for BACHELOR's student to learn at university? (same choices as above) (checkbox)
++++ 4- Is there any skill, that you think is superfluous for BACHELOR's student to learn at university? (same choices as above) (checkbox)
 
 5- How do you think the BS GPA affects a fresh BS graduate to get hired?
 * I think it's not relevant
@@ -78,7 +78,7 @@ when he/she graduates? (checkbox)
 * 12-24 months
 * more than two years
 
-11- If you choose anything else than '0-3 months', please tell us why do you think a fresh graduate will need that much time (what skills
++++ 11- If you choose anything else than '0-3 months', please tell us why do you think a fresh graduate will need that much time (what skills
 he's learning):
 (open question)
 
@@ -148,13 +148,13 @@ if not specified, those are OPEN questions.
 * The post-graduate students are more prepared than undergraduate-level students
 * Anybody entering the workforce for the first time, regardless of their academic pedigree, will need training and time to get fully proficient.
 
-24- At what point in the life/career of somebody do you think a graduate program (e.g. a Master's degree) can be most effective from professional proficiency point of view?
++++ 24- At what point in the life/career of somebody do you think a graduate program (e.g. a Master's degree) can be most effective from professional proficiency point of view?
 * When a student does it straight after getting a Bachelor's
 * When a professional does it after working in the industry for some years
 * When a professional needs retraining (because of outdated skills or change of work field)
 * Not many differences
 
-25- Which flavour of a graduate program (e.g. a Master's degree) do you think would be most effective from professional proficiency point of view?
++++ 25- Which flavour of a graduate program (e.g. a Master's degree) do you think would be most effective from professional proficiency point of view?
 * On campus, full time - the grad student does nothing else
 * On campus, part time - the grad student keeps his/her job
 * Online, full time - the grad student does nothing else
