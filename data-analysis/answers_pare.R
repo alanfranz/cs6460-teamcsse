@@ -10,7 +10,7 @@ answers <- read.csv(file="answers2.csv",
 # in this part of the analysis, we:
 # - convert multiple answers (checkbox style) to yes/no answers, for the sake of analysis and proper correlation
 # - pick better names for most columns, and factorize them
-asd <- answers %>% as_tibble() %>% transmute(
+normalized <- answers %>% as_tibble() %>% transmute(
      age.group = as.factor(What.s.your.age.),
      degree.highest = as.factor(What.is.the.highest.degree.you.earned.),
      degree.country = as.factor(If.you.hold.a.university.degree..what.country.you.received.your.degree.in.),
