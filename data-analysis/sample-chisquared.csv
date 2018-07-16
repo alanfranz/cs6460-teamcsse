@@ -1,0 +1,652 @@
+id;jobtype;neighborhood
+1;White collar;A
+2;White collar;A
+3;White collar;A
+4;White collar;A
+5;White collar;A
+6;White collar;A
+7;White collar;A
+8;White collar;A
+9;White collar;A
+10;White collar;A
+11;White collar;A
+12;White collar;A
+13;White collar;A
+14;White collar;A
+15;White collar;A
+16;White collar;A
+17;White collar;A
+18;White collar;A
+19;White collar;A
+20;White collar;A
+21;White collar;A
+22;White collar;A
+23;White collar;A
+24;White collar;A
+25;White collar;A
+26;White collar;A
+27;White collar;A
+28;White collar;A
+29;White collar;A
+30;White collar;A
+31;White collar;A
+32;White collar;A
+33;White collar;A
+34;White collar;A
+35;White collar;A
+36;White collar;A
+37;White collar;A
+38;White collar;A
+39;White collar;A
+40;White collar;A
+41;White collar;A
+42;White collar;A
+43;White collar;A
+44;White collar;A
+45;White collar;A
+46;White collar;A
+47;White collar;A
+48;White collar;A
+49;White collar;A
+50;White collar;A
+51;White collar;A
+52;White collar;A
+53;White collar;A
+54;White collar;A
+55;White collar;A
+56;White collar;A
+57;White collar;A
+58;White collar;A
+59;White collar;A
+60;White collar;A
+61;White collar;A
+62;White collar;A
+63;White collar;A
+64;White collar;A
+65;White collar;A
+66;White collar;A
+67;White collar;A
+68;White collar;A
+69;White collar;A
+70;White collar;A
+71;White collar;A
+72;White collar;A
+73;White collar;A
+74;White collar;A
+75;White collar;A
+76;White collar;A
+77;White collar;A
+78;White collar;A
+79;White collar;A
+80;White collar;A
+81;White collar;A
+82;White collar;A
+83;White collar;A
+84;White collar;A
+85;White collar;A
+86;White collar;A
+87;White collar;A
+88;White collar;A
+89;White collar;A
+90;White collar;A
+91;White collar;B
+92;White collar;B
+93;White collar;B
+94;White collar;B
+95;White collar;B
+96;White collar;B
+97;White collar;B
+98;White collar;B
+99;White collar;B
+100;White collar;B
+101;White collar;B
+102;White collar;B
+103;White collar;B
+104;White collar;B
+105;White collar;B
+106;White collar;B
+107;White collar;B
+108;White collar;B
+109;White collar;B
+110;White collar;B
+111;White collar;B
+112;White collar;B
+113;White collar;B
+114;White collar;B
+115;White collar;B
+116;White collar;B
+117;White collar;B
+118;White collar;B
+119;White collar;B
+120;White collar;B
+121;White collar;B
+122;White collar;B
+123;White collar;B
+124;White collar;B
+125;White collar;B
+126;White collar;B
+127;White collar;B
+128;White collar;B
+129;White collar;B
+130;White collar;B
+131;White collar;B
+132;White collar;B
+133;White collar;B
+134;White collar;B
+135;White collar;B
+136;White collar;B
+137;White collar;B
+138;White collar;B
+139;White collar;B
+140;White collar;B
+141;White collar;B
+142;White collar;B
+143;White collar;B
+144;White collar;B
+145;White collar;B
+146;White collar;B
+147;White collar;B
+148;White collar;B
+149;White collar;B
+150;White collar;B
+151;White collar;C
+152;White collar;C
+153;White collar;C
+154;White collar;C
+155;White collar;C
+156;White collar;C
+157;White collar;C
+158;White collar;C
+159;White collar;C
+160;White collar;C
+161;White collar;C
+162;White collar;C
+163;White collar;C
+164;White collar;C
+165;White collar;C
+166;White collar;C
+167;White collar;C
+168;White collar;C
+169;White collar;C
+170;White collar;C
+171;White collar;C
+172;White collar;C
+173;White collar;C
+174;White collar;C
+175;White collar;C
+176;White collar;C
+177;White collar;C
+178;White collar;C
+179;White collar;C
+180;White collar;C
+181;White collar;C
+182;White collar;C
+183;White collar;C
+184;White collar;C
+185;White collar;C
+186;White collar;C
+187;White collar;C
+188;White collar;C
+189;White collar;C
+190;White collar;C
+191;White collar;C
+192;White collar;C
+193;White collar;C
+194;White collar;C
+195;White collar;C
+196;White collar;C
+197;White collar;C
+198;White collar;C
+199;White collar;C
+200;White collar;C
+201;White collar;C
+202;White collar;C
+203;White collar;C
+204;White collar;C
+205;White collar;C
+206;White collar;C
+207;White collar;C
+208;White collar;C
+209;White collar;C
+210;White collar;C
+211;White collar;C
+212;White collar;C
+213;White collar;C
+214;White collar;C
+215;White collar;C
+216;White collar;C
+217;White collar;C
+218;White collar;C
+219;White collar;C
+220;White collar;C
+221;White collar;C
+222;White collar;C
+223;White collar;C
+224;White collar;C
+225;White collar;C
+226;White collar;C
+227;White collar;C
+228;White collar;C
+229;White collar;C
+230;White collar;C
+231;White collar;C
+232;White collar;C
+233;White collar;C
+234;White collar;C
+235;White collar;C
+236;White collar;C
+237;White collar;C
+238;White collar;C
+239;White collar;C
+240;White collar;C
+241;White collar;C
+242;White collar;C
+243;White collar;C
+244;White collar;C
+245;White collar;C
+246;White collar;C
+247;White collar;C
+248;White collar;C
+249;White collar;C
+250;White collar;C
+251;White collar;C
+252;White collar;C
+253;White collar;C
+254;White collar;C
+255;White collar;D
+256;White collar;D
+257;White collar;D
+258;White collar;D
+259;White collar;D
+260;White collar;D
+261;White collar;D
+262;White collar;D
+263;White collar;D
+264;White collar;D
+265;White collar;D
+266;White collar;D
+267;White collar;D
+268;White collar;D
+269;White collar;D
+270;White collar;D
+271;White collar;D
+272;White collar;D
+273;White collar;D
+274;White collar;D
+275;White collar;D
+276;White collar;D
+277;White collar;D
+278;White collar;D
+279;White collar;D
+280;White collar;D
+281;White collar;D
+282;White collar;D
+283;White collar;D
+284;White collar;D
+285;White collar;D
+286;White collar;D
+287;White collar;D
+288;White collar;D
+289;White collar;D
+290;White collar;D
+291;White collar;D
+292;White collar;D
+293;White collar;D
+294;White collar;D
+295;White collar;D
+296;White collar;D
+297;White collar;D
+298;White collar;D
+299;White collar;D
+300;White collar;D
+301;White collar;D
+302;White collar;D
+303;White collar;D
+304;White collar;D
+305;White collar;D
+306;White collar;D
+307;White collar;D
+308;White collar;D
+309;White collar;D
+310;White collar;D
+311;White collar;D
+312;White collar;D
+313;White collar;D
+314;White collar;D
+315;White collar;D
+316;White collar;D
+317;White collar;D
+318;White collar;D
+319;White collar;D
+320;White collar;D
+321;White collar;D
+322;White collar;D
+323;White collar;D
+324;White collar;D
+325;White collar;D
+326;White collar;D
+327;White collar;D
+328;White collar;D
+329;White collar;D
+330;White collar;D
+331;White collar;D
+332;White collar;D
+333;White collar;D
+334;White collar;D
+335;White collar;D
+336;White collar;D
+337;White collar;D
+338;White collar;D
+339;White collar;D
+340;White collar;D
+341;White collar;D
+342;White collar;D
+343;White collar;D
+344;White collar;D
+345;White collar;D
+346;White collar;D
+347;White collar;D
+348;White collar;D
+349;White collar;D
+350;White collar;D
+351;White collar;D
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+
