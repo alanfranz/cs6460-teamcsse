@@ -86,8 +86,11 @@ normalized_wide <- cbind(id=ids, normalized_wide)
 # now, each column is either a bool or a factor.
 normalized_long <- gather(normalized_wide, question, measurement, age.group:nojobexperience.opinion,factor_key=TRUE)
 
-print(summary(lm(bsc.achieves.programming ~ are.you.a.graduate.student, normalized_wide)))
-print(summary(lm(bsc.achieves.programming ~ are.you.an.undergrad.student, normalized_wide)))
-print(summary(lm(bsc.achieves.programming ~ are.you.a.teacher, normalized_wide)))
-print(summary(lm(bsc.achieves.programming ~ are.you.an.industry.professional, normalized_wide)))
+#print(summary(lm(bsc.achieves.programming ~ are.you.a.graduate.student, normalized_wide)))
+#print(summary(lm(bsc.achieves.programming ~ are.you.an.undergrad.student, normalized_wide)))
+#print(summary(lm(bsc.achieves.programming ~ are.you.a.teacher, normalized_wide)))
+#print(summary(lm(bsc.achieves.programming ~ are.you.an.industry.professional, normalized_wide)))
+
+print(summary(lm(bsc.achieves.research ~ are.you.a.graduate.student, normalized_wide)))
+print(summary(lm(bsc.achieves.research ~ are.you.an.industry.professional, normalized_wide)))
 
