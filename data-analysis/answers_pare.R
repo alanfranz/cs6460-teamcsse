@@ -1,6 +1,7 @@
 suppressMessages(library(dplyr))
+library(tidyr)
 
-# we don't read answers with factors because I had some issues later on with multiple answers analysis,
+# we don't read answers with factors directly because I had some issues later on with multiple answers analysis,
 # and we want to rename the columns, by the way
 answers <- read.csv(file="answers2.csv",
                         header=TRUE, sep=",",
@@ -10,7 +11,7 @@ answers <- read.csv(file="answers2.csv",
 # in this part of the analysis, we:
 # - convert multiple answers (checkbox style) to yes/no answers, for the sake of analysis and proper correlation
 # - pick better names for most columns, and factorize them
-normalized <- answers %>% as_tibble() %>% transmute(
+normalized_wide <- answers %>% as_tibble() %>% transmute(
      age.group = as.factor(What.s.your.age.),
      degree.highest = as.factor(What.is.the.highest.degree.you.earned.),
      degree.country = as.factor(If.you.hold.a.university.degree..what.country.you.received.your.degree.in.),
@@ -78,5 +79,10 @@ normalized <- answers %>% as_tibble() %>% transmute(
      nojobexperience.opinion = as.factor(In.general..which.statement..in.your.opinion..is.more.accurate..if.we.assume.that.below.groups.have.no.previous.job.experience..)
              )
 
+#add explicit row id, needed lather
+ids <- rownames(normalized_wide)
+normalized_wide <- cbind(id=ids, normalized_wide)
 
+# now, each column is either a bool or a factor.
+normalized_long <- gather(normalized_wide, question, measurement, age.group:nojobexperience.opinion,factor_key=TRUE)
 
