@@ -173,22 +173,24 @@ teacher_research <- prop.table(table(normalized_wide %>%
                                           select(are.you.a.teacher, bsc.achieves.research) %>% filter(are.you.a.teacher == TRUE)))
 
 
-df <- data.frame(category=character(), bsc.achieves.programming=numeric(), bsc.achieves.computational=numeric(), bsc.achieves.hireability=numeric(),
+bsc.achievements.by.category <- data.frame(category=character(), bsc.achieves.programming=numeric(), bsc.achieves.computational=numeric(), bsc.achieves.hireability=numeric(),
 		 bsc.achieves.realworldproblemsolving=numeric(), bsc.achieves.research=numeric(), bsc.achieves.projectmanagement=numeric(),
 		 stringsAsFactors = FALSE)
-df[nrow(df) + 1,] = list("Industry professional", round(industry_programming[1, "TRUE"]*100,1), 
+bsc.achievements.by.category[nrow(bsc.achievements.by.category) + 1,] = list("Industry professional", round(industry_programming[1, "TRUE"]*100,1), 
                          round(industry_computational[1, "TRUE"]*100,1), round(industry_hireability[1, "TRUE"]*100,1),  round(industry_realworldproblemsolving[1, "TRUE"]*100,1),
 			 round(industry_research[1, "TRUE"]*100,1), round(industry_projectmanagement[1, "TRUE"]*100,1))
-df[nrow(df) + 1,] = list("Undergrad", round(undergrad_programming[1, "TRUE"]*100,1), 
+bsc.achievements.by.category[nrow(bsc.achievements.by.category) + 1,] = list("Undergrad", round(undergrad_programming[1, "TRUE"]*100,1), 
                          round(undergrad_computational[1, "TRUE"]*100,1), round(undergrad_hireability[1, "TRUE"]*100,1),  round(undergrad_realworldproblemsolving[1, "TRUE"]*100,1),
 			 round(undergrad_research[1, "TRUE"]*100,1), 0.0)
-df[nrow(df) + 1,] = list("Graduate student", round(grad_programming[1, "TRUE"]*100,1), 
+bsc.achievements.by.category[nrow(bsc.achievements.by.category) + 1,] = list("Graduate student", round(grad_programming[1, "TRUE"]*100,1), 
                          round(grad_computational[1, "TRUE"]*100,1), round(grad_hireability[1, "TRUE"]*100,1),  round(grad_realworldproblemsolving[1, "TRUE"]*100,1),
 			 round(grad_research[1, "TRUE"]*100,1), round(grad_projectmanagement[1, "TRUE"]*100,1))
 
-df[nrow(df) + 1,] = list("Teacher", round(teacher_programming[1, "TRUE"]*100,1), 
+bsc.achievements.by.category[nrow(bsc.achievements.by.category) + 1,] = list("Teacher", round(teacher_programming[1, "TRUE"]*100,1), 
                          round(teacher_computational[1, "TRUE"]*100,1), round(teacher_hireability[1, "TRUE"]*100,1),  round(teacher_realworldproblemsolving[1, "TRUE"]*100,1),
 			 round(teacher_research[1, "TRUE"]*100,1), 0.0)
+
+
 
 
 
