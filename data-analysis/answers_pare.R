@@ -1,9 +1,10 @@
 suppressMessages(library(dplyr))
 library(tidyr)
+library(gmodels)
 
 # we don't read answers with factors directly because I had some issues later on with multiple answers analysis,
 # and we want to rename the columns, by the way
-answers <- read.csv(file="answers2.csv",
+answers <- read.csv(file="misaligned-20180720-inferred-categories.csv",
                         header=TRUE, sep=",",
                         stringsAsFactors=FALSE)
 
@@ -91,6 +92,27 @@ normalized_long <- gather(normalized_wide, question, measurement, age.group:nojo
 #print(summary(lm(bsc.achieves.programming ~ are.you.a.teacher, normalized_wide)))
 #print(summary(lm(bsc.achieves.programming ~ are.you.an.industry.professional, normalized_wide)))
 
-print(summary(lm(bsc.achieves.research ~ are.you.a.graduate.student, normalized_wide)))
-print(summary(lm(bsc.achieves.research ~ are.you.an.industry.professional, normalized_wide)))
+# we'll do the regression later on, let's start with the simpler things.
+#print(summary(lm(bsc.achieves.research ~ are.you.a.graduate.student, normalized_wide)))
+#print(summary(lm(bsc.achieves.research ~ are.you.an.industry.professional, normalized_wide)))
+a
+# I'm quite sure there's a better way to do this.
+industry_programming <- prop.table(table(normalized_wide %>% 
+                        select(are.you.an.industry.professional, bsc.achieves.programming) %>% filter(are.you.an.industry.professional == TRUE)))
+
+undergrad_programming <- prop.table(table(normalized_wide %>% 
+                                           select(are.you.an.undergrad.student, bsc.achieves.programming) %>% filter(are.you.an.undergrad.student == TRUE)))
+
+grad_programming <- prop.table(table(normalized_wide %>% 
+                                            select(are.you.a.graduate.student, bsc.achieves.programming) %>% filter(are.you.a.graduate.student == TRUE)))
+
+teacher_programming <- prop.table(table(normalized_wide %>% 
+                                       select(are.you.a.teacher, bsc.achieves.programming) %>% filter(are.you.a.teacher == TRUE)))
+
+
+df <- data.frame(category=character(), programming=logical(), stringsAsFactors = FALSE)
+df[nrow(df) + 1,] = list("Industry professional", round(industry_programming[1, "TRUE"]*100,1))
+df[nrow(df) + 1,] = list("Undergrad student", round(undergrad_programming[1, "TRUE"]*100,1))
+df[nrow(df) + 1,] = list("Graduate student", round(grad_programming[1, "TRUE"]*100,1))
+df[nrow(df) + 1,] = list("Teacher", round(teacher_programming[1, "TRUE"]*100,1))
 
