@@ -190,6 +190,102 @@ bsc.achievements.by.category[nrow(bsc.achievements.by.category) + 1,] = list("Te
                          round(teacher_bsc_computational[1, "TRUE"]*100,1), round(teacher_bsc_hireability[1, "TRUE"]*100,1),  round(teacher_bsc_realworldproblemsolving[1, "TRUE"]*100,1),
 			 round(teacher_bsc_research[1, "TRUE"]*100,1), 0.0)
 
+# start msc
+
+industry_msc_programming <- prop.table(table(normalized_wide %>% 
+                        select(are.you.an.industry.professional, msc.achieves.programming) %>% filter(are.you.an.industry.professional == TRUE)))
+
+undergrad_msc_programming <- prop.table(table(normalized_wide %>% 
+                                           select(are.you.an.undergrad.student, msc.achieves.programming) %>% filter(are.you.an.undergrad.student == TRUE)))
+
+grad_msc_programming <- prop.table(table(normalized_wide %>% 
+                                            select(are.you.a.graduate.student, msc.achieves.programming) %>% filter(are.you.a.graduate.student == TRUE)))
+
+teacher_msc_programming <- prop.table(table(normalized_wide %>% 
+                                       select(are.you.a.teacher, msc.achieves.programming) %>% filter(are.you.a.teacher == TRUE)))
+
+industry_msc_computational <- prop.table(table(normalized_wide %>% 
+                                           select(are.you.an.industry.professional, msc.achieves.computational) %>% filter(are.you.an.industry.professional == TRUE)))
+
+undergrad_msc_computational <- prop.table(table(normalized_wide %>% 
+                                            select(are.you.an.undergrad.student, msc.achieves.computational) %>% filter(are.you.an.undergrad.student == TRUE)))
+
+grad_msc_computational <- prop.table(table(normalized_wide %>% 
+                                       select(are.you.a.graduate.student, msc.achieves.computational) %>% filter(are.you.a.graduate.student == TRUE)))
+
+teacher_msc_computational <- prop.table(table(normalized_wide %>% 
+                                          select(are.you.a.teacher, msc.achieves.computational) %>% filter(are.you.a.teacher == TRUE)))
+
+industry_msc_hireability <- prop.table(table(normalized_wide %>% 
+                                           select(are.you.an.industry.professional, msc.achieves.hireability) %>% filter(are.you.an.industry.professional == TRUE)))
+
+undergrad_msc_hireability <- prop.table(table(normalized_wide %>% 
+                                            select(are.you.an.undergrad.student, msc.achieves.hireability) %>% filter(are.you.an.undergrad.student == TRUE)))
+
+grad_msc_hireability <- prop.table(table(normalized_wide %>% 
+                                       select(are.you.a.graduate.student, msc.achieves.hireability) %>% filter(are.you.a.graduate.student == TRUE)))
+
+teacher_msc_hireability <- prop.table(table(normalized_wide %>% 
+                                          select(are.you.a.teacher, msc.achieves.hireability) %>% filter(are.you.a.teacher == TRUE)))
+
+
+industry_msc_projectmanagement <- prop.table(table(normalized_wide %>% 
+                                           select(are.you.an.industry.professional, msc.achieves.projectmanagement) %>% filter(are.you.an.industry.professional == TRUE)))
+
+undergrad_msc_projectmanagement <- prop.table(table(normalized_wide %>% 
+                                            select(are.you.an.undergrad.student, msc.achieves.projectmanagement) %>% filter(are.you.an.undergrad.student == TRUE)))
+
+graduate_msc_projectmanagement <- prop.table(table(normalized_wide %>% 
+                                       select(are.you.a.graduate.student, msc.achieves.projectmanagement) %>% filter(are.you.a.graduate.student == TRUE)))
+
+teacher_msc_projectmanagement <- prop.table(table(normalized_wide %>% 
+                                          select(are.you.a.teacher, msc.achieves.projectmanagement) %>% filter(are.you.a.teacher == TRUE)))
+
+
+industry_msc_realworldproblemsolving <- prop.table(table(normalized_wide %>% 
+                                           select(are.you.an.industry.professional, msc.achieves.realworldproblemsolving) %>% filter(are.you.an.industry.professional == TRUE)))
+
+undergrad_msc_realworldproblemsolving <- prop.table(table(normalized_wide %>% 
+                                            select(are.you.an.undergrad.student, msc.achieves.realworldproblemsolving) %>% filter(are.you.an.undergrad.student == TRUE)))
+
+grad_msc_realworldproblemsolving <- prop.table(table(normalized_wide %>% 
+                                       select(are.you.a.graduate.student, msc.achieves.realworldproblemsolving) %>% filter(are.you.a.graduate.student == TRUE)))
+
+teacher_msc_realworldproblemsolving <- prop.table(table(normalized_wide %>% 
+                                          select(are.you.a.teacher, msc.achieves.realworldproblemsolving) %>% filter(are.you.a.teacher == TRUE)))
+
+
+industry_msc_research <- prop.table(table(normalized_wide %>% 
+                                           select(are.you.an.industry.professional, msc.achieves.research) %>% filter(are.you.an.industry.professional == TRUE)))
+
+undergrad_msc_research <- prop.table(table(normalized_wide %>% 
+                                            select(are.you.an.undergrad.student, msc.achieves.research) %>% filter(are.you.an.undergrad.student == TRUE)))
+
+grad_msc_research <- prop.table(table(normalized_wide %>% 
+                                       select(are.you.a.graduate.student, msc.achieves.research) %>% filter(are.you.a.graduate.student == TRUE)))
+
+teacher_msc_research <- prop.table(table(normalized_wide %>% 
+                                          select(are.you.a.teacher, msc.achieves.research) %>% filter(are.you.a.teacher == TRUE)))
+
+
+msc.achievements.by.category <- data.frame(category=character(), msc.achieves.programming=numeric(), msc.achieves.computational=numeric(), msc.achieves.hireability=numeric(),
+		 msc.achieves.realworldproblemsolving=numeric(), msc.achieves.research=numeric(), msc.achieves.projectmanagement=numeric(),
+		 stringsAsFactors = FALSE)
+msc.achievements.by.category[nrow(msc.achievements.by.category) + 1,] = list("Industry professional", round(industry_msc_programming[1, "TRUE"]*100,1), 
+                         round(industry_msc_computational[1, "TRUE"]*100,1), round(industry_msc_hireability[1, "TRUE"]*100,1),  round(industry_msc_realworldproblemsolving[1, "TRUE"]*100,1),
+			 round(industry_msc_research[1, "TRUE"]*100,1), round(industry_msc_projectmanagement[1, "TRUE"]*100,1))
+msc.achievements.by.category[nrow(msc.achievements.by.category) + 1,] = list("Undergrad", round(undergrad_msc_programming[1, "TRUE"]*100,1), 
+                         round(undergrad_msc_computational[1, "TRUE"]*100,1), round(undergrad_msc_hireability[1, "TRUE"]*100,1),  round(undergrad_msc_realworldproblemsolving[1, "TRUE"]*100,1),
+			 round(undergrad_msc_research[1, "TRUE"]*100,1), round(undergrad_msc_projectmanagement[1, "TRUE"]*100,1))
+msc.achievements.by.category[nrow(msc.achievements.by.category) + 1,] = list("Graduate student", round(grad_msc_programming[1, "TRUE"]*100,1), 
+                         round(grad_msc_computational[1, "TRUE"]*100,1), round(grad_msc_hireability[1, "TRUE"]*100,1),  round(grad_msc_realworldproblemsolving[1, "TRUE"]*100,1),
+			 round(grad_msc_research[1, "TRUE"]*100,1), round(graduate_msc_projectmanagement[1, "TRUE"]*100,1))
+
+msc.achievements.by.category[nrow(msc.achievements.by.category) + 1,] = list("Teacher", round(teacher_msc_programming[1, "TRUE"]*100,1), 
+                         round(teacher_msc_computational[1, "TRUE"]*100,1), round(teacher_msc_hireability[1, "TRUE"]*100,1),  round(teacher_msc_realworldproblemsolving[1, "TRUE"]*100,1),
+			 round(teacher_msc_research[1, "TRUE"]*100,1), round(teacher_msc_projectmanagement[1, "TRUE"]*100,1))
+
+
 
 
 
