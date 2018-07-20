@@ -97,6 +97,7 @@ normalized_long <- gather(normalized_wide, question, measurement, age.group:nojo
 #print(summary(lm(bsc.achieves.research ~ are.you.an.industry.professional, normalized_wide)))
 a
 # I'm quite sure there's a better way to do this.
+# FIX: missing soft skills!!!
 industry_bsc_programming <- prop.table(table(normalized_wide %>% 
                         select(are.you.an.industry.professional, bsc.achieves.programming) %>% filter(are.you.an.industry.professional == TRUE)))
 
@@ -480,15 +481,21 @@ mscexpect.achievements.by.category[nrow(mscexpect.achievements.by.category) + 1,
 			 round(teacher_mscexpect_research[1, "TRUE"]*100,1), round(teacher_mscexpect_projectmanagement[1, "TRUE"]*100,1))
 
 
+ tbl <- table(normalized_wide %>% select(age.group, bsc.achieves.programming) )
+ p <- prop.table(tbl, 1)
+ q <- data.frame(matrix(p, nrow=nrow(p)))
+ rownames(q) <- dimnames(p)[[1]]
+ colnames(q) <- c("doesntachieve", "achieves")
+ r <- q %>% transmute(bsc.achieves.programming = round(achieves*100,1))
+ rownames(r) <- rownames(q)
+# mydata <- normalized_long %>% filter(question == "age.group" | question == "bsc.achieves.programming") %>% select("question", "measurement") 
+# mydata$question <- factor(mydata$question)
+# 
+# x <- table(mydata$question, mydata$measurement)
 
 
 
 
-
-
-#df[nrow(df) + 1,] = list("Undergrad student", round(undergrad_programming[1, "TRUE"]*100,1), round(undergrad_computational[1, "TRUE"]*100,1))
-#df[nrow(df) + 1,] = list("Graduate student", round(grad_programming[1, "TRUE"]*100,1), round(grad_computational[1, "TRUE"]*100,1))
-#df[nrow(df) + 1,] = list("Teacher", round(teacher_programming[1, "TRUE"]*100,1), round(teacher_computational[1, "TRUE"]*100,1))
 
 
 
