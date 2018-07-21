@@ -95,7 +95,7 @@ normalized_long <- gather(normalized_wide, question, measurement, age.group:nojo
 # we'll do the regression later on, let's start with the simpler things.
 #print(summary(lm(bsc.achieves.research ~ are.you.a.graduate.student, normalized_wide)))
 #print(summary(lm(bsc.achieves.research ~ are.you.an.industry.professional, normalized_wide)))
-a
+
 # I'm quite sure there's a better way to do this.
 # FIX: missing soft skills!!!
 industry_bsc_programming <- prop.table(table(normalized_wide %>% 
@@ -481,13 +481,37 @@ mscexpect.achievements.by.category[nrow(mscexpect.achievements.by.category) + 1,
 			 round(teacher_mscexpect_research[1, "TRUE"]*100,1), round(teacher_mscexpect_projectmanagement[1, "TRUE"]*100,1))
 
 
- tbl <- table(normalized_wide %>% select(age.group, bsc.achieves.programming) )
- p <- prop.table(tbl, 1)
- q <- data.frame(matrix(p, nrow=nrow(p)))
- rownames(q) <- dimnames(p)[[1]]
- colnames(q) <- c("doesntachieve", "achieves")
- r <- q %>% transmute(bsc.achieves.programming = round(achieves*100,1))
- rownames(r) <- rownames(q)
+#x <- normalized_wide %>% select(bsc.achieves.programming, bsc.achieves.computational, age.group)
+#x$bsc.achieves.programming <- as.factor(x$bsc.achieves.programming)
+#x$bsc.achieves.computational <- as.factor(x$bsc.achieves.computational)
+
+x <- normalized_wide
+
+
+tbl <- table(x %>% select(age.group))
+p <- tabular(age.group~bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement
+             + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability
+             + bsc.achieves.dontknow
+             , x)
+
+ 
+ #p <- prop.table(tbl, 1)
+ q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
+ rownames(q) <- rowLabels(p)
+ colnames(q) <- colLabels(p)[1,]
+ q <- add_rownames(q, var="age.group")
+ q <- q %>% mutate(total = tbl[age.group])
+ 
+ 
+ 
+ 
+
+ #colnames(q) <- colLabels(p)
+ #rownames(q) <- dimnames(p)[[1]]
+ #colnames(q) <- c("doesntachieve", "achieves")
+ #r <- q %>% transmute(bsc.achieves.programming = round(achieves*100,1))
+ #rownames(r) <- rownames(q)
+ 
 # mydata <- normalized_long %>% filter(question == "age.group" | question == "bsc.achieves.programming") %>% select("question", "measurement") 
 # mydata$question <- factor(mydata$question)
 # 
