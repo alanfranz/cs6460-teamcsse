@@ -485,18 +485,60 @@ mscexpect.achievements.by.category[nrow(mscexpect.achievements.by.category) + 1,
 #x$bsc.achieves.programming <- as.factor(x$bsc.achieves.programming)
 #x$bsc.achieves.computational <- as.factor(x$bsc.achieves.computational)
 
-x <- normalized_wide
 
-
-tbl <- table(x %>% select(age.group))
+agegroup.tbl <- table(normalized_wide %>% select(age.group))
+# age.group vs bsc achievements - START
 p <- tabular(age.group~bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement
              + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability
              + bsc.achieves.dontknow
-             , x)
+             , normalized_wide)
 
  q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
  rownames(q) <- rowLabels(p)
  colnames(q) <- colLabels(p)[1,]
   q <- add_rownames(q, var="age.group")
- q <- q %>% mutate(total = tbl[age.group])
- q <- q %>% mutate_at(vars(contains('bsc')), .funs = funs(pc = round(./total*100, 1)))
+ q <- q %>% mutate(total = agegroup.tbl[age.group])
+ age.group.bsc.achieves.table <- q %>% mutate_at(vars(contains('bsc')), .funs = funs(pc = round(./total*100, 1)))
+ # age.group vs bsc achievements - END
+ 
+ # age.group vs bsc desiderata - START
+ p <- tabular(age.group~bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement
+              + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability
+              + bsc.shouldachieve.dontknow
+              , normalized_wide)
+ 
+ q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
+ rownames(q) <- rowLabels(p)
+ colnames(q) <- colLabels(p)[1,]
+ q <- add_rownames(q, var="age.group")
+ q <- q %>% mutate(total = agegroup.tbl[age.group])
+ age.group.bsc.shouldachieve.table <- q %>% mutate_at(vars(contains('bsc')), .funs = funs(pc = round(./total*100, 1)))
+ # age.group vs bsc desiderata - END
+
+ # age.group vs msc achievements - START
+ p <- tabular(age.group~msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement
+              + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability
+              + msc.achieves.dontknow
+              , normalized_wide)
+ 
+ q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
+ rownames(q) <- rowLabels(p)
+ colnames(q) <- colLabels(p)[1,]
+ q <- add_rownames(q, var="age.group")
+ q <- q %>% mutate(total = agegroup.tbl[age.group])
+ age.group.msc.achieves.table <- q %>% mutate_at(vars(contains('msc')), .funs = funs(pc = round(./total*100, 1)))
+ # age.group vs msc achievements - END
+ 
+ # age.group vs msc achievements - START
+ p <- tabular(age.group~msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement
+              + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability
+              + msc.shouldachieve.dontknow
+              , normalized_wide)
+ 
+ q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
+ rownames(q) <- rowLabels(p)
+ colnames(q) <- colLabels(p)[1,]
+ q <- add_rownames(q, var="age.group")
+ q <- q %>% mutate(total = agegroup.tbl[age.group])
+ age.group.msc.shouldachieve.table <- q %>% mutate_at(vars(contains('msc')), .funs = funs(pc = round(./total*100, 1)))
+ # age.group vs msc achievements - END
