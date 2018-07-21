@@ -494,32 +494,9 @@ p <- tabular(age.group~bsc.achieves.programming + bsc.achieves.computational + b
              + bsc.achieves.dontknow
              , x)
 
- 
- #p <- prop.table(tbl, 1)
  q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
  rownames(q) <- rowLabels(p)
  colnames(q) <- colLabels(p)[1,]
- q <- add_rownames(q, var="age.group")
+  q <- add_rownames(q, var="age.group")
  q <- q %>% mutate(total = tbl[age.group])
- 
- 
- 
- 
-
- #colnames(q) <- colLabels(p)
- #rownames(q) <- dimnames(p)[[1]]
- #colnames(q) <- c("doesntachieve", "achieves")
- #r <- q %>% transmute(bsc.achieves.programming = round(achieves*100,1))
- #rownames(r) <- rownames(q)
- 
-# mydata <- normalized_long %>% filter(question == "age.group" | question == "bsc.achieves.programming") %>% select("question", "measurement") 
-# mydata$question <- factor(mydata$question)
-# 
-# x <- table(mydata$question, mydata$measurement)
-
-
-
-
-
-
-
+ q <- q %>% mutate_at(vars(contains('bsc')), .funs = funs(pc = round(./total*100, 1)))
