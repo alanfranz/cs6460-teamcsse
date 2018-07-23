@@ -124,6 +124,23 @@ tab_boolean <- function(independent, dependent, mutate_what) {
 
 }
 
+tab_msq <- function(independent, dependent, mutate_what) {
+  mytbl <- table(normalized_wide %>% select(matches(independent)))
+  p <- tabular(as.formula(sprintf("%s~%s", independent, dependent))
+               , normalized_wide)
+  
+  q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
+  
+  colnames(q) <- colLabels(p)[2,]
+  rownames(q) <- rowLabels(p)
+  q <- tibble::rownames_to_column(q, var=independent)
+  q <- q %>% mutate(total=mytbl[!!sym(independent)])
+  q <- q %>% mutate_at(vars(contains(mutate_what)), .funs = funs(pc = round(./total*100, 1)))
+  #rownames(q) <- c(independent)
+  return (q)
+  
+}
+
 
 
 
@@ -190,9 +207,10 @@ categories.msc.shouldachieve.table <- rbind(is.undergraduate.student.msc.shoulda
 #bsc.proficiency.gpa = as.factor(How.do.you.think.the.GPA.affects.a.fresh.BS.graduate.s.professional.proficiency.),
 #bsc.proficiency.topschool = as.factor(How.do.you.think.the.school.choice..e.g..Top.10.Ivy.League.university.vs.random.college..affects.a.fresh.BS.graduate.s.professional.proficiency.),
 #bsc.landjob.delay = as.factor(How.long.do.you.think.it.will.take.for.a.fresh.BS.graduate.to.land.his.her.first.job..after.graduation.),
-#bsc.proficiency.delay = as.factor(How.long.do.you.think.it.will.take.for.a.fresh.BS.graduate.to.become.fully.proficient.at.his.her.first.job..after.being.hired.),
+#bsc.proficiency.delay = as.factor(How.long.do.you.think.it.will.take.fwor.a.fresh.BS.graduate.to.become.fully.proficient.at.his.her.first.job..after.being.hired.),
 
 #age.group.bsc.hireability = tab_categories("age.group", "bsc.hireability.gpa + bsc.proficiency.gpa + bsc.proficiency.topschool + bsc.landjob.delay + bsc.proficiency.delay", "bsc")
+age.group.bsc.hireability <- tab_msq("age.group", "bsc.hireability.gpa", "bsc")
 
 
 
