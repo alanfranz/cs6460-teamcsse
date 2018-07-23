@@ -39,11 +39,14 @@ normalized_wide <- answers %>% as_tibble() %>% transmute(
      bsc.shouldachieve.softskills = grepl("Soft skills (communication, teamwork, etc)", Are.there.any.skills..that.you.think.an.UNDERGRADUATE.student.would.need.to.learn.at.university..where.it.is.not.taught.by.universities..and.are.essential.in.working.industry., fixed = TRUE),
      bsc.shouldachieve.hireability = grepl("Get credentials and learn skills in finding a good job", Are.there.any.skills..that.you.think.an.UNDERGRADUATE.student.would.need.to.learn.at.university..where.it.is.not.taught.by.universities..and.are.essential.in.working.industry., fixed = TRUE),
      bsc.shouldachieve.dontknow = grepl("I don't know/prefer not to disclose", Are.there.any.skills..that.you.think.an.UNDERGRADUATE.student.would.need.to.learn.at.university..where.it.is.not.taught.by.universities..and.are.essential.in.working.industry., fixed = TRUE),
+     
      bsc.hireability.gpa = as.factor(How.do.you.think.the.GPA.affects.a.fresh.BS.graduate.s.chances.to.get.hired.),
      bsc.proficiency.gpa = as.factor(How.do.you.think.the.GPA.affects.a.fresh.BS.graduate.s.professional.proficiency.),
      bsc.proficiency.topchool = as.factor(How.do.you.think.the.school.choice..e.g..Top.10.Ivy.League.university.vs.random.college..affects.a.fresh.BS.graduate.s.professional.proficiency.),
      bsc.landjob.delay = as.factor(How.long.do.you.think.it.will.take.for.a.fresh.BS.graduate.to.land.his.her.first.job..after.graduation.),
      bsc.proficiency.delay = as.factor(How.long.do.you.think.it.will.take.for.a.fresh.BS.graduate.to.become.fully.proficient.at.his.her.first.job..after.being.hired.),
+     
+    
      msc.achieves.programming = grepl("He/She learns programming very well", Currently..what.do.you.think.a.GRADUATE.student..for.a.MS.program..in.CS.or.SE.achieves..when.he.she.graduates., fixed = TRUE),
      msc.achieves.computational = grepl("He/She learns computational thinking", Currently..what.do.you.think.a.GRADUATE.student..for.a.MS.program..in.CS.or.SE.achieves..when.he.she.graduates., fixed = TRUE),
      msc.achieves.projectmanagement = grepl("He/She learns project management", Currently..what.do.you.think.a.GRADUATE.student..for.a.MS.program..in.CS.or.SE.achieves..when.he.she.graduates., fixed = TRUE),
@@ -88,81 +91,7 @@ normalized_wide <- cbind(id=ids, normalized_wide)
 # now, each column is either a bool or a factor.
 normalized_long <- gather(normalized_wide, question, measurement, age.group:nojobexperience.opinion,factor_key=TRUE)
 
-#print(summary(lm(bsc.achieves.programming ~ are.you.a.graduate.student, normalized_wide)))
-#print(summary(lm(bsc.achieves.programming ~ are.you.an.undergrad.student, normalized_wide)))
-#print(summary(lm(bsc.achieves.programming ~ are.you.a.teacher, normalized_wide)))
-#print(summary(lm(bsc.achieves.programming ~ are.you.an.industry.professional, normalized_wide)))
 
-# we'll do the regression later on, let's start with the simpler things.
-#print(summary(lm(bsc.achieves.research ~ are.you.a.graduate.student, normalized_wide)))
-#print(summary(lm(bsc.achieves.research ~ are.you.an.industry.professional, normalized_wide)))
-
-# I'm quite sure there's a better way to do this.
-# FIX: missing soft skills!!!
-
-
-#x <- normalized_wide %>% select(bsc.achieves.programming, bsc.achieves.computational, age.group)
-#x$bsc.achieves.programming <- as.factor(x$bsc.achieves.programming)
-#x$bsc.achieves.computational <- as.factor(x$bsc.achieves.computational)
-
-
-agegroup.tbl <- table(normalized_wide %>% select(age.group))
-# age.group vs bsc achievements - START
-p <- tabular(age.group~bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement
-             + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability
-             + bsc.achieves.dontknow
-             , normalized_wide)
-
- q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
- rownames(q) <- rowLabels(p)
- colnames(q) <- colLabels(p)[1,]
-  q <- add_rownames(q, var="age.group")
- q <- q %>% mutate(total = agegroup.tbl[age.group])
- age.group.bsc.achieves.table <- q %>% mutate_at(vars(contains('bsc')), .funs = funs(pc = round(./total*100, 1)))
- # age.group vs bsc achievements - END
- 
- # age.group vs bsc desiderata - START
- p <- tabular(age.group~bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement
-              + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability
-              + bsc.shouldachieve.dontknow
-              , normalized_wide)
- 
- q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
- rownames(q) <- rowLabels(p)
- colnames(q) <- colLabels(p)[1,]
- q <- add_rownames(q, var="age.group")
- q <- q %>% mutate(total = agegroup.tbl[age.group])
- age.group.bsc.shouldachieve.table <- q %>% mutate_at(vars(contains('bsc')), .funs = funs(pc = round(./total*100, 1)))
- # age.group vs bsc desiderata - END
-
- # age.group vs msc achievements - START
- p <- tabular(age.group~msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement
-              + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability
-              + msc.achieves.dontknow
-              , normalized_wide)
- 
- q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
- rownames(q) <- rowLabels(p)
- colnames(q) <- colLabels(p)[1,]
- q <- add_rownames(q, var="age.group")
- q <- q %>% mutate(total = agegroup.tbl[age.group])
- age.group.msc.achieves.table <- q %>% mutate_at(vars(contains('msc')), .funs = funs(pc = round(./total*100, 1)))
- # age.group vs msc achievements - END
- 
- # age.group vs msc achievements - START
- p <- tabular(age.group~msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement
-              + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability
-              + msc.shouldachieve.dontknow
-              , normalized_wide)
- 
- q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
- rownames(q) <- rowLabels(p)
- colnames(q) <- colLabels(p)[1,]
- q <- add_rownames(q, var="age.group")
- q <- q %>% mutate(total = agegroup.tbl[age.group])
- age.group.msc.shouldachieve.table <- q %>% mutate_at(vars(contains('msc')), .funs = funs(pc = round(./total*100, 1)))
- # age.group vs msc achievements - END
- 
  
 tab_categories <- function(independent, dependent, mutate_what) {
 mytbl <- table(normalized_wide %>% select(matches(independent)))
@@ -194,6 +123,13 @@ tab_boolean <- function(independent, dependent, mutate_what) {
 }
 
 
+
+
+age.group.bsc.achieves.table <- tab_categories("age.group", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
+age.group.bsc.shouldachieve.table <- tab_categories("age.group", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
+
+age.group.msc.achieves.table <- tab_categories("age.group", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
+age.group.msc.shouldachieve.table <- tab_categories("age.group", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
  
 degree.highest.bsc.achieves.table <- tab_categories("degree.highest", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
 degree.highest.bsc.shouldachieve.table <- tab_categories("degree.highest", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
