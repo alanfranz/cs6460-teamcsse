@@ -225,7 +225,31 @@ is.graduate.student.bsc.achieves.table <- tab_boolean("are.you.a.graduate.studen
 teacher.bsc.achieves.table <- tab_boolean("are.you.a.teacher", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
 industry.professional.bsc.achieves.table <- tab_boolean("are.you.an.industry.professional", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
 
-xxx <- rbind(is.undergraduate.student.bsc.achieves.table, is.graduate.student.bsc.achieves.table, teacher.bsc.achieves.table, industry.professional.bsc.achieves.table)
- 
+categories.bsc.achieves.table <- rbind(is.undergraduate.student.bsc.achieves.table, is.graduate.student.bsc.achieves.table, teacher.bsc.achieves.table, industry.professional.bsc.achieves.table)
+
+is.undergraduate.student.bsc.shouldachieve.table <- tab_boolean("are.you.an.undergrad.student", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
+is.graduate.student.bsc.shouldachieve.table <- tab_boolean("are.you.a.graduate.student", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
+teacher.bsc.shouldachieve.table <- tab_boolean("are.you.a.teacher", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
+industry.professional.bsc.shouldachieve.table <- tab_boolean("are.you.an.industry.professional", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
+
+categories.bsc.shouldachieve.table <- rbind(is.undergraduate.student.bsc.shouldachieve.table, is.graduate.student.bsc.shouldachieve.table, teacher.bsc.shouldachieve.table, industry.professional.bsc.shouldachieve.table)
+
+is.undergraduate.student.msc.achieves.table <- tab_boolean("are.you.an.undergrad.student", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
+is.graduate.student.msc.achieves.table <- tab_boolean("are.you.a.graduate.student", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
+teacher.msc.achieves.table <- tab_boolean("are.you.a.teacher", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
+industry.professional.msc.achieves.table <- tab_boolean("are.you.an.industry.professional", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
+
+categories.msc.achieves.table <- rbind(is.undergraduate.student.msc.achieves.table, is.graduate.student.msc.achieves.table, teacher.msc.achieves.table, industry.professional.msc.achieves.table)
+
+is.undergraduate.student.msc.shouldachieve.table <- tab_boolean("are.you.an.undergrad.student", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
+is.graduate.student.msc.shouldachieve.table <- tab_boolean("are.you.a.graduate.student", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
+teacher.msc.shouldachieve.table <- tab_boolean("are.you.a.teacher", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
+industry.professional.msc.shouldachieve.table <- tab_boolean("are.you.an.industry.professional", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
+
+categories.msc.shouldachieve.table <- rbind(is.undergraduate.student.msc.shouldachieve.table, is.graduate.student.msc.shouldachieve.table, teacher.msc.shouldachieve.table, industry.professional.msc.shouldachieve.table)
+
+
+
+
  #explore
  #age.group.msc.achieves.table %>% select("age.group", "total", contains("_pc"), )
