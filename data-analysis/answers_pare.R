@@ -559,7 +559,7 @@ mytbl <- table(normalized_wide %>% select(matches(independent)))
 }
  
 tab_boolean <- function(independent, dependent, mutate_what) {
-  current <- normalized_wide %>% select(matches(independent))
+
   p <- tabular(as.formula(sprintf("%s~%s", independent, dependent))
                , normalized_wide)
   
