@@ -1,6 +1,7 @@
 suppressMessages(library(dplyr))
 library(tidyr)
 library(gmodels)
+library(tables)
 
 # we don't read answers with factors directly because I had some issues later on with multiple answers analysis,
 # and we want to rename the columns, by the way
@@ -545,23 +546,24 @@ p <- tabular(age.group~bsc.achieves.programming + bsc.achieves.computational + b
  
  
 mytabfunc <- function(independent, dependent, mutate_what) {
+mytbl <- table(normalized_wide %>% select(matches(independent)))
  p <- tabular(as.formula(sprintf("%s~%s", independent, dependent))
               , normalized_wide)
  
  q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
  rownames(q) <- rowLabels(p)
  colnames(q) <- colLabels(p)[1,]
- q <- add_rownames(q, var=independent)
- q <- q %>% mutate(total = agegroup.tbl[age.group])
- return (q %>% mutate_at(vars(mutate_what), .funs = funs(pc = round(./total*100, 1))))
+ q <- tibble::rownames_to_column(q, var=independent)
+ q <- q %>% mutate(total=mytbl[!!sym(independent)])
+ return (q %>% mutate_at(vars(contains(mutate_what)), .funs = funs(pc = round(./total*100, 1))))
 }
  
 
-xxx <- mytabfunc("age.group", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement
-              + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability
-              + msc.shouldachieve.dontknow", contains('msc'))
+xxx <- mytabfunc("age.group", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
  
- 
+degree.highest.bsc.achieve.table <- mytabfunc("degree.highest", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
+
+
  
  
  
