@@ -542,3 +542,28 @@ p <- tabular(age.group~bsc.achieves.programming + bsc.achieves.computational + b
  q <- q %>% mutate(total = agegroup.tbl[age.group])
  age.group.msc.shouldachieve.table <- q %>% mutate_at(vars(contains('msc')), .funs = funs(pc = round(./total*100, 1)))
  # age.group vs msc achievements - END
+ 
+ 
+mytabfunc <- function(independent, dependent, mutate_what) {
+ p <- tabular(as.formula(sprintf("%s~%s", independent, dependent))
+              , normalized_wide)
+ 
+ q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
+ rownames(q) <- rowLabels(p)
+ colnames(q) <- colLabels(p)[1,]
+ q <- add_rownames(q, var=independent)
+ q <- q %>% mutate(total = agegroup.tbl[age.group])
+ return (q %>% mutate_at(vars(mutate_what), .funs = funs(pc = round(./total*100, 1))))
+}
+ 
+
+xxx <- mytabfunc("age.group", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement
+              + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability
+              + msc.shouldachieve.dontknow", contains('msc'))
+ 
+ 
+ 
+ 
+ 
+ #explore
+ #age.group.msc.achieves.table %>% select("age.group", "total", contains("_pc"), )
