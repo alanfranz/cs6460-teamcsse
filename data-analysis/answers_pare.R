@@ -580,6 +580,13 @@ employed.country.bsc.shouldachieve.table <- mytabfunc("employed.country", "bsc.s
 employed.country.msc.achieves.table <- mytabfunc("employed.country", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
 employed.country.msc.shouldachieve.table <- mytabfunc("employed.country", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
 
+company.size.bsc.achieves.table <- mytabfunc("company.size", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
+company.size.bsc.shouldachieve.table <- mytabfunc("company.size", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
+
+company.size.msc.achieves.table <- mytabfunc("company.size", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
+company.size.msc.shouldachieve.table <- mytabfunc("company.size", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
+
+
 
  
  #explore
