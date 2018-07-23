@@ -267,6 +267,41 @@ industry.professional.bsc.hireability.gpa.tmp <- tab_msq_no_index("are.you.an.in
 categories.bsc.hireability.gpa.table = rbind(undergrad.bsc.hireability.gpa.tmp, gradstudent.bsc.hireability.gpa.tmp,
                                              teacher.bsc.hireability.gpa.tmp, industry.professional.bsc.hireability.gpa.tmp)
 
+gradstudent.bsc.proficiency.gpa.tmp <- tab_msq_no_index("are.you.a.graduate.student", "bsc.proficiency.gpa")
+undergrad.bsc.proficiency.gpa.tmp <- tab_msq_no_index("are.you.an.undergrad.student", "bsc.proficiency.gpa")
+teacher.bsc.proficiency.gpa.tmp <- tab_msq_no_index("are.you.a.teacher", "bsc.proficiency.gpa")
+industry.professional.bsc.proficiency.gpa.tmp <- tab_msq_no_index("are.you.an.industry.professional", "bsc.proficiency.gpa")
+
+categories.bsc.proficiency.gpa.table = rbind(undergrad.bsc.proficiency.gpa.tmp, gradstudent.bsc.proficiency.gpa.tmp,
+                                             teacher.bsc.proficiency.gpa.tmp, industry.professional.bsc.proficiency.gpa.tmp)
+
+
+gradstudent.bsc.proficiency.topschool.tmp <- tab_msq_no_index("are.you.a.graduate.student", "bsc.proficiency.topschool")
+undergrad.bsc.proficiency.topschool.tmp <- tab_msq_no_index("are.you.an.undergrad.student", "bsc.proficiency.topschool")
+teacher.bsc.proficiency.topschool.tmp <- tab_msq_no_index("are.you.a.teacher", "bsc.proficiency.topschool")
+industry.professional.bsc.proficiency.topschool.tmp <- tab_msq_no_index("are.you.an.industry.professional", "bsc.proficiency.topschool")
+
+categories.bsc.proficiency.topschool.table = rbind(undergrad.bsc.proficiency.topschool.tmp, gradstudent.bsc.proficiency.topschool.tmp,
+                                             teacher.bsc.proficiency.topschool.tmp, industry.professional.bsc.proficiency.topschool.tmp)
+
+
+gradstudent.bsc.landjob.delay.tmp <- tab_msq_no_index("are.you.a.graduate.student", "bsc.landjob.delay")
+undergrad.bsc.landjob.delay.tmp <- tab_msq_no_index("are.you.an.undergrad.student", "bsc.landjob.delay")
+teacher.bsc.landjob.delay.tmp <- tab_msq_no_index("are.you.a.teacher", "bsc.landjob.delay")
+industry.professional.bsc.landjob.delay.tmp <- tab_msq_no_index("are.you.an.industry.professional", "bsc.landjob.delay")
+
+categories.bsc.landjob.delay.table = rbind(undergrad.bsc.landjob.delay.tmp, gradstudent.bsc.landjob.delay.tmp,
+                                             teacher.bsc.landjob.delay.tmp, industry.professional.bsc.landjob.delay.tmp)
+
+gradstudent.bsc.proficiency.delay.tmp <- tab_msq_no_index("are.you.a.graduate.student", "bsc.proficiency.delay")
+undergrad.bsc.proficiency.delay.tmp <- tab_msq_no_index("are.you.an.undergrad.student", "bsc.proficiency.delay")
+teacher.bsc.proficiency.delay.tmp <- tab_msq_no_index("are.you.a.teacher", "bsc.proficiency.delay")
+industry.professional.bsc.proficiency.delay.tmp <- tab_msq_no_index("are.you.an.industry.professional", "bsc.proficiency.delay")
+
+categories.bsc.proficiency.delay.table = rbind(undergrad.bsc.proficiency.delay.tmp, gradstudent.bsc.proficiency.delay.tmp,
+                                             teacher.bsc.proficiency.delay.tmp, industry.professional.bsc.proficiency.delay.tmp)
+
+
 
 
 
