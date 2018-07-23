@@ -559,7 +559,7 @@ mytbl <- table(normalized_wide %>% select(matches(independent)))
 }
  
 tab_boolean <- function(independent, dependent, mutate_what) {
-  mytbl <- table(normalized_wide %>% select(matches(independent)))
+  current <- normalized_wide %>% select(matches(independent))
   p <- tabular(as.formula(sprintf("%s~%s", independent, dependent))
                , normalized_wide)
   
@@ -567,7 +567,7 @@ tab_boolean <- function(independent, dependent, mutate_what) {
  
   colnames(q) <- colLabels(p)[1,]
   #q <- tibble::rownames_to_column(q, var=independent)
-  q <- q %>% mutate(total=nrow(normalized_wide))
+  q <- q %>% mutate(total=nrow(normalized_wide %>% filter(!!sym(independent) == TRUE)))
   q <- q %>% mutate_at(vars(contains(mutate_what)), .funs = funs(pc = round(./total*100, 1)))
  rownames(q) <- c(independent)
   return (q)
