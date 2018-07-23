@@ -141,6 +141,25 @@ tab_msq <- function(independent, dependent) {
   
 }
 
+tab_msq_no_index <- function(independent, dependent) {
+  mytbl <- table(normalized_wide %>% select(matches(independent)))
+  p <- tabular(as.formula(sprintf("%s~%s", independent, dependent))
+               , normalized_wide)
+  
+  q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
+  
+  colnames(q) <- colLabels(p)[2,]
+  rownames(q) <- rowLabels(p)
+  q <- tibble::rownames_to_column(q, var=independent)
+  q <- q %>% mutate(total=nrow(normalized_wide %>% filter(!!sym(independent) == TRUE)))
+  q <- q %>% mutate_at(vars(-contains(independent),-contains("total")), .funs = funs(pc = round(./total*100, 1)))
+  q <- q %>% select(-contains(independent))
+  rownames(q) <- rowLabels(p)
+  #rownames(q) <- c(independent)
+  return (q)
+  
+}
+
 
 
 
@@ -215,6 +234,40 @@ age.group.bsc.proficiency.gpa.table <- tab_msq("age.group", "bsc.proficiency.gpa
 age.group.bsc.proficiency.topschool.table <- tab_msq("age.group", "bsc.proficiency.topschool")
 age.group.bsc.landjob.delay.table <- tab_msq("age.group", "bsc.landjob.delay")
 age.group.bsc.proficiency.delay.table <- tab_msq("age.group", "bsc.proficiency.delay")
+
+degree.highest.bsc.hireability.gpa.table <- tab_msq("degree.highest", "bsc.hireability.gpa")
+degree.highest.bsc.proficiency.gpa.table <- tab_msq("degree.highest", "bsc.proficiency.gpa")
+degree.highest.bsc.proficiency.topschool.table <- tab_msq("degree.highest", "bsc.proficiency.topschool")
+degree.highest.bsc.landjob.delay.table <- tab_msq("degree.highest", "bsc.landjob.delay")
+degree.highest.bsc.proficiency.delay.table <- tab_msq("degree.highest", "bsc.proficiency.delay")
+
+degree.country.bsc.hireability.gpa.table <- tab_msq("degree.country", "bsc.hireability.gpa")
+degree.country.bsc.proficiency.gpa.table <- tab_msq("degree.country", "bsc.proficiency.gpa")
+degree.country.bsc.proficiency.topschool.table <- tab_msq("degree.country", "bsc.proficiency.topschool")
+degree.country.bsc.landjob.delay.table <- tab_msq("degree.country", "bsc.landjob.delay")
+degree.country.bsc.proficiency.delay.table <- tab_msq("degree.country", "bsc.proficiency.delay")
+
+employed.country.bsc.hireability.gpa.table <- tab_msq("employed.country", "bsc.hireability.gpa")
+employed.country.bsc.proficiency.gpa.table <- tab_msq("employed.country", "bsc.proficiency.gpa")
+employed.country.bsc.proficiency.topschool.table <- tab_msq("employed.country", "bsc.proficiency.topschool")
+employed.country.bsc.landjob.delay.table <- tab_msq("employed.country", "bsc.landjob.delay")
+employed.country.bsc.proficiency.delay.table <- tab_msq("employed.country", "bsc.proficiency.delay")
+
+company.size.bsc.hireability.gpa.table <- tab_msq("company.size", "bsc.hireability.gpa")
+company.size.bsc.proficiency.gpa.table <- tab_msq("company.size", "bsc.proficiency.gpa")
+company.size.bsc.proficiency.topschool.table <- tab_msq("company.size", "bsc.proficiency.topschool")
+company.size.bsc.landjob.delay.table <- tab_msq("company.size", "bsc.landjob.delay")
+company.size.bsc.proficiency.delay.table <- tab_msq("company.size", "bsc.proficiency.delay")
+
+gradstudent.bsc.hireability.gpa.tmp <- tab_msq_no_index("are.you.a.graduate.student", "bsc.hireability.gpa")
+undergrad.bsc.hireability.gpa.tmp <- tab_msq_no_index("are.you.an.undergrad.student", "bsc.hireability.gpa")
+teacher.bsc.hireability.gpa.tmp <- tab_msq_no_index("are.you.a.teacher", "bsc.hireability.gpa")
+industry.professional.bsc.hireability.gpa.tmp <- tab_msq_no_index("are.you.an.industry.professional", "bsc.hireability.gpa")
+
+categories.bsc.hireability.gpa.table = rbind(undergrad.bsc.hireability.gpa.tmp, gradstudent.bsc.hireability.gpa.tmp,
+                                             teacher.bsc.hireability.gpa.tmp, industry.professional.bsc.hireability.gpa.tmp)
+
+
 
 
 
