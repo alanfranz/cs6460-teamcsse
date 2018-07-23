@@ -135,7 +135,7 @@ tab_msq <- function(independent, dependent, mutate_what) {
   rownames(q) <- rowLabels(p)
   q <- tibble::rownames_to_column(q, var=independent)
   q <- q %>% mutate(total=mytbl[!!sym(independent)])
-  q <- q %>% mutate_at(vars(contains(mutate_what)), .funs = funs(pc = round(./total*100, 1)))
+  q <- q %>% mutate_at(vars(-contains(independent),-contains("total")), .funs = funs(pc = round(./total*100, 1)))
   #rownames(q) <- c(independent)
   return (q)
   
