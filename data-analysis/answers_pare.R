@@ -303,6 +303,65 @@ categories.bsc.proficiency.delay.table = rbind(undergrad.bsc.proficiency.delay.t
 
 
 
+age.group.msc.hireability.gpa.table <- tab_msq("age.group", "msc.hireability.gpa")
+age.group.msc.landjob.delay.table <- tab_msq("age.group", "msc.landjob.delay")
+age.group.msc.proficiency.delay.table <- tab_msq("age.group", "msc.proficiency.delay")
+
+degree.highest.msc.hireability.gpa.table <- tab_msq("degree.highest", "msc.hireability.gpa")
+degree.highest.msc.landjob.delay.table <- tab_msq("degree.highest", "msc.landjob.delay")
+degree.highest.msc.proficiency.delay.table <- tab_msq("degree.highest", "msc.proficiency.delay")
+
+degree.country.msc.hireability.gpa.table <- tab_msq("degree.country", "msc.hireability.gpa")
+degree.country.msc.landjob.delay.table <- tab_msq("degree.country", "msc.landjob.delay")
+degree.country.msc.proficiency.delay.table <- tab_msq("degree.country", "msc.proficiency.delay")
+
+employed.country.msc.hireability.gpa.table <- tab_msq("employed.country", "msc.hireability.gpa")
+employed.country.msc.landjob.delay.table <- tab_msq("employed.country", "msc.landjob.delay")
+employed.country.msc.proficiency.delay.table <- tab_msq("employed.country", "msc.proficiency.delay")
+
+company.size.msc.hireability.gpa.table <- tab_msq("company.size", "msc.hireability.gpa")
+company.size.msc.landjob.delay.table <- tab_msq("company.size", "msc.landjob.delay")
+company.size.msc.proficiency.delay.table <- tab_msq("company.size", "msc.proficiency.delay")
+
+gradstudent.msc.hireability.gpa.tmp <- tab_msq_no_index("are.you.a.graduate.student", "msc.hireability.gpa")
+undergrad.msc.hireability.gpa.tmp <- tab_msq_no_index("are.you.an.undergrad.student", "msc.hireability.gpa")
+teacher.msc.hireability.gpa.tmp <- tab_msq_no_index("are.you.a.teacher", "msc.hireability.gpa")
+industry.professional.msc.hireability.gpa.tmp <- tab_msq_no_index("are.you.an.industry.professional", "msc.hireability.gpa")
+
+categories.msc.hireability.gpa.table = rbind(undergrad.msc.hireability.gpa.tmp, gradstudent.msc.hireability.gpa.tmp,
+                                             teacher.msc.hireability.gpa.tmp, industry.professional.msc.hireability.gpa.tmp)
+
+gradstudent.msc.landjob.delay.tmp <- tab_msq_no_index("are.you.a.graduate.student", "msc.landjob.delay")
+undergrad.msc.landjob.delay.tmp <- tab_msq_no_index("are.you.an.undergrad.student", "msc.landjob.delay")
+teacher.msc.landjob.delay.tmp <- tab_msq_no_index("are.you.a.teacher", "msc.landjob.delay")
+industry.professional.msc.landjob.delay.tmp <- tab_msq_no_index("are.you.an.industry.professional", "msc.landjob.delay")
+
+categories.msc.landjob.delay.table = rbind(undergrad.msc.landjob.delay.tmp, gradstudent.msc.landjob.delay.tmp,
+                                             teacher.msc.landjob.delay.tmp, industry.professional.msc.landjob.delay.tmp)
+
+gradstudent.msc.proficiency.delay.tmp <- tab_msq_no_index("are.you.a.graduate.student", "msc.proficiency.delay")
+undergrad.msc.proficiency.delay.tmp <- tab_msq_no_index("are.you.an.undergrad.student", "msc.proficiency.delay")
+teacher.msc.proficiency.delay.tmp <- tab_msq_no_index("are.you.a.teacher", "msc.proficiency.delay")
+industry.professional.msc.proficiency.delay.tmp <- tab_msq_no_index("are.you.an.industry.professional", "msc.proficiency.delay")
+
+categories.msc.proficiency.delay.table = rbind(undergrad.msc.proficiency.delay.tmp, gradstudent.msc.proficiency.delay.tmp,
+                                             teacher.msc.proficiency.delay.tmp, industry.professional.msc.proficiency.delay.tmp)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
