@@ -545,7 +545,7 @@ p <- tabular(age.group~bsc.achieves.programming + bsc.achieves.computational + b
  # age.group vs msc achievements - END
  
  
-mytabfunc <- function(independent, dependent, mutate_what) {
+tab_categories <- function(independent, dependent, mutate_what) {
 mytbl <- table(normalized_wide %>% select(matches(independent)))
  p <- tabular(as.formula(sprintf("%s~%s", independent, dependent))
               , normalized_wide)
@@ -558,34 +558,50 @@ mytbl <- table(normalized_wide %>% select(matches(independent)))
  return (q %>% mutate_at(vars(contains(mutate_what)), .funs = funs(pc = round(./total*100, 1))))
 }
  
+tab_boolean <- function(independent, dependent, mutate_what) {
+  mytbl <- table(normalized_wide %>% select(matches(independent)))
+  p <- tabular(as.formula(sprintf("%s~%s", independent, dependent))
+               , normalized_wide)
+  
+  q <- data.frame(matrix(p, nrow=nrow(p))) %>% mutate_all(as.integer)
+ 
+  colnames(q) <- colLabels(p)[1,]
+  #q <- tibble::rownames_to_column(q, var=independent)
+  q <- q %>% mutate(total=nrow(normalized_wide))
+  q <- q %>% mutate_at(vars(contains(mutate_what)), .funs = funs(pc = round(./total*100, 1)))
+ rownames(q) <- c(independent)
+  return (q)
+
+}
 
 
  
-degree.highest.bsc.achieves.table <- mytabfunc("degree.highest", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
-degree.highest.bsc.shouldachieve.table <- mytabfunc("degree.highest", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
+degree.highest.bsc.achieves.table <- tab_categories("degree.highest", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
+degree.highest.bsc.shouldachieve.table <- tab_categories("degree.highest", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
 
-degree.highest.msc.achieves.table <- mytabfunc("degree.highest", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
-degree.highest.msc.shouldachieve.table <- mytabfunc("degree.highest", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
+degree.highest.msc.achieves.table <- tab_categories("degree.highest", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
+degree.highest.msc.shouldachieve.table <- tab_categories("degree.highest", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
 
-degree.country.bsc.achieves.table <- mytabfunc("degree.country", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
-degree.country.bsc.shouldachieve.table <- mytabfunc("degree.country", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
+degree.country.bsc.achieves.table <- tab_categories("degree.country", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
+degree.country.bsc.shouldachieve.table <- tab_categories("degree.country", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
 
-degree.country.msc.achieves.table <- mytabfunc("degree.country", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
-degree.country.msc.shouldachieve.table <- mytabfunc("degree.country", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
+degree.country.msc.achieves.table <- tab_categories("degree.country", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
+degree.country.msc.shouldachieve.table <- tab_categories("degree.country", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
 
 
-employed.country.bsc.achieves.table <- mytabfunc("employed.country", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
-employed.country.bsc.shouldachieve.table <- mytabfunc("employed.country", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
+employed.country.bsc.achieves.table <- tab_categories("employed.country", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
+employed.country.bsc.shouldachieve.table <- tab_categories("employed.country", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
 
-employed.country.msc.achieves.table <- mytabfunc("employed.country", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
-employed.country.msc.shouldachieve.table <- mytabfunc("employed.country", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
+employed.country.msc.achieves.table <- tab_categories("employed.country", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
+employed.country.msc.shouldachieve.table <- tab_categories("employed.country", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
 
-company.size.bsc.achieves.table <- mytabfunc("company.size", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
-company.size.bsc.shouldachieve.table <- mytabfunc("company.size", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
+company.size.bsc.achieves.table <- tab_categories("company.size", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
+company.size.bsc.shouldachieve.table <- tab_categories("company.size", "bsc.shouldachieve.programming + bsc.shouldachieve.computational + bsc.shouldachieve.projectmanagement + bsc.shouldachieve.realworldproblemsolving + bsc.shouldachieve.research + bsc.shouldachieve.softskills + bsc.shouldachieve.hireability + bsc.shouldachieve.dontknow", "bsc")
 
-company.size.msc.achieves.table <- mytabfunc("company.size", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
-company.size.msc.shouldachieve.table <- mytabfunc("company.size", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
+company.size.msc.achieves.table <- tab_categories("company.size", "msc.achieves.programming + msc.achieves.computational + msc.achieves.projectmanagement + msc.achieves.realworldproblemsolving + msc.achieves.research + msc.achieves.softskills + msc.achieves.hireability + msc.achieves.dontknow", "msc")
+company.size.msc.shouldachieve.table <- tab_categories("company.size", "msc.shouldachieve.programming + msc.shouldachieve.computational + msc.shouldachieve.projectmanagement + msc.shouldachieve.realworldproblemsolving + msc.shouldachieve.research + msc.shouldachieve.softskills + msc.shouldachieve.hireability + msc.shouldachieve.dontknow", "msc")
 
+gradx <- tab_boolean("are.you.a.graduate.student", "bsc.achieves.programming + bsc.achieves.computational + bsc.achieves.projectmanagement + bsc.achieves.realworldproblemsolving + bsc.achieves.research + bsc.achieves.softskills + bsc.achieves.hireability + bsc.achieves.dontknow", "bsc")
 
 
  
