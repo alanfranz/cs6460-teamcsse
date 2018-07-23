@@ -42,7 +42,7 @@ normalized_wide <- answers %>% as_tibble() %>% transmute(
      
      bsc.hireability.gpa = as.factor(How.do.you.think.the.GPA.affects.a.fresh.BS.graduate.s.chances.to.get.hired.),
      bsc.proficiency.gpa = as.factor(How.do.you.think.the.GPA.affects.a.fresh.BS.graduate.s.professional.proficiency.),
-     bsc.proficiency.topchool = as.factor(How.do.you.think.the.school.choice..e.g..Top.10.Ivy.League.university.vs.random.college..affects.a.fresh.BS.graduate.s.professional.proficiency.),
+     bsc.proficiency.topschool = as.factor(How.do.you.think.the.school.choice..e.g..Top.10.Ivy.League.university.vs.random.college..affects.a.fresh.BS.graduate.s.professional.proficiency.),
      bsc.landjob.delay = as.factor(How.long.do.you.think.it.will.take.for.a.fresh.BS.graduate.to.land.his.her.first.job..after.graduation.),
      bsc.proficiency.delay = as.factor(How.long.do.you.think.it.will.take.for.a.fresh.BS.graduate.to.become.fully.proficient.at.his.her.first.job..after.being.hired.),
      
@@ -63,9 +63,11 @@ normalized_wide <- answers %>% as_tibble() %>% transmute(
      msc.shouldachieve.softskills = grepl("Soft skills (communication, teamwork, etc)", Are.there.any.skills..that.you.think.a.GRADUATE.student..for.a.MS.program..would.need.to.learn.at.university..that.it.is.not.taught.by.universities..and.are.essential.in.working.industry., fixed = TRUE),
      msc.shouldachieve.hireability = grepl("Get the credentials and learn skills in finding a good job", Are.there.any.skills..that.you.think.a.GRADUATE.student..for.a.MS.program..would.need.to.learn.at.university..that.it.is.not.taught.by.universities..and.are.essential.in.working.industry., fixed = TRUE),
      msc.shouldachieve.dontknow = grepl("I don't know/prefer not to disclose", Are.there.any.skills..that.you.think.a.GRADUATE.student..for.a.MS.program..would.need.to.learn.at.university..that.it.is.not.taught.by.universities..and.are.essential.in.working.industry., fixed = TRUE),
+     
      msc.hireability.gpa = as.factor(How.do.you.think.the.GPA.of.a.GRADUATE.student..for.a.MS.program..affects.a.fresh.graduate.to.get.hired.),
      msc.landjob.delay = as.factor(How.long.do.you.think.a.GRADUATE.student..for.a.MS.program..will.need.in.order.to.land.his.her.first.job..after.graduation.),
      msc.proficiency.delay = as.factor(How.long.do.you.think.a.GRADUATE.student..for.a.MS.program..will.need.in.order.to.become.fully.proficient.at.his.her.first.job..after.being.hired.),
+     
      bsc.vs.jobexperience.hireability = as.factor(Consider.two.candidates.for.a.same.job..One.holds.a.4.year.BS.degree.and.has.no.job.experience..The.other.has.no.degree..but.has.4.years.of.job.experience.in.a.similar.role..What.do.you.think.about.the.candidates..chance.of.being.hired.),
      bsc.vs.jobexperience.shorttermproficiency = as.factor(Consider.two.fresh.hires.for.the.same.position.at.the.same.company..One.holds.a.4.year.BS.degree.and.no.job.experience..The.other.has.no.degree..but.has.4.years.of.job.experience.in.a.similar.role..What.do.you.think.about.the.candidates..skills.and.performance.RIGHT.AFTER.BEING.HIRED.),
      bsc.vs.jobexperience.longtermproficiency = as.factor(Consider.two.fresh.hires.for.the.same.position.at.the.same.company..One.holds.a.4.year.BS.degree.and.no.job.experience..The.other.has.no.degree..but.has.4.years.of.job.experience.in.a.similar.role..They.work.at.the.company..in.the.same.role..for.one.year..What.do.you.think.about.the.candidates..skills.and.career.at.that.time..after.1.year..),
@@ -184,6 +186,13 @@ industry.professional.msc.shouldachieve.table <- tab_boolean("are.you.an.industr
 
 categories.msc.shouldachieve.table <- rbind(is.undergraduate.student.msc.shouldachieve.table, is.graduate.student.msc.shouldachieve.table, teacher.msc.shouldachieve.table, industry.professional.msc.shouldachieve.table)
 
+#bsc.hireability.gpa = as.factor(How.do.you.think.the.GPA.affects.a.fresh.BS.graduate.s.chances.to.get.hired.),
+#bsc.proficiency.gpa = as.factor(How.do.you.think.the.GPA.affects.a.fresh.BS.graduate.s.professional.proficiency.),
+#bsc.proficiency.topschool = as.factor(How.do.you.think.the.school.choice..e.g..Top.10.Ivy.League.university.vs.random.college..affects.a.fresh.BS.graduate.s.professional.proficiency.),
+#bsc.landjob.delay = as.factor(How.long.do.you.think.it.will.take.for.a.fresh.BS.graduate.to.land.his.her.first.job..after.graduation.),
+#bsc.proficiency.delay = as.factor(How.long.do.you.think.it.will.take.for.a.fresh.BS.graduate.to.become.fully.proficient.at.his.her.first.job..after.being.hired.),
+
+#age.group.bsc.hireability = tab_categories("age.group", "bsc.hireability.gpa + bsc.proficiency.gpa + bsc.proficiency.topschool + bsc.landjob.delay + bsc.proficiency.delay", "bsc")
 
 
 
