@@ -128,6 +128,15 @@ tab_boolean <- function(independent, dependent, mutate_what) {
 
 }
 
+tab_boolean_categories <- function(dependent, mutate_what) {
+ gradstudent <- tab_boolean("are.you.a.graduate.student", dependent, mutate_what)
+ undergrad <- tab_boolean("are.you.an.undergrad.student", dependent, mutate_what)
+ teacher <- tab_boolean("are.you.a.teacher", dependent, mutate_what)
+ industry.professional <- tab_boolean("are.you.an.industry.professional", dependent, mutate_what)
+
+ return (rbind(undergrad, gradstudent, teacher, industry.professional))
+}
+
 tab_msq <- function(independent, dependent) {
   mytbl <- table(normalized_wide %>% select(matches(independent)))
   p <- tabular(as.formula(sprintf("%s~%s", independent, dependent))
@@ -407,11 +416,22 @@ categories.msc.vs.bscexperience.hireability.table <- tab_msq_no_index_categories
 categories.msc.vs.bscexperience.shorttermproficiency.table <- tab_msq_no_index_categories("bsc.vs.jobexperience.shorttermproficiency")
 categories.msc.vs.bscexperience.longtermproficiency.table <- tab_msq_no_index_categories("bsc.vs.jobexperience.longtermproficiency")
 
+age.group.retraining.table <- tab_categories("age.group", "retraining.alt.onthejob + retraining.alt.mooc + retraining.alt.inperson + retraining.alt.dontknow", "retraining")
+degree.country.retraining.table <- tab_categories("age.group", "retraining.alt.onthejob + retraining.alt.mooc + retraining.alt.inperson + retraining.alt.dontknow", "retraining")
+degree.highest.retraining.table <- tab_categories("degree.highest", "retraining.alt.onthejob + retraining.alt.mooc + retraining.alt.inperson + retraining.alt.dontknow", "retraining")
+employed.country.retraining.table <- tab_categories("employed.country", "retraining.alt.onthejob + retraining.alt.mooc + retraining.alt.inperson + retraining.alt.dontknow", "retraining")
+company.size.retraining.table <- tab_categories("company.size", "retraining.alt.onthejob + retraining.alt.mooc + retraining.alt.inperson + retraining.alt.dontknow", "retraining")
+
+categories.retraining.table <- tab_boolean_categories("retraining.alt.onthejob + retraining.alt.mooc + retraining.alt.inperson + retraining.alt.dontknow", "retraining")
+
+age.group.grad.online.benefits.table <- tab_categories("age.group", "grad.online.benefits.time + grad.online.benefits.money + grad.online.benefits.motivation + grad.online.benefits.career + grad.online.benefits.dontknow", "benefits")
+degree.country.grad.online.benefits.table <- tab_categories("degree.country", "grad.online.benefits.time + grad.online.benefits.money + grad.online.benefits.motivation + grad.online.benefits.career + grad.online.benefits.dontknow", "benefits")
+degree.highest.grad.online.benefits.table <- tab_categories("degree.highest", "grad.online.benefits.time + grad.online.benefits.money + grad.online.benefits.motivation + grad.online.benefits.career + grad.online.benefits.dontknow", "benefits")
+employed.country.grad.online.benefits.table <- tab_categories("employed.country", "grad.online.benefits.time + grad.online.benefits.money + grad.online.benefits.motivation + grad.online.benefits.career + grad.online.benefits.dontknow", "benefits")
+company.size.grad.online.benefits.table <- tab_categories("company.size", "grad.online.benefits.time + grad.online.benefits.money + grad.online.benefits.motivation + grad.online.benefits.career + grad.online.benefits.dontknow", "benefits")
 
 
-
-
-
+categories.grad.online.benefits.table <- tab_boolean_categories("grad.online.benefits.time + grad.online.benefits.money + grad.online.benefits.motivation + grad.online.benefits.career + grad.online.benefits.dontknow", "benefits")
 
 
 
