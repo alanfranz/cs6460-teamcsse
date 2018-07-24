@@ -3,6 +3,10 @@ library(tidyr)
 library(gmodels)
 library(tables)
 
+# INSTRUCTIONS: variables that end with "table" are data which is prepared to be read. If a column terminates with "_pc" it's a percentage for that
+# answer.
+
+
 # we don't read answers with factors directly because I had some issues later on with multiple answers analysis,
 # and we want to rename the columns, by the way
 answers <- read.csv(file="misaligned-20180720-inferred-categories.csv",
@@ -244,13 +248,6 @@ industry.professional.msc.shouldachieve.table <- tab_boolean("are.you.an.industr
 
 categories.msc.shouldachieve.table <- rbind(is.undergraduate.student.msc.shouldachieve.table, is.graduate.student.msc.shouldachieve.table, teacher.msc.shouldachieve.table, industry.professional.msc.shouldachieve.table)
 
-#bsc.hireability.gpa = as.factor(How.do.you.think.the.GPA.affects.a.fresh.BS.graduate.s.chances.to.get.hired.),
-#bsc.proficiency.gpa = as.factor(How.do.you.think.the.GPA.affects.a.fresh.BS.graduate.s.professional.proficiency.),
-#bsc.proficiency.topschool = as.factor(How.do.you.think.the.school.choice..e.g..Top.10.Ivy.League.university.vs.random.college..affects.a.fresh.BS.graduate.s.professional.proficiency.),
-#bsc.landjob.delay = as.factor(How.long.do.you.think.it.will.take.for.a.fresh.BS.graduate.to.land.his.her.first.job..after.graduation.),
-#bsc.proficiency.delay = as.factor(How.long.do.you.think.it.will.take.fwor.a.fresh.BS.graduate.to.become.fully.proficient.at.his.her.first.job..after.being.hired.),
-
-#age.group.bsc.hireability = tab_categories("age.group", "bsc.hireability.gpa + bsc.proficiency.gpa + bsc.proficiency.topschool + bsc.landjob.delay + bsc.proficiency.delay", "bsc")
 age.group.bsc.hireability.gpa.table <- tab_msq("age.group", "bsc.hireability.gpa")
 age.group.bsc.proficiency.gpa.table <- tab_msq("age.group", "bsc.proficiency.gpa")
 age.group.bsc.proficiency.topschool.table <- tab_msq("age.group", "bsc.proficiency.topschool")
@@ -441,17 +438,6 @@ employed.degree.nojobexperience.opinion.table <- tab_msq("employed.country", "no
 company.size.nojobexperience.opinion.table <- tab_msq("company.size", "nojobexperience.opinion")
 
 categories.nojobexperience.table <- tab_msq_no_index_categories("nojobexperience.opinion")
-
-
-
-
-
-
-
-
-
-
-
 
 
 
