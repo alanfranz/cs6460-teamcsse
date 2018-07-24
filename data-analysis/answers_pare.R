@@ -434,7 +434,13 @@ company.size.grad.online.benefits.table <- tab_categories("company.size", "grad.
 categories.grad.online.benefits.table <- tab_boolean_categories("grad.online.benefits.time + grad.online.benefits.money + grad.online.benefits.motivation + grad.online.benefits.career + grad.online.benefits.dontknow", "benefits")
 
 
+age.group.nojobexperience.opinion.table <- tab_msq("age.group", "nojobexperience.opinion")
+degree.highest.nojobexperience.opinion.table <- tab_msq("degree.highest", "nojobexperience.opinion")
+degree.country.nojobexperience.opinion.table <- tab_msq("degree.country", "nojobexperience.opinion")
+employed.degree.nojobexperience.opinion.table <- tab_msq("employed.country", "nojobexperience.opinion")
+company.size.nojobexperience.opinion.table <- tab_msq("company.size", "nojobexperience.opinion")
 
+categories.nojobexperience.table <- tab_msq_no_index_categories("nojobexperience.opinion")
 
 
 
