@@ -74,16 +74,20 @@ normalized_wide <- answers %>% as_tibble() %>% transmute(
      msc.vs.bscexperience.hireability = as.factor(Consider.two.candidates.for.the.same.job..One.holds.a.relevant.MS.degree.and.no.job.experience..The.other.has.a.BS.and.2.years.of.relevant.job.experience..What.do.you.think.about.the.candidates..chance.of.being.hired.),
      msc.vs.bscexperience.shorttermproficiency = as.factor(Consider.two.fresh.hires.for.the.same.position.at.the.same.company..One.holds.a.relevant.MS.degree.and.no.job.experience..The.other.has.a.BS.degree..and.a.couple.of.years.of.experience.in.a.similar.role..What.do.you.think.about.the.candidates..skills.and.performance.RIGHT.AFTER.BEING.HIRED.),
      msc.vs.bscexperience.longtermproficiency = as.factor(Consider.two.fresh.hires.for.the.same.role.at.the.same.company..One.holds.an.MS.degree.and.no.job.experience..The.other.has.a.BS.degree..and.2.years.of.job.experience.in.a.similar.role..They.work.at.the.company..in.the.same.role..for.one.year..What.do.you.think.about.the.candidates..skills.and.career.at.that.time..after.1.year..),
+     
      retraining.alt.onthejob = grepl("Retraining on the job.", In.your.opinion..what.could.be.valid.alternatives.to.a.Master.s.degree.for.a.professional.in.need.of.retraining., fixed = TRUE),
      retraining.alt.mooc = grepl("Massive Open Online Courses (MOOCs)", In.your.opinion..what.could.be.valid.alternatives.to.a.Master.s.degree.for.a.professional.in.need.of.retraining., fixed = TRUE),
      retraining.alt.inperson = grepl("In-person classes in non-academic institutions (e.g. Bradfield school of computer science)", In.your.opinion..what.could.be.valid.alternatives.to.a.Master.s.degree.for.a.professional.in.need.of.retraining., fixed = TRUE),
      retraining.alt.dontknow = grepl("I don't know/prefer not to disclose", In.your.opinion..what.could.be.valid.alternatives.to.a.Master.s.degree.for.a.professional.in.need.of.retraining., fixed = TRUE),
+     
      grad.online.benefits.time = grepl("Time. The online program gives the schedule flexibility.", In.your.opinion..what.would.be.the.benefits.of.joining.a..graduate.level.online..program., fixed = TRUE),
      grad.online.benefits.money = grepl("Money. The online program mostly are less expensive than on-campus programs", In.your.opinion..what.would.be.the.benefits.of.joining.a..graduate.level.online..program., fixed = TRUE),
      grad.online.benefits.motivation = grepl("Motivation. The topic should be of high interest, not just an imposed training experience.", In.your.opinion..what.would.be.the.benefits.of.joining.a..graduate.level.online..program., fixed = TRUE),
      grad.online.benefits.career = grepl("Career advancement. Success in the program should be a guarantee of a better position.", In.your.opinion..what.would.be.the.benefits.of.joining.a..graduate.level.online..program., fixed = TRUE),
      grad.online.benefits.dontknow = grepl("I don't know/prefer not to disclose", In.your.opinion..what.would.be.the.benefits.of.joining.a..graduate.level.online..program., fixed = TRUE),
+     
      nojobexperience.opinion = as.factor(In.general..which.statement..in.your.opinion..is.more.accurate..if.we.assume.that.below.groups.have.no.previous.job.experience..)
+     
              )
 
 #add explicit row id, needed lather
@@ -160,6 +164,15 @@ tab_msq_no_index <- function(independent, dependent) {
   
 }
 
+tab_msq_no_index_categories <- function(dependent) {
+ gradstudent <- tab_msq_no_index("are.you.a.graduate.student", dependent)
+ undergrad <- tab_msq_no_index("are.you.an.undergrad.student", dependent)
+ teacher <- tab_msq_no_index("are.you.a.teacher", dependent)
+ industry.professional <- tab_msq_no_index("are.you.an.industry.professional", dependent)
+
+ return (rbind(undergrad, gradstudent, teacher, industry.professional))
+ 
+}
 
 
 
@@ -346,6 +359,56 @@ industry.professional.msc.proficiency.delay.tmp <- tab_msq_no_index("are.you.an.
 
 categories.msc.proficiency.delay.table = rbind(undergrad.msc.proficiency.delay.tmp, gradstudent.msc.proficiency.delay.tmp,
                                              teacher.msc.proficiency.delay.tmp, industry.professional.msc.proficiency.delay.tmp)
+
+
+age.group.bsc.vs.jobexperience.hireability.table <- tab_msq("age.group", "bsc.vs.jobexperience.hireability")
+age.group.bsc.vs.jobexperience.shorttermproficiency.table <- tab_msq("age.group", "bsc.vs.jobexperience.shorttermproficiency")
+age.group.bsc.vs.jobexperience.longtermproficiency.table <- tab_msq("age.group", "bsc.vs.jobexperience.longtermproficiency")
+age.group.msc.vs.bscexperience.hireability.table <- tab_msq("age.group", "msc.vs.bscexperience.hireability")
+age.group.msc.vs.bscexperience.shorttermproficiency.table <- tab_msq("age.group", "msc.vs.bscexperience.shorttermproficiency")
+age.group.msc.vs.bscexperience.longtermproficiency.table <- tab_msq("age.group", "msc.vs.bscexperience.longtermproficiency")
+
+degree.highest.bsc.vs.jobexperience.hireability.table <- tab_msq("degree.highest", "bsc.vs.jobexperience.hireability")
+degree.highest.bsc.vs.jobexperience.shorttermproficiency.table <- tab_msq("degree.highest", "bsc.vs.jobexperience.shorttermproficiency")
+degree.highest.bsc.vs.jobexperience.longtermproficiency.table <- tab_msq("degree.highest", "bsc.vs.jobexperience.longtermproficiency")
+degree.highest.msc.vs.bscexperience.hireability.table <- tab_msq("degree.highest", "msc.vs.bscexperience.hireability")
+degree.highest.msc.vs.bscexperience.shorttermproficiency.table <- tab_msq("degree.highest", "msc.vs.bscexperience.shorttermproficiency")
+degree.highest.bsc.vs.jobexperience.hireability.table <- tab_msq("degree.highest", "msc.vs.bscexperience.longtermproficiency")
+
+
+degree.country.bsc.vs.jobexperience.hireability.table <- tab_msq("degree.country", "bsc.vs.jobexperience.hireability")
+degree.country.bsc.vs.jobexperience.shorttermproficiency.table <- tab_msq("degree.country", "bsc.vs.jobexperience.shorttermproficiency")
+degree.country.bsc.vs.jobexperience.longtermproficiency.table <- tab_msq("degree.country", "bsc.vs.jobexperience.longtermproficiency")
+degree.country.msc.vs.bscexperience.hireability.table <- tab_msq("degree.country", "msc.vs.bscexperience.hireability")
+degree.country.msc.vs.bscexperience.shorttermproficiency.table <- tab_msq("degree.country", "msc.vs.bscexperience.shorttermproficiency")
+degree.country.msc.vs.bscexperience.longtermproficiency.table <- tab_msq("degree.country", "msc.vs.bscexperience.longtermproficiency")
+
+
+employed.country.bsc.vs.jobexperience.hireability.table <- tab_msq("employed.country", "bsc.vs.jobexperience.hireability")
+employed.country.bsc.vs.jobexperience.shorttermproficiency.table <- tab_msq("employed.country", "bsc.vs.jobexperience.shorttermproficiency")
+employed.country.bsc.vs.jobexperience.longtermproficiency.table <- tab_msq("employed.country", "bsc.vs.jobexperience.longtermproficiency")
+employed.country.msc.vs.bscexperience.hireability.table <- tab_msq("employed.country", "msc.vs.bscexperience.hireability")
+employed.country.msc.vs.bscexperience.shorttermproficiency.table <- tab_msq("employed.country", "msc.vs.bscexperience.shorttermproficiency")
+employed.country.msc.vs.bscexperience.longtermproficiency.table <- tab_msq("employed.country", "msc.vs.bscexperience.longtermproficiency")
+
+
+company.size.bsc.vs.jobexperience.hireability.table <- tab_msq("company.size", "bsc.vs.jobexperience.hireability")
+company.size.bsc.vs.jobexperience.shorttermproficiency.table <- tab_msq("company.size", "bsc.vs.jobexperience.shorttermproficiency")
+company.size.bsc.vs.jobexperience.longtermproficiency.table <- tab_msq("company.size", "bsc.vs.jobexperience.longtermproficiency")
+company.size.msc.vs.bscexperience.hireability.table <- tab_msq("company.size", "msc.vs.bscexperience.hireability")
+company.size.msc.vs.bscexperience.shorttermproficiency.table <- tab_msq("company.size", "msc.vs.bscexperience.shorttermproficiency")
+company.size.msc.vs.bscexperience.longtermproficiency.table <- tab_msq("company.size", "msc.vs.bscexperience.longtermproficiency")
+
+
+categories.bsc.vs.jobexperience.hireability.table <- tab_msq_no_index_categories("bsc.vs.jobexperience.hireability")
+categories.bsc.vs.jobexperience.shorttermproficiency.table <- tab_msq_no_index_categories("bsc.vs.jobexperience.shorttermproficiency")
+categories.bsc.vs.jobexperience.longtermproficiency.table <- tab_msq_no_index_categories("bsc.vs.jobexperience.longtermproficiency")
+categories.msc.vs.bscexperience.hireability.table <- tab_msq_no_index_categories("bsc.vs.jobexperience.hireability")
+categories.msc.vs.bscexperience.shorttermproficiency.table <- tab_msq_no_index_categories("bsc.vs.jobexperience.shorttermproficiency")
+categories.msc.vs.bscexperience.longtermproficiency.table <- tab_msq_no_index_categories("bsc.vs.jobexperience.longtermproficiency")
+
+
+
 
 
 
