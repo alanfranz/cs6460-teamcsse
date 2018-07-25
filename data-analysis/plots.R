@@ -1,5 +1,6 @@
 library(ggplot2)
 library(dplyr)
+library(stringr)
 #source("answers_pare.R")
 
 
@@ -14,8 +15,9 @@ age.group.chart <- ggplot(age.group.bsc.achieves.table, aes(x="", y=total, fill=
 categories_plot <- function(mytable, title, replacesth) {
 
  asd <- gather(tibble::rownames_to_column(mytable %>% select(contains("_pc")), var="category"), achievement, percentage, matches(".*_pc$"), factor_key=TRUE)
- asd <- asd %>% mutate(achievement = gsub("_pc", "", gsub(replacesth, "", achievement, fixed=TRUE), fixed=TRUE),
+ asd <- asd %>% mutate(achievement = str_wrap(gsub("_pc", "", gsub(replacesth, "", achievement, fixed=TRUE), fixed=TRUE), 30),
                       category = gsub("$", "?", gsub(".", " ", category, fixed = TRUE)))
+ 
 
 
  chart <- ggplot(asd, aes(x=achievement, y=percentage, fill=category)) +  geom_bar(position="dodge", stat="identity") + labs(title=title, y="percentage of category respondents")
@@ -26,5 +28,7 @@ categories_plot(categories.bsc.achieves.table, "BSc graduate reported achievemen
 categories_plot(categories.bsc.shouldachieve.table, "BSc graduate would-like achievements by category", "bsc.shouldachieve.")
 categories_plot(categories.msc.achieves.table, "MSc graduate reported achievements by category", "msc.achieves.")
 categories_plot(categories.msc.shouldachieve.table, "MSc graduate would-like achievements by category", "msc.shouldachieve.")
+
+categories_plot(categories.bsc.hireability.gpa.table, "BSc graduate hireability by category", "IGNOREIGNORE")
 
 
