@@ -26,9 +26,16 @@ categories_plot <- function(mytable, title, replacesth) {
 
 categories_plot(categories.bsc.achieves.table, "BSc graduate reported achievements by category", "bsc.achieves.")
 categories_plot(categories.bsc.shouldachieve.table, "BSc graduate would-like achievements by category", "bsc.shouldachieve.")
+
+categories_plot(categories.bsc.hireability.gpa.table, "BSc graduate reported GPA impact on hireability by category", "IGNOREIGNORE")
+categories_plot(categories.bsc.proficiency.gpa.table, "BSc graduate reported GPA impact on proficiency by category", "IGNOREIGNORE")
+categories_plot(categories.bsc.proficiency.topschool.table, "BSc graduate reported top-school impact on proficiency by category", "IGNOREIGNORE")
+categories_plot(categories.bsc.landjob.delay.table, "BSc graduate reported delay to get first job by category", "IGNOREIGNORE")
+categories_plot(categories.bsc.proficiency.delay.table, "BSc graduate reported delay to achieve proficiency", "IGNOREIGNORE")
+
 categories_plot(categories.msc.achieves.table, "MSc graduate reported achievements by category", "msc.achieves.")
 categories_plot(categories.msc.shouldachieve.table, "MSc graduate would-like achievements by category", "msc.shouldachieve.")
 
-categories_plot(categories.bsc.hireability.gpa.table, "BSc graduate hireability by category", "IGNOREIGNORE")
-
-
+categories_plot(categories.msc.hireability.gpa.table, "MSc graduate reported GPA impact on hireability by category", "IGNOREIGNORE")
+categories_plot(categories.msc.landjob.delay.table, "MSc graduate reported delay to get first job by category", "IGNOREIGNORE")
+categories_plot(categories.msc.proficiency.delay.table, "MSc graduate reported delay to achieve proficiency", "IGNOREIGNORE")
