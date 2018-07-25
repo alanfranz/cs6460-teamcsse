@@ -3,8 +3,16 @@ library(tidyr)
 library(gmodels)
 library(tables)
 
+# install packages if not existed
+# install.packages("tidyr")
+# install.packages("gmodels")
+# install.packages("tables")
+
 # INSTRUCTIONS: variables that end with "table" are data which is prepared to be read. If a column terminates with "_pc" it's a percentage for that
 # answer.
+
+# set the directory to current working directory
+# setwd("~/put the path here")
 
 
 # we don't read answers with factors directly because I had some issues later on with multiple answers analysis,
