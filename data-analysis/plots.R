@@ -1,7 +1,7 @@
 library(ggplot2)
 library(dplyr)
 library(stringr)
-#source("answers_pare.R")
+source("answers_pare.R")
 
 
 age.group.chart <- ggplot(age.group.bsc.achieves.table, aes(x="", y=total, fill=age.group)) + geom_bar(stat="identity") + labs(title="Age group count", x="", y="count") + guides(fill=guide_legend(title=NULL))
@@ -50,6 +50,6 @@ categories_plot(categories.msc.vs.bscexperience.hireability.table, "MSc degree v
 categories_plot(categories.msc.vs.bscexperience.shorttermproficiency.table, "MSc degree versus BSC and job experience short-term proficiency", "IGNORE")
 categories_plot(categories.msc.vs.bscexperience.longtermproficiency.table, "MSc degree versus BSC and job experience long-term proficiency", "IGNORE")
 
-categories_plot(categories.grad.online.benefits.table, "Benefits for online programs", "grad.online.benefits")
+categories_plot(categories.grad.online.benefits.table, "Benefits for online programs", "grad.online.benefits.")
 categories_plot(categories.nojobexperience.table, "Industry readiness with relation to job experience", "IGNORE")
 

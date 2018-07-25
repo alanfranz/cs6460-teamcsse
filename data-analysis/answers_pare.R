@@ -17,7 +17,7 @@ library(tables)
 
 # we don't read answers with factors directly because I had some issues later on with multiple answers analysis,
 # and we want to rename the columns, by the way
-answers <- read.csv(file="misaligned-20180720-inferred-categories.csv",
+answers <- read.csv(file="Misaligned-Cleaned-20180725.csv",
                         header=TRUE, sep=",",
                         stringsAsFactors=FALSE)
 
