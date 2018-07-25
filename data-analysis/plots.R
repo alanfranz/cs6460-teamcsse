@@ -1,7 +1,7 @@
 library(ggplot2)
 library(dplyr)
 library(stringr)
-source("answers_pare.R")
+#source("answers_pare.R")
 
 
 age.group.chart <- ggplot(age.group.bsc.achieves.table, aes(x="", y=total, fill=age.group)) + geom_bar(stat="identity") + labs(title="Age group count", x="", y="count") + guides(fill=guide_legend(title=NULL))
