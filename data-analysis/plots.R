@@ -50,3 +50,6 @@ categories_plot(categories.msc.vs.bscexperience.hireability.table, "MSc degree v
 categories_plot(categories.msc.vs.bscexperience.shorttermproficiency.table, "MSc degree versus BSC and job experience short-term proficiency", "IGNORE")
 categories_plot(categories.msc.vs.bscexperience.longtermproficiency.table, "MSc degree versus BSC and job experience long-term proficiency", "IGNORE")
 
+categories_plot(categories.grad.online.benefits.table, "Benefits for online programs", "grad.online.benefits")
+categories_plot(categories.nojobexperience.table, "Industry readiness with relation to job experience", "IGNORE")
+
