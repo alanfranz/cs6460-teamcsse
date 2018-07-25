@@ -417,9 +417,9 @@ company.size.msc.vs.bscexperience.longtermproficiency.table <- tab_msq("company.
 categories.bsc.vs.jobexperience.hireability.table <- tab_msq_no_index_categories("bsc.vs.jobexperience.hireability")
 categories.bsc.vs.jobexperience.shorttermproficiency.table <- tab_msq_no_index_categories("bsc.vs.jobexperience.shorttermproficiency")
 categories.bsc.vs.jobexperience.longtermproficiency.table <- tab_msq_no_index_categories("bsc.vs.jobexperience.longtermproficiency")
-categories.msc.vs.bscexperience.hireability.table <- tab_msq_no_index_categories("bsc.vs.jobexperience.hireability")
-categories.msc.vs.bscexperience.shorttermproficiency.table <- tab_msq_no_index_categories("bsc.vs.jobexperience.shorttermproficiency")
-categories.msc.vs.bscexperience.longtermproficiency.table <- tab_msq_no_index_categories("bsc.vs.jobexperience.longtermproficiency")
+categories.msc.vs.bscexperience.hireability.table <- tab_msq_no_index_categories("msc.vs.bscexperience.hireability")
+categories.msc.vs.bscexperience.shorttermproficiency.table <- tab_msq_no_index_categories("msc.vs.bscexperience.shorttermproficiency")
+categories.msc.vs.bscexperience.longtermproficiency.table <- tab_msq_no_index_categories("msc.vs.bscexperience.longtermproficiency")
 
 age.group.retraining.table <- tab_categories("age.group", "retraining.alt.onthejob + retraining.alt.mooc + retraining.alt.inperson + retraining.alt.dontknow", "retraining")
 degree.country.retraining.table <- tab_categories("age.group", "retraining.alt.onthejob + retraining.alt.mooc + retraining.alt.inperson + retraining.alt.dontknow", "retraining")
