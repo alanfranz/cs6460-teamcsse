@@ -234,9 +234,15 @@ Since we liked to get a good sample, we created a website, where we described wh
 \section{Results}
 Surprisingly, we've found that the expectations don't seem to be that misaligned on many topics. All of our categories, for example, have got very similar opinions on most BS graduate skills and would-like skills with one interesting twist.
 
-\includegraphics[scale=0.2]{../data-analysis/plots_output/BSc_graduate_reported_achievements_by_category.png}
+\begin{figure}
+ \includegraphics[scale=0.2]{../data-analysis/plots_output/BSc_graduate_reported_achievements_by_category.png}
+ \caption{caption}~\label{fig:figure1}
+\end{figure}
 
-\includegraphics[scale=0.2]{../data-analysis/plots_output/BSc_graduate_would-like_achievements_by_category.png}
+\begin{figure}
+ \includegraphics[scale=0.2]{../data-analysis/plots_output/BSc_graduate_would-like_achievements_by_category.png}
+  \caption{caption}~\label{fig:figure2}
+\end{figure}
 
 We can see that most of our respondents, regardless of their category, think that a BS graduate achieves the so-called \textit{computational thinking}, and, secondarily, a certain chance of getting hired and some programming skills. Here, we can actually see a bit of contrast between two categories: the teachers, and the industry professionals. The former group think that programming is something a BS graduate definitely acquires; the latter, being the ones that actually employ such skills, are far more reluctant to say that you get this skill in university.
 
@@ -246,9 +252,15 @@ One surprise comes from programming skills for undergrads. It's not marked as a 
 
 The other surprise comes from research skills. Teachers don't think it's something that is taught, and neither that should be taught. Possibly, that's left to graduate education?\newline
 
-\includegraphics[scale=0.2]{../data-analysis/plots_output/MSc_graduate_reported_achievements_by_category.png}
+\begin{figure}
+ \includegraphics[scale=0.2]{../data-analysis/plots_output/MSc_graduate_reported_achievements_by_category.png}
+  \caption{caption}~\label{fig:figure3}
+\end{figure}
 
-\includegraphics[scale=0.2]{../data-analysis/plots_output/MSc_graduate_would-like_achievements_by_category.png}
+\begin{figure}
+ \includegraphics[scale=0.2]{../data-analysis/plots_output/MSc_graduate_would-like_achievements_by_category.png}
+  \caption{caption}~\label{fig:figure4}
+\end{figure}
 
 Here we see the opinions about graduate education. It appears to be a partial solution for some parts of undergrad education, but not completely. Most people \textit{but industry professionals and graduate-level students} would agree that MS education improves your programming skills; since industry professionals are actually the most qualified at such opinion, it's not really encouraging, since they estimate MS graduate abilities on par with BS graduate abilities. On the other hand, teachers and undergraduate students categories (> 75\%) selected this skill as an achievement after MS graduation.
 
@@ -258,28 +270,56 @@ But real-word problem solving is still an open problem, even after a MS degree; 
 
 Generally, we can see more traces of this belief in another answer:
 
+\begin{figure}
 \includegraphics[scale=0.2]{../data-analysis/plots_output/Industry_readiness_with_relation_to_job_experience.png}
+ \caption{caption}~\label{fig:figure5}
+\end{figure}
 
 Only a few undergrads (12.5\%) hope that, at the end of their four-year studies, they'll have a high chance to enter the workforce and just have a great career. Other categories mostly believe that an apprenticeship phase will be mandatory for everybody - in this phase, most probably our graduates will learn about \textbf{soft skills, project management, real-world problem solving, and actual programming}.
 
 This idea is reinforced by other answers in our survey; when discussing the chances of being hired, we asked our respondents to compare experienced and unexperienced candidates with and without degrees.
 
-\includegraphics[scale=0.2]{../data-analysis/plots_output/BSc_degree_versus_job_experience_hireability.png}
+\begin{figure}
+ \includegraphics[scale=0.2]{../data-analysis/plots_output/BSc_degree_versus_job_experience_hireability.png}
+  \caption{caption}~\label{fig:figure6}
 %TODO: verify this graph: it seems a bit off, some categories seem to sum to more than 100%
+\end{figure}
 
-\includegraphics[scale=0.2]{../data-analysis/plots_output/MSc_degree_versus_BSC_and_job_experience_hireability.png}
+\begin{figure}
+ \includegraphics[scale=0.2]{../data-analysis/plots_output/MSc_degree_versus_BSC_and_job_experience_hireability.png}
+  \caption{caption}~\label{fig:figure7}
+\end{figure}
 
 As we can see, a large majority (between 75\% to 80\%) thinks that experience matters a lot. Interestingly, teachers seem that experience is even more important, probably acknowledging the industry-school expectation gap and our supposed misalignment.
 
 One last interesting result explains the job proficiency in short-term and long-term for both BS and MS graduates:
 
+\begin{figure}
 \includegraphics[scale=0.2]{../data-analysis/plots_output/BSc_degree_versus_job_experience_short-term_proficiency.png}
+ \caption{caption}~\label{fig:figure8}
+\end{figure}
 
+\begin{figure}
 \includegraphics[scale=0.2]{../data-analysis/plots_output/BSc_degree_versus_job_experience_long-term_proficiency.png}
+ \caption{caption}~\label{fig:figure9}
+\end{figure}
 
+\begin{figure}
 \includegraphics[scale=0.2]{../data-analysis/plots_output/MSc_degree_versus_BSC_and_job_experience_short-term_proficiency.png}
+ \caption{caption}~\label{fig:figure10}
+\end{figure}
 
+\begin{figure}
 \includegraphics[scale=0.2]{../data-analysis/plots_output/MSc_degree_versus_BSC_and_job_experience_long-term_proficiency.png}
+ \caption{caption}~\label{fig:figure11}
+\end{figure}
+
+
+\begin{figure*}
+  \centering
+  \includegraphics[width=1.75\columnwidth]{../data-analysis/plots_output/Solutions_to_gain_useful_job_experience.png}
+  \caption{The table shows the suggested solutions by participants on how to gain useful work experience during BS and MS studies.}~\label{fig:figure12}
+\end{figure*}
 
 Here, we can explain two things:
 \begin{itemize}
@@ -291,7 +331,14 @@ While the first statement may be a bit expected, we think that the second is cle
 
 We have seen quite scattered responses about the impact of GPAs and top schools, and we don't think we can draw big conclusions about those topics (The graphs are collected at \url{http://www.misalignedtech.com/} ) %TODO: Need to add graphs zip folder in our website
 
-%TODO: I need to add the analysis for solutions and online programs
+\begin{figure}
+  \includegraphics[scale=0.2]{../data-analysis/plots_output/Reported_retraining_best_options.png}
+  \caption{This graph displays the comparison between category responses on alternatives to MS education for a professional in need of retraining.}~\label{fig:figure13}
+\end{figure}
+
+In the next step, we collected data about possible solutions and suggestions on how the students in both levels can gain useful work experience during their studies. We found that most frequent answers are as internships, real-world work, part-time jobs, extra courses or learning new languages, open-source projects, research, and studying. As it shows in the table below, the majority of the participants pointed out "internships" as the most effective practice for that. The next two major suggestions are part-time job and open-source projects. It is interesting that the part-time job is selected doubled the time for MS studies compared to BS studies. Another item to point out is the Research selection. As it shows in the table, 13\% of the respondents think that Research can help in MS studies to gain useful work experience. However, only 6\% recommend Research as an option to better be prepared for job industry.
+
+Here, we looked at valid alternatives to MS education for a professional in need of retraining. As we expected, the MOOC and, certainly, on-site job training received the highest percentage among all the categories. The "in-person learning" received less than 40\% of responses from all categories except teachers and professors. about 60\% of professors think that in-person studies can be a convincing option for MS studies. Another interesting item is to compare undergraduate-level students responses. It shows that there is a percentage increase (about 20\%) of choosing MOOC compared to on-site job training. This shows the high demand from undergraduate students to attend high-level online graduate programs and substitute this option with in-person or on-campus studies.
 
 \section{Limitations}
  We think our research has several limitations.\newline
