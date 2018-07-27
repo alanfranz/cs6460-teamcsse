@@ -20,7 +20,7 @@ categories_plot <- function(mytable, title, replacesth) {
  
 
 
- chart <- ggplot(asd, aes(x=achievement, y=percentage, fill=category)) +  geom_bar(position="dodge", stat="identity") + labs(title=title, y="percentage of category respondents") + coord_flip() + theme(legend.position = "bottom") + guides(fill=guide_legend(nrow=2, byrow=TRUE))
+ chart <- ggplot(asd, aes(x=achievement, y=percentage, fill=category)) +  geom_bar(position="dodge", stat="identity") + labs(title=title, y="percentage of category respondents") + coord_flip() + theme(legend.position = "bottom", text = element_text(size=12)) + guides(fill=guide_legend(nrow=2, byrow=TRUE))
  ggsave(sprintf("%s/%s.eps", "plots_output", gsub(" ", "_", title, fixed=TRUE)), plot=chart, device="eps", width=50, height=10, units="cm", dpi=72)
  ggsave(sprintf("%s/%s.png", "plots_output", gsub(" ", "_", title, fixed=TRUE)), plot=chart, device="png", width=20, height=20, units="cm", dpi=150)
 }
